@@ -25,7 +25,7 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IS
     public Sprite skillbarCooldownSprite;
     public bool haveSkillbarIcon;
     public int Unique_ID;
-
+    private string skillName;
 
     [TextArea()]
     public string description;
@@ -34,7 +34,7 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IS
         skillTree = GameObject.Find("Canvas").GetComponent<SkillTree>();
         button.onClick.AddListener(() => Use());
         //gameObject.SetActive(false);
-
+        skillName = gameObject.name;
         // skillpointsNeededText.text = skillPointsNeeded.ToString();
         skillIcon.sprite = lockedSprite;
     }
@@ -140,16 +140,19 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IS
 
     public void Save(GameData gameData)
     {
+        Debug.Log("What about now?");
         foreach (SkillsNodeData node in gameData.SkillsNodeData)
         {
             if (node.ID == Unique_ID)
             {
                 node.IsUsed = IsUsed;
+                node.IsUnlocked = IsUnlocked;
+                node.SkillName = skillName;
                 return;
             }
         }
-
-        gameData.SkillsNodeData.Add(new SkillsNodeData() { ID = Unique_ID, IsUsed = IsUsed });
+        Debug.Log("Came here");
+        gameData.SkillsNodeData.Add(new SkillsNodeData() { ID = Unique_ID, SkillName = skillName, IsUsed = IsUsed, IsUnlocked = IsUnlocked });
     }
 
     public void Load(GameData gameData)
@@ -162,6 +165,7 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IS
             if (node.ID == Unique_ID)
             {
                 IsUsed = node.IsUsed;
+                IsUnlocked = node.IsUnlocked;
                 if(IsUsed)
                 {
                     skillIcon.sprite = selectedSprite;

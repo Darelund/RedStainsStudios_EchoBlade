@@ -32,12 +32,14 @@ public class SavingManager : MonoBehaviour
 
     private void Start()
     {
-        savables = GameObject.FindObjectsByType<MonoBehaviour>(FindObjectsSortMode.None).
+        savables = GameObject.FindObjectsByType<MonoBehaviour>(FindObjectsInactive.Include, FindObjectsSortMode.None).
             OfType<ISavable>().ToList();
-        Debug.Log(savables.Count);
-        // savables = GameObject.FindObjectsOfType<MonoBehaviour>()
 
-        fileSaver = new JsonSaver();
+        savables.ForEach(s =>
+            Debug.Log(s.GetType()) );
+            // savables = GameObject.FindObjectsOfType<MonoBehaviour>()
+
+            fileSaver = new JsonSaver();
         //LOAD DAT DATA!!!
         LoadData();
 

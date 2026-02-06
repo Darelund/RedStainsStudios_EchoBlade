@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -94,6 +95,7 @@ public class SkillsNodeData //What skills in the SkillTree that have been bought
     public int ID;
     public string SkillName;
     public bool IsUsed;
+    public bool IsUnlocked;
 }
 [System.Serializable]
 public class AbilityBarData //What Abilities that you have
@@ -127,6 +129,11 @@ public class PlayerAbilityData //What abilites are unlocked
     //        [PlayerAbility.DetectionReduction] = false,
     //    };
     //}
+    public string AbilityName;
     public PlayerAbility PlayerAbility;
     public bool HasAbility;
+    public PlayerAbilityData()
+    {
+        AbilityName = Convert.ToString(PlayerAbility);
+    }
 }
