@@ -14,7 +14,7 @@ public class GameData
     //Number of deaths 
     //LastPlayedScene
     //Unlocked scenes
-
+    public bool NewGame;
 
     public List<PlayerAbilityData> PlayerAbilityData;
     public List<AltarData> altarData;
@@ -39,6 +39,8 @@ public class GameData
     //Empty save, which is when we get a new save
     public GameData()
     {
+        NewGame = true;
+
         PlayerAbilityData = new List<PlayerAbilityData>()
         {
             new PlayerAbilityData() { PlayerAbility = PlayerAbility.ShadowWalk, HasAbility = false },

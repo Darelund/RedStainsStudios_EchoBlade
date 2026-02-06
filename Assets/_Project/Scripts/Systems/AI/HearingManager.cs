@@ -28,7 +28,7 @@ public class HearingManager : MonoBehaviour
     }
     #endregion
 
- 
+
 
     public event Action<HeardSound> OnHearing;
 
@@ -47,7 +47,7 @@ public class HearingManager : MonoBehaviour
         }
 
 
-        OnHearing.Invoke(new HeardSound(soundLocation, hearingSound /*soundIntensity)*/));
+        OnHearing?.Invoke(new HeardSound(soundLocation, hearingSound /*soundIntensity)*/));
     }
     public class SoundWaveData
     {

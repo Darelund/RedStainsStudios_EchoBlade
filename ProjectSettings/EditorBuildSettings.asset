@@ -9,8 +9,11 @@ EditorBuildSettings:
     path: Assets/_Project/Scenes/Levels/Main Menu/Main Menu.unity
     guid: 615630e90bc211e419c8280b3f83af1f
   - enabled: 1
-    path: Assets/_Project/Scenes/Levels/Whitebox/Level_GraveyardWhitebox.unity
-    guid: af96e7df7f43c004bb35e12bb4e515a9
+    path: Assets/_Project/Scenes/Levels/IntroScene.unity
+    guid: 6ed78b02907ca3844b58cc406678cca1
+  - enabled: 1
+    path: Assets/_Project/Scenes/Levels/Level_Morgue.unity
+    guid: 7702d2f6c0b9d1c4e9fde5a8ae4256e7
   - enabled: 1
     path: Assets/_Project/Scenes/Levels/Level_Graveyard.unity
     guid: 553c69595abbfe548af47c633f3c96ad
