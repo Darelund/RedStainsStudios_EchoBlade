@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -6,6 +7,12 @@ public class GameManager : StateMachine, ISavable
 {
     private int currentSkillPoints = 0;
     public int skillPointsUsed;
+
+    public Dictionary<string, bool> ScenesUnlocked = new Dictionary<string, bool>();
+    //public bool GraveyardUnlocked;
+    //public bool ManorUnlocked;
+    //public bool EscapeUnlocked;
+
     public int GetCurrentSkillPoints() => currentSkillPoints;
 
     public void IncreaseSkillPoints(int skillPointsAdded)
@@ -23,6 +30,14 @@ public class GameManager : StateMachine, ISavable
     public static GameManager Instance;
     private void Awake()
     {
+        ScenesUnlocked = new Dictionary<string, bool>()
+        {
+            ["Level_Graveyard"] = true,
+            ["Level_Manor"] = false,
+            ["Level_Escape"] = false
+        };
+
+
         if (Instance == null || Instance == this) Instance = this;
         else Destroy(this);
     }
@@ -59,12 +74,22 @@ public class GameManager : StateMachine, ISavable
     {
         gameData.SkillsPointsUsed = skillPointsUsed;
         gameData.SkillPointsLeft = currentSkillPoints;
+
+        Debug.Log($"Grave: {ScenesUnlocked["Level_Graveyard"]},Manor: {ScenesUnlocked["Level_Manor"]}, Escape: {ScenesUnlocked["Level_Escape"]}");
+        gameData.GraveyardUnlocked = ScenesUnlocked["Level_Graveyard"];
+        gameData.ManorUnlocked = ScenesUnlocked["Level_Manor"];
+        gameData.EscapeUnlocked = ScenesUnlocked["Level_Escape"];
+
     }
 
     public void Load(GameData gameData)
     {
         currentSkillPoints = gameData.SkillPointsLeft;
         skillPointsUsed = gameData.SkillsPointsUsed;
+
+        ScenesUnlocked["Level_Graveyard"] = gameData.GraveyardUnlocked;
+        ScenesUnlocked["Level_Manor"] = gameData.ManorUnlocked;
+        ScenesUnlocked["Level_Escape"] = gameData.EscapeUnlocked;
     }
     public void ResetSkillPoints()
     {

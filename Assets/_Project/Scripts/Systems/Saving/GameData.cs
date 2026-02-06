@@ -62,8 +62,8 @@ public class GameData
         Deaths = 0;
         TimePlayed = new TimePlayedData(0, 0, 0);
 
-        LastPlayedScene = "";
-        GraveyardUnlocked = false;
+        LastPlayedScene = "Level_Graveyard";
+        GraveyardUnlocked = true;
         ManorUnlocked = false;
         EscapeUnlocked = false;
     }
