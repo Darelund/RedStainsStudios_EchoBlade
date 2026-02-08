@@ -171,7 +171,7 @@ MonoBehaviour:
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: 0.42528737
+          value: 0.4535519
           inSlope: Infinity
           outSlope: Infinity
           tangentMode: 0
@@ -188,7 +188,7 @@ MonoBehaviour:
           inWeight: 0
           outWeight: 0
         - serializedVersion: 3
-          time: 0.009876544
+          time: 0.020725388
           value: 0
           inSlope: 0
           outSlope: 0
@@ -197,7 +197,7 @@ MonoBehaviour:
           inWeight: 0
           outWeight: 0
         - serializedVersion: 3
-          time: 0.96526796
+          time: 0.95595855
           value: 0
           inSlope: Infinity
           outSlope: Infinity
@@ -206,8 +206,8 @@ MonoBehaviour:
           inWeight: 0
           outWeight: 0
         - serializedVersion: 3
-          time: 0.9925926
-          value: 0.43544304
+          time: 0.97927463
+          value: 0.42622954
           inSlope: 7.639402
           outSlope: 7.639402
           tangentMode: 0
@@ -258,10 +258,10 @@ MonoBehaviour:
   active: 1
   postExposure:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0
   contrast:
     m_OverrideState: 0
-    m_Value: 0
+    m_Value: -11
   colorFilter:
     m_OverrideState: 0
     m_Value: {r: 1, g: 1, b: 1, a: 1}
@@ -285,8 +285,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.ChromaticAberration
   active: 1
   intensity:
-    m_OverrideState: 1
-    m_Value: 0
+    m_OverrideState: 0
+    m_Value: 0.322
 --- !u!114 &-985473019885808574
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -305,7 +305,7 @@ MonoBehaviour:
     m_Value: 0
   tint:
     m_OverrideState: 0
-    m_Value: 21
+    m_Value: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -343,10 +343,10 @@ MonoBehaviour:
     m_Value: 1
   threshold:
     m_OverrideState: 1
-    m_Value: 0.1
+    m_Value: 1
   intensity:
     m_OverrideState: 1
-    m_Value: 0.01
+    m_Value: 0.1
   scatter:
     m_OverrideState: 1
     m_Value: 0.7
@@ -355,7 +355,7 @@ MonoBehaviour:
     m_Value: 65472
   tint:
     m_OverrideState: 0
-    m_Value: {r: 1, g: 1, b: 1, a: 1}
+    m_Value: {r: 0, g: 0, b: 0, a: 1}
   highQualityFiltering:
     m_OverrideState: 0
     m_Value: 0
@@ -366,12 +366,12 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 6
   dirtTexture:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: {fileID: 2800000, guid: 70b732717c33de54eb0a9502b77e0c31, type: 3}
     dimension: 1
   dirtIntensity:
     m_OverrideState: 0
-    m_Value: 0
+    m_Value: 1
 --- !u!114 &8910188769851928848
 MonoBehaviour:
   m_ObjectHideFlags: 3
