@@ -21,7 +21,7 @@ public class S_AsyncLoadingManager : MonoBehaviour
 
     IEnumerator LoadSceneAsync(int SceneID)
     {
-        AsyncOperation operation = SceneManager.LoadSceneAsync(SceneID);
+        AsyncOperation operation = SceneManager.LoadSceneAsync(GameObject.FindAnyObjectByType<MainMenu>().selectedLevel);
         
         LoadingScreen.SetActive(true);
         

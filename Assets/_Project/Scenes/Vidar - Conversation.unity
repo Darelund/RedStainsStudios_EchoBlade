@@ -2996,30 +2996,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: -14.481098
       objectReference: {fileID: 0}
-    - target: {fileID: 4716509805505160708, guid: 9f64805503237ea448f51b663252870e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 18
-      objectReference: {fileID: 0}
-    - target: {fileID: 4716509805505160708, guid: 9f64805503237ea448f51b663252870e, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4716509805505160708, guid: 9f64805503237ea448f51b663252870e, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.56098527
-      objectReference: {fileID: 0}
-    - target: {fileID: 4716509805505160708, guid: 9f64805503237ea448f51b663252870e, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.4304593
-      objectReference: {fileID: 0}
-    - target: {fileID: 4716509805505160708, guid: 9f64805503237ea448f51b663252870e, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.5609857
-      objectReference: {fileID: 0}
-    - target: {fileID: 4716509805505160708, guid: 9f64805503237ea448f51b663252870e, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.43045968
-      objectReference: {fileID: 0}
     - target: {fileID: 5965158235604092076, guid: 9f64805503237ea448f51b663252870e, type: 3}
       propertyPath: m_Name
       value: Player Ref
