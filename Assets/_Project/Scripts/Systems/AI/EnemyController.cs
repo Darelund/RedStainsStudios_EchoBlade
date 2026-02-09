@@ -9,7 +9,7 @@ public class EnemyController : NonMonoBehaviourStateMachine
     [SerializeField] List<Transform> waypoints = new List<Transform>();
     [SerializeField] GameObject weapon;
 
-    public Vector3 PointOfInterest = new Vector3(0, 0, 0);
+    public InterestPoint PointOfInterest = new InterestPoint();
     public bool ShouldPatrol = true;
     public float hearingRange;
     public bool ShowGizmos = false;
