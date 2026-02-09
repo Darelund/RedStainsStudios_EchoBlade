@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 
 public class SkillTreeState : State
 {
@@ -10,6 +12,8 @@ public class SkillTreeState : State
         AIManager.Instance.StopAllAI();
         skillTreeUI.SetActive(true);
         skiltree.UpdateSkillTree();
+        GameObject.FindAnyObjectByType<Volume>().profile.TryGet(out DepthOfField d);
+        d.active = true;
     }
     public override void UpdateState()
     {
@@ -25,6 +29,8 @@ public class SkillTreeState : State
     {
         AIManager.Instance.ResumeAllAI();
         skillTreeUI.SetActive(false);
+        GameObject.FindAnyObjectByType<Volume>().profile.TryGet(out DepthOfField d);
+        d.active = false;
     }
 
     public void CloseSkillTree()
