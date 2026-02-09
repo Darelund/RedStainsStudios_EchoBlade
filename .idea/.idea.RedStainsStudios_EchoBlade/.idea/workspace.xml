@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1da759cc-d91c-4100-ae63-758c3494afb7" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scenes/Levels/Level_Graveyard.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scenes/Levels/Level_Graveyard.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scenes/Levels/Main Menu/Main Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scenes/Levels/Main Menu/Main Menu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Shaders/Phantom/M_USG_Phantom.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Shaders/Phantom/M_USG_Phantom.mat" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,15 +16,15 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Darelund/RedStainsStudios_EchoBlade.git",
-    "accountId": "8a0f2ace-5152-4387-949f-cb3806c6d05c"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Darelund/RedStainsStudios_EchoBlade.git&quot;,
+    &quot;accountId&quot;: &quot;8a0f2ace-5152-4387-949f-cb3806c6d05c&quot;
   }
-}]]></component>
+}</component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "git-widget-placeholder": "CNEB-143-main-menu-polish",
+    "git-widget-placeholder": "CNEB-152-play-button-vfx",
     "node.js.selected.package.tslint": "(autodetect)"
   }
 }]]></component>
