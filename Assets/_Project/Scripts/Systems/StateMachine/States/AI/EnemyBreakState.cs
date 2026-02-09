@@ -39,7 +39,7 @@ public class EnemyBreakState : NonMonoState
         if (isOnBreak is true)
         {
             BreakTickingDown();
-            return;
+            //return;
         }
         else
         {
