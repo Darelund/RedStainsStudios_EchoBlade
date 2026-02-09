@@ -11,7 +11,7 @@ public class SkillTreeState : State
     {
         AIManager.Instance.StopAllAI();
         skillTreeUI.SetActive(true);
-        skiltree.UpdateSkillTree();
+        skiltree.UpdateSkillTrees();
         GameObject.FindAnyObjectByType<Volume>().profile.TryGet(out DepthOfField d);
         d.active = true;
     }

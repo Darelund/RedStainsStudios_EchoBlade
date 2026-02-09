@@ -38,11 +38,11 @@ public class AbilityBarManager : MonoBehaviour
         }
         Debug.LogError("NO SKILLBARS LEFT, anyways. Probably a dog problem");
     }
-    public void ResetAbilityBar()
+    public void ResetEveryAbilityBar()
     {
         foreach (var abilityBar in abilityBarList)
         {
-           // abilityBar.
+            abilityBar.ResetAbilityBar();
         }
     }
 }
