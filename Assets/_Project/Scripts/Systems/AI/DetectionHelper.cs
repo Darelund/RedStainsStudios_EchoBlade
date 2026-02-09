@@ -1,5 +1,8 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 
 
 public enum DetectionState
@@ -9,16 +12,26 @@ public enum DetectionState
     Detect,
     Investigate
 }
-
+public struct InterestPoint
+{
+    public Vector3 Position;
+    public Vector3 Direction;
+    public InterestPoint(Vector3 position, Vector3 direction)
+    {
+        Position = position;
+        Direction = direction;
+    }
+}
 public class DetectionHelper
 {
-    private Transform detectionGameObject;
+    private Transform detectorObject;
     private Transform eyes;
     private GameObject target;
+    private List<Transform> extremityPoints;
 
     private float timeInSight;
-    private const float CHASE_THRESHOLD = 0.8f;
-    private const float INVESTIGATE_THRESHOLD = 0.5f;
+    //private float CHASE_THRESHOLD = 2.5f;
+    //private float INVESTIGATE_THRESHOLD = 1f;
 
 
     private float eyeSightAngle = 28f;
@@ -26,107 +39,98 @@ public class DetectionHelper
     private readonly LightChanger lightChanger;
     public DetectionHelper(Transform transform, Transform eyes, LightChanger lightChanger)
     {
-        detectionGameObject = transform;
+        detectorObject = transform;
+        target = GameObject.FindAnyObjectByType<Movement>().gameObject;
         this.eyes = eyes;
         this.lightChanger = lightChanger;
         eyeSightAngle = lightChanger.angle / 2;
         detectionRange = lightChanger.range;
+
+        //extremityPoints = target.GetComponent<Movement>().ExtremityPoints;
+        extremityPoints = new List<Transform>();
+        extremityPoints.Add(target.GetComponentInChildren<Animator>().GetBoneTransform(HumanBodyBones.Head).transform);
+        extremityPoints.Add(target.GetComponentInChildren<Animator>().GetBoneTransform(HumanBodyBones.Chest).transform);
+        extremityPoints.Add(target.GetComponentInChildren<Animator>().GetBoneTransform(HumanBodyBones.Neck).transform);
+        extremityPoints.Add(target.GetComponentInChildren<Animator>().GetBoneTransform(HumanBodyBones.Spine).transform);
+        extremityPoints.Add(target.GetComponentInChildren<Animator>().GetBoneTransform(HumanBodyBones.Hips).transform);
+        extremityPoints.Add(target.GetComponentInChildren<Animator>().GetBoneTransform(HumanBodyBones.LeftFoot).transform);
+        extremityPoints.Add(target.GetComponentInChildren<Animator>().GetBoneTransform(HumanBodyBones.RightFoot).transform);
+        extremityPoints.Add(target.GetComponentInChildren<Animator>().GetBoneTransform(HumanBodyBones.LeftHand).transform);
+        extremityPoints.Add(target.GetComponentInChildren<Animator>().GetBoneTransform(HumanBodyBones.RightHand).transform);
+        extremityPoints.Add(target.GetComponentInChildren<Animator>().GetBoneTransform(HumanBodyBones.LeftShoulder).transform);
+        extremityPoints.Add(target.GetComponentInChildren<Animator>().GetBoneTransform(HumanBodyBones.RightShoulder).transform);
+        Debug.Log(extremityPoints.Count);
     }
     public GameObject GetTarget() => target;
-    Vector3 lastposition;
-    public DetectionState Detect()
+    //Collider[] colliders;
+    //int maxColliders = 10;
+    public DetectionState Detect(float CHASE_THRESHOLD = 2.5f, float INVESTIGATE_THRESHOLD = 1f)
     {
-        //First find player in area
-        var colliders = Physics.OverlapSphere(detectionGameObject.position, detectionRange, 1 << 0); //TODO: Right now it finds all default layers, dumb, fix later
-        Vector3 forwardDir = detectionGameObject.forward;
-        RaycastHit rayHit;
-        foreach (var c in colliders)
+        Vector3 forwardDir = detectorObject.forward;
+        Vector3 targetDir = (target.transform.position - detectorObject.position);
+        var distanceToPlayer = targetDir.magnitude;
+
+        //Player too far away
+        if(distanceToPlayer > detectionRange) return DetectionState.DetectNone;
+       // Debug.Log("Inside detection range");
+
+        //Check if the player is inside FOV
+        float angle = Vector3.Angle(targetDir, forwardDir);
+        if (angle <= eyeSightAngle)
         {
-            //If the object isn't a player move on
-            if (c.gameObject.GetComponent<Movement>() == null)
-            {
-                continue;
-            }
-
-            Vector3 TargetDir = (c.transform.position - detectionGameObject.position).normalized;
-
-            //Check if the player is inside FOV
-            float angle = Vector3.Angle(TargetDir, forwardDir);
-            if (angle <= eyeSightAngle)
-            {
-                //Check if we can see the player
-                //Send away 10 - 30 rays to see if player is hiding or not
-                //Look range
-                //Vector3 velocity = (c.transform.position - lastposition) / Time.deltaTime;
-                //lastposition = c.transform.position;
-
-                //float distance = Vector3.Distance(detectionGameObject.position, c.transform.position);
-                //float predictionTime = distance / detectionGameObject.GetComponent<NavMeshAgent>().speed;
-
-                //Vector3 futurePosition =
-                //c.transform.position + velocity * predictionTime;
-                Vector3 predictedDir = PredictFutureDirection(c.gameObject);
-
-
-                //Physics.Raycast(eyes.transform.position, predictedDir, out rayHit, lookRange);
-                //Debug.DrawRay(eyes.transform.position, predictedDir * lookRange, Color.red, 1);
-
-                int numberOfRaycasts = 10;
-                float degreesBetweenRays = 5f;
-
-                for (int i = -numberOfRaycasts; i < numberOfRaycasts; i++)
-                {
-                    var angleBetweenRays = i * degreesBetweenRays;
-                    Vector3 dir = Quaternion.AngleAxis(angleBetweenRays, Vector3.up) * TargetDir;
-
-
-                    //Physics.Raycast(eyes.transform.position, TargetDir + dir, out rayHit, lookRange);
-
-                    Physics.Raycast(eyes.transform.position, predictedDir + dir, out rayHit, detectionRange);
-                    Debug.DrawRay(eyes.transform.position, (predictedDir + dir) * detectionRange, Color.darkOliveGreen, 1);
-
-                    if (rayHit.collider != null && rayHit.transform == c.transform)
-                    {
-                        //TODO: It shouldn't only be about time insight
-                        //it should also be how close you are. If you are in the face of the
-                        //enemy then obviously it should instantly chase/do something
-                        float closeness = detectionRange - Vector3.Distance(detectionGameObject.position, rayHit.collider.transform.position);
-                        //So you use lookRange somehow
-
-
-
-                        //Found a player in sight
-                        target = rayHit.collider.gameObject;
-                        timeInSight += closeness * Time.deltaTime;
-                        //agent.ResetPath();// = false; //Resetting path when looking at an object, does it work? I don't really know
-                        //HasReachedTargetPosition = true;
-                        if (timeInSight > CHASE_THRESHOLD)
-                        {
-                            //timeInSight = 0;
-                            //agent.ResetPath();// = false;
-                            //HasReachedTargetPosition = true;
-                            //currentEnemyState = EnemyState.Chase;
-                            return DetectionState.Chase;
-                        }
-                        //isInvestigating = false;
-
-                        //Should be called from the object using this script
-                        //Not this scripts responsibility to change color
-                        lightChanger.ChangeVisibilityColor(timeInSight);
-
-                        return DetectionState.Detect;
-                    }
-                }
-            }
-            //else //Out of sight before chaseTime was reached
-            //{
-            //    //isInvestigating = false;
-
-            //    target = null;
-            //    //timeInSight = 0;
-            //}
+            //Debug.Log("Inside eye sight");
+          //  Vector3 predictedDir = PredictFutureDirection(target.gameObject);
+            var detectResult = ShootOutRays(CHASE_THRESHOLD);
+            if (detectResult == DetectionState.Detect || detectResult == DetectionState.Chase) return detectResult;
         }
-        target = null;
+        UpdateLight();
+
+       
+        if (timeInSight > INVESTIGATE_THRESHOLD)
+        {
+            return DetectionState.Investigate;
+        }
+        Debug.Log(timeInSight);
+        return DetectionState.DetectNone;
+    }
+    private DetectionState ShootOutRays(float CHASE_THRESHOLD = 2.5f)
+    {
+        RaycastHit rayHit;
+
+        for (int i = 0; i < extremityPoints.Count; i++)
+        {
+            Vector3 predictedDir = (eyes.position - extremityPoints[i].transform.position).normalized;
+           // Vector3 predictedDir = PredictFutureDirection();
+            Physics.Raycast(extremityPoints[i].transform.position, predictedDir, out rayHit, detectionRange, (1 << 0) | (1 << 6) | (1 << 13));
+            Debug.DrawRay(extremityPoints[i].transform.position, (predictedDir) * detectionRange, Color.darkOliveGreen, 1);
+            //Debug.Log($"Extremity position: {extremityPoints[9].GetComponentInParent<Animator>().GetBoneTransform(HumanBodyBones.Head).transform.position}");
+            //if (rayHit.collider != null)
+            //    Debug.Log($"Name of hit object - {rayHit.collider.name} and target transform is {detectorObject.transform.name}");
+            if (rayHit.collider != null && rayHit.transform == detectorObject.transform)
+            {
+                //TODO: It shouldn't only be about time insight
+                //it should also be how close you are. If you are in the face of the
+                //enemy then obviously it should instantly chase/do something
+                float closeness = detectionRange - Vector3.Distance(target.transform.position, rayHit.collider.transform.position);
+                timeInSight += closeness * Time.deltaTime;
+                Debug.Log(timeInSight);
+                //Chase after being in sight for x seconds
+                if (timeInSight > CHASE_THRESHOLD)
+                {
+                    //Debug.Log("Time to chase");
+                    return DetectionState.Chase;
+                }
+                lightChanger.ChangeVisibilityColor(timeInSight);
+                //Debug.Log("Detecting");
+                //Stand still and look at the thing you detect
+                return DetectionState.Detect;
+            }
+        }
+        //Debug.Log("Nothing detected");
+        return DetectionState.DetectNone;
+    }
+    private void UpdateLight()
+    {
         if (timeInSight > 0)
         {
             timeInSight -= Time.deltaTime;
@@ -136,109 +140,71 @@ public class DetectionHelper
             timeInSight = 0;
         }
         lightChanger.ChangeVisibilityColor(timeInSight);
-        if (timeInSight > INVESTIGATE_THRESHOLD)
-        {
-            //currentEnemyState = EnemyState.Investigate;
-
-            return DetectionState.Investigate;
-        }
-        return DetectionState.DetectNone;
     }
+    //private Vector3 PredictFutureDirection()
+    //{
+    //    float distance = Vector3.Distance(eyes.position, extremityPoints[9].GetComponentInParent<Animator>().GetBoneTransform(HumanBodyBones.Head).transform.position);
 
-    private Vector3 PredictFutureDirection(GameObject target)
-    {
-        Vector3 upOnY = new Vector3(0, 0.5f, 0);
-        float distance = Vector3.Distance(detectionGameObject.position, target.transform.position + upOnY);
+    //    Vector3 velocity = (((target.transform.position) - lastposition) / Time.deltaTime) * 0.35f;
+    //    lastposition = target.transform.position;
 
-        Vector3 velocity = (((target.transform.position + upOnY) - lastposition) / Time.deltaTime) * 0.35f;
-        lastposition = target.transform.position + upOnY;
+    //    float predictionTime = distance / detectorObject.GetComponent<NavMeshAgent>().speed;
 
-        float predictionTime = distance / detectionGameObject.GetComponent<NavMeshAgent>().speed;
-
-        Vector3 futurePosition =
-        (target.transform.position + upOnY) + velocity * predictionTime;
-        Vector3 predictedDir = (futurePosition - eyes.position).normalized;
-        return predictedDir;
-    }
+    //    Vector3 futurePosition =
+    //    (target.transform.position) + velocity * predictionTime;
+    //    Vector3 predictedDir = (eyes.position - futurePosition).normalized;
+    //    return predictedDir;
+    //}
 
 
     //TODO: Right now it finds all default layers, dumb, fix later. Make one layer for things that the enemy should interact with when they see it
     public bool PlayerAround()
     {
-        var colliders = Physics.OverlapSphere(detectionGameObject.position, 10, 1 << 0);
 
-        foreach (var c in colliders)
+        float autoDetectionRange = 5; //Target is close enough so we know the target isn't hiding
+        float distance = Vector3.Distance(target.transform.position, detectorObject.position);
+        Debug.Log($"Distance to player {distance}");
+        //No need to check, player can't hide
+        if (distance <= autoDetectionRange) return true;
+
+        //Well player is to far away
+        if (distance > detectionRange) return false;
+
+   
+
+
+        //Vector3 predictedDir = PredictFutureDirection(target.gameObject);
+        //GameObject.FindAnyObjectByType<Volume>().profile.TryGet<DepthOfField>(out DepthOfField d);
+        //d.active = true;
+
+        RaycastHit rayHit;
+
+        for (int i = 0; i < extremityPoints.Count; i++)
         {
-            if (c.gameObject.GetComponent<Movement>() == null)
-            {
-                continue;
-            }
-            float rangeToKnowIfRaycastShouldBeUsed = 2;
-            float distance = Vector3.Distance(c.transform.position, detectionGameObject.position);
-            if (distance <= rangeToKnowIfRaycastShouldBeUsed) return true;
-
-            Vector3 predictedDir = PredictFutureDirection(c.gameObject);
-
-            RaycastHit rayHit;
-
-            int numberOfRaycasts = 15;
-            float degreesBetweenRays = 5;
-
-            for (int i = -numberOfRaycasts; i < numberOfRaycasts; i++)
-            {
-                var angle = i * degreesBetweenRays;
-                Vector3 dir = Quaternion.AngleAxis(angle, Vector3.up) * predictedDir;
-
-
-                Physics.Raycast(eyes.transform.position, predictedDir + dir, out rayHit, detectionRange, 1 << 0);
-                Debug.DrawRay(eyes.transform.position, (predictedDir + dir) * detectionRange, Color.darkOrange, 1);
-                if (rayHit.collider != null && rayHit.transform.CompareTag("Player"))
-                    return true;
-            }
-            //Debug.Log($"Cant see - distance {distance}");
-            return false;
+            Vector3 predictedDir = (eyes.position - extremityPoints[i].position).normalized;
+           // Vector3 predictedDir = PredictFutureDirection();
+            Physics.Raycast(extremityPoints[i].transform.position, predictedDir, out rayHit, detectionRange, 1 << 0 | 1 << 6 | 1 << 13);
+            Debug.DrawRay(extremityPoints[i].transform.position, (predictedDir) * detectionRange, Color.darkOrange, 1);
+            if (rayHit.collider != null && rayHit.transform == detectorObject.transform)
+                return true;
         }
-        //Debug.Log("Couldn't find");
+
+        //int numberOfRaycasts = 15;
+        //float degreesBetweenRays = 5;
+
+        //for (int i = -numberOfRaycasts; i < numberOfRaycasts; i++)
+        //{
+        //    var angle = i * degreesBetweenRays;
+        //    Vector3 dir = Quaternion.AngleAxis(angle, Vector3.up) * predictedDir;
+
+
+        //    Physics.Raycast(eyes.transform.position, predictedDir + dir, out rayHit, detectionRange, 1 << 0 | 1 << 6 | 1 << 13);
+        //    Debug.DrawRay(eyes.transform.position, (predictedDir + dir) * detectionRange, Color.darkOrange, 1);
+        //    if (rayHit.collider != null && rayHit.transform.CompareTag("Player"))
+        //        return true;
+        //}
+        //Debug.Log($"Cant see - distance {distance}");
         return false;
+
     }
-    //public bool PlayerAroundSphere()
-    //{
-    //    var colliders = Physics.OverlapSphere(detectionGameObject.position, 10, 1 << 0);
-    //    foreach (var c in colliders)
-    //    {
-    //        if (c.gameObject.GetComponent<Movement>() == null)
-    //        {
-    //            continue;
-    //        }
-    //        float rangeToKnowIfRaycastShouldBeUsed = 2;
-    //        float distance = Vector3.Distance(c.transform.position, detectionGameObject.position);
-    //        if (distance <= rangeToKnowIfRaycastShouldBeUsed) return true;
-
-    //        Vector3 predictedDir = PredictFutureDirection(c.gameObject);
-
-    //        RaycastHit rayHit;
-    //        var ray = new Ray(detectionGameObject.position, predictedDir);
-
-    //       RaycastHit[] colliders2 = Physics.SphereCastAll(ray, 5, 10);
-
-    //        int numberOfRaycasts = 15;
-    //        float degreesBetweenRays = 5;
-
-    //        for (int i = -numberOfRaycasts; i < numberOfRaycasts; i++)
-    //        {
-    //            var angle = i * degreesBetweenRays;
-    //            Vector3 dir = Quaternion.AngleAxis(angle, Vector3.up) * predictedDir;
-
-
-    //            Physics.Raycast(eyes.transform.position, predictedDir + dir, out rayHit, detectionRange, 1 << 0);
-    //            Debug.DrawRay(eyes.transform.position, (predictedDir + dir) * detectionRange, Color.darkOrange, 1);
-    //            if (rayHit.collider != null && rayHit.transform.CompareTag("Player"))
-    //                return true;
-    //        }
-    //        Debug.Log($"Cant see - distance {distance}");
-    //        return false;
-    //    }
-    //    Debug.Log("Couldn't find");
-    //    return false;
-    //}
 }
