@@ -40,6 +40,7 @@ public class GameData
     //Empty save, which is when we get a new save
     public GameData()
     {
+        //Debug.LogError("NEW GAME DATA");
         NewGame = true;
 
         PlayerAbilityData = new List<PlayerAbilityData>()

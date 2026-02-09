@@ -39,7 +39,7 @@ public class GameManager : StateMachine, ISavable
 
 
         if (Instance == null || Instance == this) Instance = this;
-        else Destroy(this);
+        else Destroy(this.gameObject);
     }
 
     private void Start()

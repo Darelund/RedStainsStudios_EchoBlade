@@ -47,7 +47,7 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IS
     }
     public void Unlock()
     {
-        Debug.Log("Unlocked");
+        //Debug.Log("Unlocked");
         IsUnlocked = true;
        // skillIcon.sprite
     }
@@ -153,7 +153,7 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IS
 
     public void Save(GameData gameData)
     {
-        Debug.Log("What about now?");
+        //Debug.Log("What about now?");
         foreach (SkillsNodeData node in gameData.SkillsNodeData)
         {
             if (node.ID == Unique_ID)
@@ -169,7 +169,7 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IS
                 return;
             }
         }
-        Debug.Log("Came here");
+       // Debug.Log("Came here");
         var newBoolList = ConnectingPaths.ConvertAll(i => IsUsed is true);
         gameData.SkillsNodeData.Add(new SkillsNodeData() { ID = Unique_ID, SkillName = skillName, IsUsed = IsUsed, IsUnlocked = IsUnlocked, ConnectingPaths = newBoolList });
     }

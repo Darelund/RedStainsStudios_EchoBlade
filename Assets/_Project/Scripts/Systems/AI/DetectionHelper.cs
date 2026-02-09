@@ -90,7 +90,7 @@ public class DetectionHelper
         {
             return DetectionState.Investigate;
         }
-        Debug.Log(timeInSight);
+        //Debug.Log(timeInSight);
         return DetectionState.DetectNone;
     }
     private DetectionState ShootOutRays(float CHASE_THRESHOLD = 2.5f)
@@ -101,7 +101,7 @@ public class DetectionHelper
         {
             Vector3 predictedDir = (eyes.position - extremityPoints[i].transform.position).normalized;
            // Vector3 predictedDir = PredictFutureDirection();
-            Physics.Raycast(extremityPoints[i].transform.position, predictedDir, out rayHit, detectionRange, (1 << 0) | (1 << 6) | (1 << 13));
+            Physics.Raycast(extremityPoints[i].transform.position, predictedDir, out rayHit, detectionRange, (1 << 0) | (1 << 6) | (1 << 13) | (1 << 9));
             Debug.DrawRay(extremityPoints[i].transform.position, (predictedDir) * detectionRange, Color.darkOliveGreen, 1);
             //Debug.Log($"Extremity position: {extremityPoints[9].GetComponentInParent<Animator>().GetBoneTransform(HumanBodyBones.Head).transform.position}");
             //if (rayHit.collider != null)
@@ -113,7 +113,7 @@ public class DetectionHelper
                 //enemy then obviously it should instantly chase/do something
                 float closeness = detectionRange - Vector3.Distance(target.transform.position, rayHit.collider.transform.position);
                 timeInSight += closeness * Time.deltaTime;
-                Debug.Log(timeInSight);
+                //Debug.Log(timeInSight);
                 //Chase after being in sight for x seconds
                 if (timeInSight > CHASE_THRESHOLD)
                 {
@@ -163,7 +163,7 @@ public class DetectionHelper
 
         float autoDetectionRange = 5; //Target is close enough so we know the target isn't hiding
         float distance = Vector3.Distance(target.transform.position, detectorObject.position);
-        Debug.Log($"Distance to player {distance}");
+        //Debug.Log($"Distance to player {distance}");
         //No need to check, player can't hide
         if (distance <= autoDetectionRange) return true;
 
@@ -183,7 +183,7 @@ public class DetectionHelper
         {
             Vector3 predictedDir = (eyes.position - extremityPoints[i].position).normalized;
            // Vector3 predictedDir = PredictFutureDirection();
-            Physics.Raycast(extremityPoints[i].transform.position, predictedDir, out rayHit, detectionRange, 1 << 0 | 1 << 6 | 1 << 13);
+            Physics.Raycast(extremityPoints[i].transform.position, predictedDir, out rayHit, detectionRange, (1 << 0) | (1 << 6) | (1 << 13) | (1 << 9));
             Debug.DrawRay(extremityPoints[i].transform.position, (predictedDir) * detectionRange, Color.darkOrange, 1);
             if (rayHit.collider != null && rayHit.transform == detectorObject.transform)
                 return true;

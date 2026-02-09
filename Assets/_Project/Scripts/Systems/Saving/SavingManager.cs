@@ -2,8 +2,6 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using static UnityEngine.Rendering.GPUSort;
-
 public class SavingManager : MonoBehaviour
 {
     #region Singleton
@@ -15,7 +13,7 @@ public class SavingManager : MonoBehaviour
     {
         if (instance != null)
         {
-            Destroy(instance);
+            Destroy(gameObject);
             return;
         }
         DontDestroyOnLoad(gameObject);
@@ -47,22 +45,29 @@ public class SavingManager : MonoBehaviour
       //  SceneManager.activeSceneChanged += SceneManager_activeSceneChanged;
         SceneManager.sceneLoaded += SceneManager_sceneLoaded;
         SceneManager.sceneUnloaded += SceneManager_sceneUnloaded;
+        //SceneManager.activeSceneChanged += SceneManager_activeSceneChanged;
         Application.quitting += Application_quitting;
     }
 
+    //private void SceneManager_activeSceneChanged(Scene arg0, Scene arg1)
+    //{
+    //    throw new System.NotImplementedException();
+    //}
+
     private void SceneManager_sceneUnloaded(Scene arg0)
     {
-        if (arg0.name != null && GameManager.Instance.ScenesUnlocked.TryGetValue(arg0.name, out bool value2) is true)
-        {
-            Debug.Log($"New scene: {arg0.name} changed");
-            //Debug.Log($"Before {GameManager.Instance.ScenesUnlocked[arg1.name]}");
-            //Debug.Log(GameManager.Instance.ScenesUnlocked[arg1.name]);
-            GameManager.Instance.ScenesUnlocked[arg0.name] = true;
-            Debug.Log($"After {GameManager.Instance.ScenesUnlocked[arg0.name]}");
-
-        }
-
         SaveData();
+        //if (arg0.name != null && GameManager.Instance.ScenesUnlocked.TryGetValue(arg0.name, out bool value2) is true)
+        //{
+        //    Debug.Log($"New scene: {arg0.name} changed");
+        //    //Debug.Log($"Before {GameManager.Instance.ScenesUnlocked[arg1.name]}");
+        //    //Debug.Log(GameManager.Instance.ScenesUnlocked[arg1.name]);
+        //    GameManager.Instance.ScenesUnlocked[arg0.name] = true;
+        //    Debug.Log($"After {GameManager.Instance.ScenesUnlocked[arg0.name]}");
+
+        //}
+        //Debug.Log("Did da scene unload?");
+        //SaveData();
     }
 
 
@@ -70,14 +75,16 @@ public class SavingManager : MonoBehaviour
     #region Saving and Loading between scene changed and application quitting
     private void SceneManager_sceneLoaded(Scene arg0, LoadSceneMode arg1)
     {
-        if(arg0.name != null && GameManager.Instance.ScenesUnlocked.TryGetValue(arg0.name, out bool value) is true)
+       // SaveData();
+        if (arg0.name != null && GameManager.Instance.ScenesUnlocked.TryGetValue(arg0.name, out bool value) is true)
         {
             Debug.Log($"scene: {arg0.name} loaded");
             GameManager.Instance.ScenesUnlocked[arg0.name] = true;
         }
+     
         savables = GameObject.FindObjectsByType<MonoBehaviour>(FindObjectsInactive.Include, FindObjectsSortMode.None).
            OfType<ISavable>().ToList();
-        SaveData();
+        //SaveData();
         LoadData();
     }
 

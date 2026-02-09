@@ -98,7 +98,7 @@ public class EnemyInvestigateState : NonMonoState
                         SparkConversation();
                     }
                     NextSearch += Time.deltaTime;
-                    Debug.Log($"NextSearch countdown: {NextSearch}");
+                    //Debug.Log($"NextSearch countdown: {NextSearch}");
                     if (NextSearch > 0.2f)
                     {
                         CircleSearch(interestingpoint);
@@ -121,7 +121,7 @@ public class EnemyInvestigateState : NonMonoState
     }
    private void SparkConversation()
     {
-        Debug.Log("SPARK");
+        //Debug.Log("SPARK");
         switch (nonMonoStateMachine.GetComponent<EnemyController>().InvestigationType)
         {
             case InvestigationType.InvestigateNone:
@@ -140,12 +140,14 @@ public class EnemyInvestigateState : NonMonoState
                 break;
         }
     }
+
+    //TODO: Fix circle again
     private void CircleSearch(Vector3 pos)
     {
         if (nonMonoStateMachine.GetComponent<EnemyController>().PointOfInterest.Direction.magnitude <= Mathf.Epsilon) return;
         //Vector3 newpos = new Vector3(Mathf.Sin(SearchAngle), 0, Mathf.Cos(SearchAngle)) * 2 + pos;
         //SearchAngle = (int)Random.Range(0, 360);
-        Debug.Log("New look angle");
+        //Debug.Log("New look angle");
         agent.SetDestination(pos + nonMonoStateMachine.GetComponent<EnemyController>().PointOfInterest.Direction);     
     }
     //TODO: Make him look around on the investigation spot instead if just standing there
@@ -153,7 +155,7 @@ public class EnemyInvestigateState : NonMonoState
     private void InvestigateArea()
     {
         currentInvestigationTime += Time.deltaTime;
-        Debug.Log($"currentInvestigationTime: {currentInvestigationTime}");
+        //Debug.Log($"currentInvestigationTime: {currentInvestigationTime}");
         //  Debug.Log("currentinvestigation time" + currentInvestigationTime + " " + " investigation time" + investigationTime);
         if (currentInvestigationTime >= investigationTime)
         {
