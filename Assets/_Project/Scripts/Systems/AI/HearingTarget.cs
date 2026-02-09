@@ -93,12 +93,12 @@ public class HearingTarget
                     Debug.Log("Footstep");
                 if (soundIntensity >= 0.1f)
                 {
-                    nonMonoBehaviourStateMachine.GetComponent<EnemyController>().PointOfInterest.Position = soundLocation;
+                    nonMonoBehaviourStateMachine.GetComponent<EnemyController>().PointOfInterest = soundLocation;
                     nonMonoBehaviourStateMachine.SwitchState<EnemyInvestigateState>();
                 }
                 break;
             case SoundType.TakeDown:
-                nonMonoBehaviourStateMachine.GetComponent<EnemyController>().PointOfInterest.Position = soundLocation;
+                nonMonoBehaviourStateMachine.GetComponent<EnemyController>().PointOfInterest = soundLocation;
                 nonMonoBehaviourStateMachine.SwitchState<EnemyInvestigateState>();
                 break;
         }

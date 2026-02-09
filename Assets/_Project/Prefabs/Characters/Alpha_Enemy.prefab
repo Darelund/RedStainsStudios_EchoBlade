@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 2224132928512504485}
   - component: {fileID: 1583636481344747677}
   - component: {fileID: 5476894314125235578}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Alpha_Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -85,8 +85,8 @@ MonoBehaviour:
   waypoints:
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
   weapon: {fileID: 3351010614528805682}
+  PointOfInterest: {x: 0, y: 0, z: 0}
   ShouldPatrol: 1
   hearingRange: 13
   ShowGizmos: 1
@@ -342,7 +342,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2115748837816596109}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: VisualAnchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -377,7 +377,7 @@ GameObject:
   - component: {fileID: 1787969615545724027}
   - component: {fileID: 4444626227915083000}
   - component: {fileID: 7723023896851886330}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -607,7 +607,7 @@ Transform:
   m_GameObject: {fileID: 7708726410785353113}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 0.775, z: 0.052}
+  m_LocalPosition: {x: -0, y: 0, z: 0.602}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

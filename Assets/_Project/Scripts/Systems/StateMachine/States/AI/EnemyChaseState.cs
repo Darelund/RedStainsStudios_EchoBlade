@@ -38,7 +38,6 @@ public class EnemyChaseState : NonMonoState
         //    nonMonoStateMachine.SwitchState<EnemyInvestigateState>();
         //}
     }
-    private Vector3 lastPos;
     private void ChaseTarget()
     {
         if (target != null)
@@ -56,12 +55,12 @@ public class EnemyChaseState : NonMonoState
             //The other way is to investigate the last spot the player was scene in
             if (detectionHelper.PlayerAround() is false)
             {
-                nonMonoStateMachine.GetComponent<EnemyController>().PointOfInterest.Position = target.transform.position;
+                nonMonoStateMachine.GetComponent<EnemyController>().PointOfInterest = target.transform.position;
                 nonMonoStateMachine.GetComponent<EnemyController>().InvestigationType = InvestigationType.InvestigateLostTrackOf;
                 nonMonoStateMachine.SwitchState<EnemyInvestigateState>();
             }
-            nonMonoStateMachine.GetComponent<EnemyController>().PointOfInterest.Direction = (target.transform.position - lastPos).normalized;
-            lastPos = target.transform.position;
+
+            //Physics.RaycastAll()
         }
         else
         {
