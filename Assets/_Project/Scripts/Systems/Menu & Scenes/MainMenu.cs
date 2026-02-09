@@ -7,7 +7,7 @@ public class MainMenu : MonoBehaviour, ISavable
     [SerializeField] private Button GraveyardBtn;
     [SerializeField] private Button ManorBtn;
     [SerializeField] private Button EscapeBtn;
-    [SerializeField] private string selectedLevel;
+    [SerializeField] public string selectedLevel;
 
 
 
