@@ -39725,6 +39725,10 @@ PrefabInstance:
       value: Enemy_Hallway
       objectReference: {fileID: 0}
     - target: {fileID: 6684550963020421671, guid: 3de558a65fc487447870e70bd9388893, type: 3}
+      propertyPath: waypoints.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6684550963020421671, guid: 3de558a65fc487447870e70bd9388893, type: 3}
       propertyPath: 'waypoints.Array.data[0]'
       value: 
       objectReference: {fileID: 55329669}
