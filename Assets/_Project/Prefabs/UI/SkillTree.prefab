@@ -1824,15 +1824,23 @@ PrefabInstance:
     - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
       propertyPath: lockedSprite
       value: 
-      objectReference: {fileID: 21300000, guid: 87a0430514beb81429b54f7d9caec714, type: 3}
+      objectReference: {fileID: 21300000, guid: f63600f0c1d710842adb64cf1a01d113, type: 3}
     - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
       propertyPath: selectedSprite
       value: 
-      objectReference: {fileID: 21300000, guid: e5fecd9d4a3bf1e4e9c15a96a0e75548, type: 3}
+      objectReference: {fileID: 21300000, guid: 4854d4c55412c1544a8e9298855162d6, type: 3}
+    - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
+      propertyPath: skillbarSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9bff83bdf8d927e46bfec52b7a983c1a, type: 3}
     - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
       propertyPath: unlockedSprite
       value: 
-      objectReference: {fileID: 21300000, guid: 167453b76dc0c0d40a8e6de75d6a9aff, type: 3}
+      objectReference: {fileID: 21300000, guid: beaa6a6fe7ff5b54a9645987d5764ecf, type: 3}
+    - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
+      propertyPath: haveSkillbarIcon
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
       propertyPath: Children.Array.size
       value: 0
@@ -1849,6 +1857,10 @@ PrefabInstance:
       propertyPath: 'Children.Array.data[1]'
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
+      propertyPath: skillbarCooldownSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4c141e57e62a4a349b1ea30c4e81f97a, type: 3}
     - target: {fileID: 1417644961575734543, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -1856,7 +1868,7 @@ PrefabInstance:
     - target: {fileID: 2375048674298569452, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 167453b76dc0c0d40a8e6de75d6a9aff, type: 3}
+      objectReference: {fileID: 21300000, guid: beaa6a6fe7ff5b54a9645987d5764ecf, type: 3}
     - target: {fileID: 2375048674298569452, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
       propertyPath: m_Color.a
       value: 1
@@ -2059,15 +2071,23 @@ PrefabInstance:
     - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
       propertyPath: lockedSprite
       value: 
-      objectReference: {fileID: 21300000, guid: 8685f4446a2ff8c469a00189b9c7d915, type: 3}
+      objectReference: {fileID: 21300000, guid: 621384458b0ed7a4f8d3bc0d0a44d510, type: 3}
     - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
       propertyPath: selectedSprite
       value: 
-      objectReference: {fileID: 21300000, guid: 6119ca1b96de64c48a9c55a26fdd5cf6, type: 3}
+      objectReference: {fileID: 21300000, guid: 88cf14af1b2bd6a4eab1f1dcc70a2dc4, type: 3}
+    - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
+      propertyPath: skillbarSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9db941dab20d6384f9b2b6c1f58a15f0, type: 3}
     - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
       propertyPath: unlockedSprite
       value: 
-      objectReference: {fileID: 21300000, guid: dbc6df7960a5cfa4788a199c8a866525, type: 3}
+      objectReference: {fileID: 21300000, guid: 0356823e1c07d164da28057fc814ec98, type: 3}
+    - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
+      propertyPath: haveSkillbarIcon
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
       propertyPath: Children.Array.size
       value: 1
@@ -2080,6 +2100,10 @@ PrefabInstance:
       propertyPath: 'Children.Array.data[0]'
       value: 
       objectReference: {fileID: 2503065124644722571}
+    - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
+      propertyPath: skillbarCooldownSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a44c4ec4005b6e646b930b7709aa5340, type: 3}
     - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
       propertyPath: ConnectingPaths.Array.size
       value: 1
@@ -2095,7 +2119,7 @@ PrefabInstance:
     - target: {fileID: 2375048674298569452, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: dbc6df7960a5cfa4788a199c8a866525, type: 3}
+      objectReference: {fileID: 21300000, guid: 0356823e1c07d164da28057fc814ec98, type: 3}
     - target: {fileID: 2375048674298569452, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
       propertyPath: m_Color.a
       value: 1
@@ -2298,15 +2322,23 @@ PrefabInstance:
     - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
       propertyPath: lockedSprite
       value: 
-      objectReference: {fileID: 21300000, guid: 1070eeffc8b25aa4994dd34df2b372a1, type: 3}
+      objectReference: {fileID: 21300000, guid: 922f702593c336c40bc1afdabf201a51, type: 3}
     - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
       propertyPath: selectedSprite
       value: 
-      objectReference: {fileID: 21300000, guid: 901fd4489f312ff4392b75e3fdd4f64a, type: 3}
+      objectReference: {fileID: 21300000, guid: 66a605fabec19f24691eb1d1d40b768c, type: 3}
+    - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
+      propertyPath: skillbarSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6d415b1a69d73a84ab7cf32aafc88a9f, type: 3}
     - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
       propertyPath: unlockedSprite
       value: 
-      objectReference: {fileID: 21300000, guid: 183f970f5f930ef4ca85e940d6281fbf, type: 3}
+      objectReference: {fileID: 21300000, guid: b2820e1a01dbf9140a6a18fee7614008, type: 3}
+    - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
+      propertyPath: haveSkillbarIcon
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
       propertyPath: Children.Array.size
       value: 3
@@ -2327,6 +2359,10 @@ PrefabInstance:
       propertyPath: 'Children.Array.data[2]'
       value: 
       objectReference: {fileID: 6615723535095547980}
+    - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
+      propertyPath: skillbarCooldownSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7b7ba88f00296084abf80d2c37014819, type: 3}
     - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
       propertyPath: ConnectingPaths.Array.size
       value: 3
@@ -2350,7 +2386,7 @@ PrefabInstance:
     - target: {fileID: 2375048674298569452, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 183f970f5f930ef4ca85e940d6281fbf, type: 3}
+      objectReference: {fileID: 21300000, guid: b2820e1a01dbf9140a6a18fee7614008, type: 3}
     - target: {fileID: 2375048674298569452, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
       propertyPath: m_Color.a
       value: 1
@@ -2824,6 +2860,26 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
+      propertyPath: lockedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8e370a9e0055dff4bbdae6ecc9a3436f, type: 3}
+    - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
+      propertyPath: selectedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 618b48c73bb3064499e9dba28b7d5f97, type: 3}
+    - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
+      propertyPath: skillbarSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f6e3765b4ded18c4caeeabd1d4c42a73, type: 3}
+    - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
+      propertyPath: unlockedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 82c31a940f470a94f8fee64c73c7d119, type: 3}
+    - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
+      propertyPath: haveSkillbarIcon
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
       propertyPath: skillpointsNeededText
       value: 
       objectReference: {fileID: 0}
@@ -2840,6 +2896,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1199872946483376261}
     - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
+      propertyPath: skillbarCooldownSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 30f1adfa59be0a740a221a22b285a6e3, type: 3}
+    - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
       propertyPath: ConnectingPaths.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -2855,10 +2915,14 @@ PrefabInstance:
       propertyPath: 'ConnectingPaths.Array.data[2]'
       value: 
       objectReference: {fileID: 1734008678350399230}
+    - target: {fileID: 1417644961575734543, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2375048674298569452, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 757225404, guid: 6f889137fe2e57c43b6a6f00fdae67b0, type: 3}
+      objectReference: {fileID: 21300000, guid: 82c31a940f470a94f8fee64c73c7d119, type: 3}
     - target: {fileID: 2375048674298569452, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
       propertyPath: m_Color.a
       value: 1
@@ -3093,15 +3157,23 @@ PrefabInstance:
     - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
       propertyPath: lockedSprite
       value: 
-      objectReference: {fileID: 21300000, guid: 4b7e37bbcd4f90a4db3819f5295b7aac, type: 3}
+      objectReference: {fileID: 21300000, guid: d778690b515ee654b9bb60376d33ebbb, type: 3}
     - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
       propertyPath: selectedSprite
       value: 
-      objectReference: {fileID: 21300000, guid: 0afefc1ce4129e04bb518b84bc468c6f, type: 3}
+      objectReference: {fileID: 21300000, guid: 4dc2958c4c3382f44a64827a4a907f0e, type: 3}
+    - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
+      propertyPath: skillbarSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 952193f6a87ce0647be0956a5860d8bd, type: 3}
     - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
       propertyPath: unlockedSprite
       value: 
-      objectReference: {fileID: 21300000, guid: 3452cf73f2be69347aca95781719ba2a, type: 3}
+      objectReference: {fileID: 21300000, guid: 8327f0b915e28084bb5e5ab7f01161b2, type: 3}
+    - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
+      propertyPath: haveSkillbarIcon
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
       propertyPath: Children.Array.size
       value: 2
@@ -3118,6 +3190,10 @@ PrefabInstance:
       propertyPath: 'Children.Array.data[1]'
       value: 
       objectReference: {fileID: 8285849520465358963}
+    - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
+      propertyPath: skillbarCooldownSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4b0b9ae809a309e41bb2753dc51e103f, type: 3}
     - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
       propertyPath: ConnectingPaths.Array.size
       value: 2
@@ -3137,7 +3213,7 @@ PrefabInstance:
     - target: {fileID: 2375048674298569452, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 3452cf73f2be69347aca95781719ba2a, type: 3}
+      objectReference: {fileID: 21300000, guid: 8327f0b915e28084bb5e5ab7f01161b2, type: 3}
     - target: {fileID: 2375048674298569452, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
       propertyPath: m_Color.a
       value: 1
@@ -3357,6 +3433,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 178b684d022b43b408b07dcc8c68c642, type: 3}
     - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
+      propertyPath: skillbarSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f989ef108c652c5428e6c0ef3c9f6d08, type: 3}
+    - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
       propertyPath: unlockedSprite
       value: 
       objectReference: {fileID: 21300000, guid: 53159dd950bf942499df9d9116f429c4, type: 3}
@@ -3372,6 +3452,10 @@ PrefabInstance:
       propertyPath: 'Children.Array.data[0]'
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
+      propertyPath: skillbarCooldownSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 255a5340320ce194c966d6d62a85a446, type: 3}
     - target: {fileID: 1417644961575734543, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -3594,6 +3678,18 @@ PrefabInstance:
       value: Increase movement speed
       objectReference: {fileID: 0}
     - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
+      propertyPath: lockedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ff1a1086c67808348887d0ba20cbe462, type: 3}
+    - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
+      propertyPath: selectedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 60a3a15b04d6fb340afa4ee3bc028174, type: 3}
+    - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
+      propertyPath: unlockedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d48284f5abe1d8c469113dd45aa172c4, type: 3}
+    - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
       propertyPath: skillpointsNeededText
       value: 
       objectReference: {fileID: 0}
@@ -3601,10 +3697,14 @@ PrefabInstance:
       propertyPath: 'Children.Array.data[0]'
       value: 
       objectReference: {fileID: 6615723535095547980}
+    - target: {fileID: 1417644961575734543, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2375048674298569452, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 757225404, guid: 6f889137fe2e57c43b6a6f00fdae67b0, type: 3}
+      objectReference: {fileID: 21300000, guid: d48284f5abe1d8c469113dd45aa172c4, type: 3}
     - target: {fileID: 2375048674298569452, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
       propertyPath: m_Color.a
       value: 1
@@ -4093,6 +4193,18 @@ PrefabInstance:
       value: Well I don't know what this is, I don't get payed enough.
       objectReference: {fileID: 0}
     - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
+      propertyPath: lockedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: fb0444b6be879c4408be19e4e2fdfc11, type: 3}
+    - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
+      propertyPath: selectedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5d5e58f5df3cee14bba73d4411a2290f, type: 3}
+    - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
+      propertyPath: unlockedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5856e3d234726c148b4fd83d68af8a5c, type: 3}
+    - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
       propertyPath: Children.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -4104,10 +4216,14 @@ PrefabInstance:
       propertyPath: 'Children.Array.data[0]'
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1417644961575734543, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2375048674298569452, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 757225404, guid: 6f889137fe2e57c43b6a6f00fdae67b0, type: 3}
+      objectReference: {fileID: 21300000, guid: 5856e3d234726c148b4fd83d68af8a5c, type: 3}
     - target: {fileID: 2375048674298569452, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
       propertyPath: m_Color.a
       value: 1
@@ -4453,6 +4569,18 @@ PrefabInstance:
       value: Increase the time abilties are used
       objectReference: {fileID: 0}
     - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
+      propertyPath: lockedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9a69040d4ace1a74ead46aac9d41460d, type: 3}
+    - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
+      propertyPath: selectedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6a3771e4aa2d0e24897c3c70516ee7e9, type: 3}
+    - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
+      propertyPath: unlockedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: fa89f8a81db91414b954bc861650e843, type: 3}
+    - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
       propertyPath: Children.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -4464,10 +4592,14 @@ PrefabInstance:
       propertyPath: 'Children.Array.data[0]'
       value: 
       objectReference: {fileID: 8285849520465358963}
+    - target: {fileID: 1417644961575734543, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2375048674298569452, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 757225404, guid: 6f889137fe2e57c43b6a6f00fdae67b0, type: 3}
+      objectReference: {fileID: 21300000, guid: fa89f8a81db91414b954bc861650e843, type: 3}
     - target: {fileID: 2375048674298569452, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
       propertyPath: m_Color.a
       value: 1
@@ -4911,6 +5043,18 @@ PrefabInstance:
       value: 'Reduces the detection '
       objectReference: {fileID: 0}
     - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
+      propertyPath: lockedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: bb207b8d43d334f4a9c77aa0504ea646, type: 3}
+    - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
+      propertyPath: selectedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 69df8ce15e3754343987e2ee9ef35f0d, type: 3}
+    - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
+      propertyPath: unlockedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 967d1606dc08d6d4296ce1b8a76ee7e7, type: 3}
+    - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
       propertyPath: Children.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -4922,10 +5066,14 @@ PrefabInstance:
       propertyPath: 'Children.Array.data[0]'
       value: 
       objectReference: {fileID: 6010844670147815565}
+    - target: {fileID: 1417644961575734543, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2375048674298569452, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 757225404, guid: 6f889137fe2e57c43b6a6f00fdae67b0, type: 3}
+      objectReference: {fileID: 21300000, guid: 967d1606dc08d6d4296ce1b8a76ee7e7, type: 3}
     - target: {fileID: 2375048674298569452, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
       propertyPath: m_Color.a
       value: 1

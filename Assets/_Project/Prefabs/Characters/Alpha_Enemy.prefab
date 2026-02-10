@@ -159,7 +159,7 @@ Animator:
   m_GameObject: {fileID: 2223049869280993935}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8ce7c9a30c4d6e0419d3321c2bc3ba9d, type: 2}
+  m_Controller: {fileID: 9100000, guid: 7d2cac363098d4e4e913bd57a1f0d1e7, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -621,9 +621,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2115748837816596109}
     m_Modifications:
+    - target: {fileID: 69673781829911040, guid: f7f9576b0a54a3440b3aef5167155dd4, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 864144670021192998, guid: f7f9576b0a54a3440b3aef5167155dd4, type: 3}
       propertyPath: m_Name
       value: GanzSe Free Modular Character Update 1_1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1167661992463941611, guid: f7f9576b0a54a3440b3aef5167155dd4, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2155362449132176874, guid: f7f9576b0a54a3440b3aef5167155dd4, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3443262323954978209, guid: f7f9576b0a54a3440b3aef5167155dd4, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3614170707684408229, guid: f7f9576b0a54a3440b3aef5167155dd4, type: 3}
       propertyPath: m_LocalScale.x
@@ -647,7 +663,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3614170707684408229, guid: f7f9576b0a54a3440b3aef5167155dd4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.234
       objectReference: {fileID: 0}
     - target: {fileID: 3614170707684408229, guid: f7f9576b0a54a3440b3aef5167155dd4, type: 3}
       propertyPath: m_LocalRotation.w
@@ -677,12 +693,48 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4693524168341476787, guid: f7f9576b0a54a3440b3aef5167155dd4, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4923604338236046805, guid: f7f9576b0a54a3440b3aef5167155dd4, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5216528289811958963, guid: f7f9576b0a54a3440b3aef5167155dd4, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5393192449839169349, guid: f7f9576b0a54a3440b3aef5167155dd4, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6391657363421340525, guid: f7f9576b0a54a3440b3aef5167155dd4, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6797268878971348697, guid: f7f9576b0a54a3440b3aef5167155dd4, type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6797268878971348697, guid: f7f9576b0a54a3440b3aef5167155dd4, type: 3}
+      propertyPath: m_ApplyRootMotion
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6869571097734348120, guid: f7f9576b0a54a3440b3aef5167155dd4, type: 3}
       propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8236328088533165862, guid: f7f9576b0a54a3440b3aef5167155dd4, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8278645202427539839, guid: f7f9576b0a54a3440b3aef5167155dd4, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8442356465188403240, guid: f7f9576b0a54a3440b3aef5167155dd4, type: 3}
+      propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
