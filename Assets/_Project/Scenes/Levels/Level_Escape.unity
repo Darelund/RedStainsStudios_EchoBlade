@@ -2480,6 +2480,63 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
+--- !u!1001 &299083224
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3389282082812547088, guid: 69165d85719ce3d4d8dba95ab9c284c0, type: 3}
+      propertyPath: m_Name
+      value: SkillBarSpriteDatabase
+      objectReference: {fileID: 0}
+    - target: {fileID: 5712617481491463274, guid: 69165d85719ce3d4d8dba95ab9c284c0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5712617481491463274, guid: 69165d85719ce3d4d8dba95ab9c284c0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5712617481491463274, guid: 69165d85719ce3d4d8dba95ab9c284c0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5712617481491463274, guid: 69165d85719ce3d4d8dba95ab9c284c0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5712617481491463274, guid: 69165d85719ce3d4d8dba95ab9c284c0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5712617481491463274, guid: 69165d85719ce3d4d8dba95ab9c284c0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5712617481491463274, guid: 69165d85719ce3d4d8dba95ab9c284c0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5712617481491463274, guid: 69165d85719ce3d4d8dba95ab9c284c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5712617481491463274, guid: 69165d85719ce3d4d8dba95ab9c284c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5712617481491463274, guid: 69165d85719ce3d4d8dba95ab9c284c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 69165d85719ce3d4d8dba95ab9c284c0, type: 3}
 --- !u!1 &311806243
 GameObject:
   m_ObjectHideFlags: 0
@@ -2748,6 +2805,10 @@ PrefabInstance:
     - target: {fileID: 2223049869280993935, guid: 3de558a65fc487447870e70bd9388893, type: 3}
       propertyPath: m_Name
       value: Enemy_Hallway (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2223049869280993935, guid: 3de558a65fc487447870e70bd9388893, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 2334487042365389339, guid: 3de558a65fc487447870e70bd9388893, type: 3}
       propertyPath: m_IsActive
@@ -3385,6 +3446,10 @@ PrefabInstance:
     - target: {fileID: 2223049869280993935, guid: 3de558a65fc487447870e70bd9388893, type: 3}
       propertyPath: m_Name
       value: Enemy_Hallway (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2223049869280993935, guid: 3de558a65fc487447870e70bd9388893, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 2334487042365389339, guid: 3de558a65fc487447870e70bd9388893, type: 3}
       propertyPath: m_IsActive
@@ -4161,6 +4226,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy_Hallway (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 2223049869280993935, guid: 3de558a65fc487447870e70bd9388893, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 2334487042365389339, guid: 3de558a65fc487447870e70bd9388893, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -4175,6 +4244,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6684550963020421671, guid: 3de558a65fc487447870e70bd9388893, type: 3}
       propertyPath: ShouldPatrol
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6684550963020421671, guid: 3de558a65fc487447870e70bd9388893, type: 3}
+      propertyPath: waypoints.Array.size
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6684550963020421671, guid: 3de558a65fc487447870e70bd9388893, type: 3}
@@ -5473,17 +5546,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4562810746480573392, guid: feeb66ececfd23c408e2d65f509eecb8, type: 3}
   m_PrefabInstance: {fileID: 633635408}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &633635410 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3290975172571089829, guid: feeb66ececfd23c408e2d65f509eecb8, type: 3}
-  m_PrefabInstance: {fileID: 633635408}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4622ee5695922564f97c07fcdc7396b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::NewMonoBehaviourScript
 --- !u!1001 &634957423
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5675,6 +5737,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy_Hallway
       objectReference: {fileID: 0}
+    - target: {fileID: 2223049869280993935, guid: 3de558a65fc487447870e70bd9388893, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 2334487042365389339, guid: 3de558a65fc487447870e70bd9388893, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -5842,6 +5908,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy_Hallway (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 2223049869280993935, guid: 3de558a65fc487447870e70bd9388893, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 2334487042365389339, guid: 3de558a65fc487447870e70bd9388893, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -5852,6 +5922,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5219778310706850875, guid: 3de558a65fc487447870e70bd9388893, type: 3}
       propertyPath: m_Shadows.m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6684550963020421671, guid: 3de558a65fc487447870e70bd9388893, type: 3}
+      propertyPath: waypoints.Array.size
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6684550963020421671, guid: 3de558a65fc487447870e70bd9388893, type: 3}
@@ -6884,6 +6958,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy_Hallway (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 2223049869280993935, guid: 3de558a65fc487447870e70bd9388893, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 2334487042365389339, guid: 3de558a65fc487447870e70bd9388893, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -6894,6 +6972,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5219778310706850875, guid: 3de558a65fc487447870e70bd9388893, type: 3}
       propertyPath: m_Shadows.m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6684550963020421671, guid: 3de558a65fc487447870e70bd9388893, type: 3}
+      propertyPath: waypoints.Array.size
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6684550963020421671, guid: 3de558a65fc487447870e70bd9388893, type: 3}
@@ -6970,6 +7052,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy_Hallway (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 2223049869280993935, guid: 3de558a65fc487447870e70bd9388893, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 2334487042365389339, guid: 3de558a65fc487447870e70bd9388893, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -6980,6 +7066,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5219778310706850875, guid: 3de558a65fc487447870e70bd9388893, type: 3}
       propertyPath: m_Shadows.m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6684550963020421671, guid: 3de558a65fc487447870e70bd9388893, type: 3}
+      propertyPath: waypoints.Array.size
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6684550963020421671, guid: 3de558a65fc487447870e70bd9388893, type: 3}
@@ -7194,6 +7284,10 @@ PrefabInstance:
     - target: {fileID: 2223049869280993935, guid: 3de558a65fc487447870e70bd9388893, type: 3}
       propertyPath: m_Name
       value: Enemy_Hallway (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2223049869280993935, guid: 3de558a65fc487447870e70bd9388893, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 2334487042365389339, guid: 3de558a65fc487447870e70bd9388893, type: 3}
       propertyPath: m_IsActive
@@ -10002,6 +10096,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy_Hallway (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 2223049869280993935, guid: 3de558a65fc487447870e70bd9388893, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 2334487042365389339, guid: 3de558a65fc487447870e70bd9388893, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -10016,6 +10114,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6684550963020421671, guid: 3de558a65fc487447870e70bd9388893, type: 3}
       propertyPath: ShouldPatrol
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6684550963020421671, guid: 3de558a65fc487447870e70bd9388893, type: 3}
+      propertyPath: waypoints.Array.size
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6684550963020421671, guid: 3de558a65fc487447870e70bd9388893, type: 3}
@@ -10271,6 +10373,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy_Hallway (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 2223049869280993935, guid: 3de558a65fc487447870e70bd9388893, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 2334487042365389339, guid: 3de558a65fc487447870e70bd9388893, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -10285,6 +10391,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6684550963020421671, guid: 3de558a65fc487447870e70bd9388893, type: 3}
       propertyPath: ShouldPatrol
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6684550963020421671, guid: 3de558a65fc487447870e70bd9388893, type: 3}
+      propertyPath: waypoints.Array.size
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6684550963020421671, guid: 3de558a65fc487447870e70bd9388893, type: 3}
@@ -11510,6 +11620,50 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec5fbaee07c9f8c448cc5b39e6f698ee, type: 3}
+--- !u!1 &1338933109
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1338933111}
+  - component: {fileID: 1338933110}
+  m_Layer: 0
+  m_Name: SavingManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1338933110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1338933109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4397253c6b59c404da0465513b744742, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SavingManager
+--- !u!4 &1338933111
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1338933109}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.75518, y: 10.81549, z: -19.68298}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1365723044
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12040,6 +12194,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy_Hallway (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 2223049869280993935, guid: 3de558a65fc487447870e70bd9388893, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 2334487042365389339, guid: 3de558a65fc487447870e70bd9388893, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -12437,16 +12595,40 @@ PrefabInstance:
       value: Restart
       objectReference: {fileID: 0}
     - target: {fileID: 2383884880589203294, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2383884880589203294, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2383884880589203294, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2070724041}
     - target: {fileID: 2383884880589203294, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2383884880589203294, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ClosePauseScreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 2383884880589203294, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PauseState, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2383884880589203294, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 2579014051571595439, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
       propertyPath: Value
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2579014051571595439, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
+      propertyPath: Children.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2632576388668167744, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
       propertyPath: m_SizeDelta.y
@@ -12456,9 +12638,33 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3169131163241011048, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
+      propertyPath: Children.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3441983322220606677, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3687075077594809586, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3687075077594809586, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 465132725}
+    - target: {fileID: 3687075077594809586, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetMasterVolume
+      objectReference: {fileID: 0}
+    - target: {fileID: 3687075077594809586, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SFXManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3687075077594809586, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3942371809299023524, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
       propertyPath: Value
@@ -12532,6 +12738,22 @@ PrefabInstance:
       propertyPath: Value
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 5916635367989151657, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
+      propertyPath: Children.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5934334300614243139, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2070724040}
+    - target: {fileID: 5934334300614243139, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ResetSkillPoints
+      objectReference: {fileID: 0}
+    - target: {fileID: 5934334300614243139, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameManager, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 6049623812115954192, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -12543,10 +12765,14 @@ PrefabInstance:
     - target: {fileID: 6199995730067037116, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 633635410}
+      objectReference: {fileID: 465132725}
     - target: {fileID: 6199995730067037116, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SliderEvent_SetVolume
+      value: SetMusicVolume
+      objectReference: {fileID: 0}
+    - target: {fileID: 6199995730067037116, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SFXManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6537280958817347432, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
       propertyPath: Value
@@ -13074,6 +13300,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy_Hallway (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 2223049869280993935, guid: 3de558a65fc487447870e70bd9388893, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 2334487042365389339, guid: 3de558a65fc487447870e70bd9388893, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -13084,6 +13314,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5219778310706850875, guid: 3de558a65fc487447870e70bd9388893, type: 3}
       propertyPath: m_Shadows.m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6684550963020421671, guid: 3de558a65fc487447870e70bd9388893, type: 3}
+      propertyPath: waypoints.Array.size
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6684550963020421671, guid: 3de558a65fc487447870e70bd9388893, type: 3}
@@ -13282,6 +13516,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy_Hallway (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 2223049869280993935, guid: 3de558a65fc487447870e70bd9388893, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 2334487042365389339, guid: 3de558a65fc487447870e70bd9388893, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -13292,6 +13530,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5219778310706850875, guid: 3de558a65fc487447870e70bd9388893, type: 3}
       propertyPath: m_Shadows.m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6684550963020421671, guid: 3de558a65fc487447870e70bd9388893, type: 3}
+      propertyPath: waypoints.Array.size
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6684550963020421671, guid: 3de558a65fc487447870e70bd9388893, type: 3}
@@ -13738,6 +13980,16 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7165659565733467285, guid: 3de558a65fc487447870e70bd9388893, type: 3}
   m_PrefabInstance: {fileID: 1498554350}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1554695437 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6968712930857224208, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
+  m_PrefabInstance: {fileID: 1455486843}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1554695438 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7257727479999072186, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
+  m_PrefabInstance: {fileID: 1455486843}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1559218401
 GameObject:
   m_ObjectHideFlags: 0
@@ -14127,6 +14379,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy_Hallway (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 2223049869280993935, guid: 3de558a65fc487447870e70bd9388893, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 2334487042365389339, guid: 3de558a65fc487447870e70bd9388893, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -14137,6 +14393,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5219778310706850875, guid: 3de558a65fc487447870e70bd9388893, type: 3}
       propertyPath: m_Shadows.m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6684550963020421671, guid: 3de558a65fc487447870e70bd9388893, type: 3}
+      propertyPath: waypoints.Array.size
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6684550963020421671, guid: 3de558a65fc487447870e70bd9388893, type: 3}
@@ -14843,6 +15103,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy_Hallway (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 2223049869280993935, guid: 3de558a65fc487447870e70bd9388893, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 2334487042365389339, guid: 3de558a65fc487447870e70bd9388893, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -15215,6 +15479,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy_Hallway (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 2223049869280993935, guid: 3de558a65fc487447870e70bd9388893, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 2334487042365389339, guid: 3de558a65fc487447870e70bd9388893, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -15229,6 +15497,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6684550963020421671, guid: 3de558a65fc487447870e70bd9388893, type: 3}
       propertyPath: ShouldPatrol
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6684550963020421671, guid: 3de558a65fc487447870e70bd9388893, type: 3}
+      propertyPath: waypoints.Array.size
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6684550963020421671, guid: 3de558a65fc487447870e70bd9388893, type: 3}
@@ -18218,6 +18490,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -19.998
       objectReference: {fileID: 0}
+    - target: {fileID: 7570583017620229133, guid: 85320e484edcf3b47b213c73ad459709, type: 3}
+      propertyPath: skillPoints
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7570583017620229133, guid: 85320e484edcf3b47b213c73ad459709, type: 3}
+      propertyPath: inputActions
+      value: 
+      objectReference: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -18296,9 +18576,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7975007526162914956, guid: c7f67f2d04638cc4a80b33ab56d2cf82, type: 3}
+      propertyPath: abilityBarUI
+      value: 
+      objectReference: {fileID: 1554695438}
+    - target: {fileID: 7975007526162914956, guid: c7f67f2d04638cc4a80b33ab56d2cf82, type: 3}
       propertyPath: pauseScreenUI
       value: 
       objectReference: {fileID: 1455486845}
+    - target: {fileID: 7975007526162914956, guid: c7f67f2d04638cc4a80b33ab56d2cf82, type: 3}
+      propertyPath: questScreenUI
+      value: 
+      objectReference: {fileID: 1554695437}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -18968,3 +19256,5 @@ SceneRoots:
   - {fileID: 24695540}
   - {fileID: 2046576669}
   - {fileID: 1820209183}
+  - {fileID: 1338933111}
+  - {fileID: 299083224}

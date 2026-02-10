@@ -801,7 +801,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1199872946483376261, guid: a16cc432b70abe247ab0934f93db1b92, type: 3}
       propertyPath: Unique_ID
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1199872946483376261, guid: a16cc432b70abe247ab0934f93db1b92, type: 3}
       propertyPath: skillbarSprite
@@ -825,7 +825,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1234404819169093596, guid: a16cc432b70abe247ab0934f93db1b92, type: 3}
       propertyPath: Unique_ID
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1234404819169093596, guid: a16cc432b70abe247ab0934f93db1b92, type: 3}
       propertyPath: skillbarSprite
@@ -845,7 +845,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1713361292483401438, guid: a16cc432b70abe247ab0934f93db1b92, type: 3}
       propertyPath: Unique_ID
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1713361292483401438, guid: a16cc432b70abe247ab0934f93db1b92, type: 3}
       propertyPath: skillbarSprite
@@ -869,7 +869,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2503065124644722571, guid: a16cc432b70abe247ab0934f93db1b92, type: 3}
       propertyPath: Unique_ID
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2503065124644722571, guid: a16cc432b70abe247ab0934f93db1b92, type: 3}
       propertyPath: skillbarSprite
@@ -989,7 +989,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4017436956496243072, guid: a16cc432b70abe247ab0934f93db1b92, type: 3}
       propertyPath: Unique_ID
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4017436956496243072, guid: a16cc432b70abe247ab0934f93db1b92, type: 3}
       propertyPath: skillbarSprite
