@@ -2749,6 +2749,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy_Hallway (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 2223049869280993935, guid: 3de558a65fc487447870e70bd9388893, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 2334487042365389339, guid: 3de558a65fc487447870e70bd9388893, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -3385,6 +3389,10 @@ PrefabInstance:
     - target: {fileID: 2223049869280993935, guid: 3de558a65fc487447870e70bd9388893, type: 3}
       propertyPath: m_Name
       value: Enemy_Hallway (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2223049869280993935, guid: 3de558a65fc487447870e70bd9388893, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 2334487042365389339, guid: 3de558a65fc487447870e70bd9388893, type: 3}
       propertyPath: m_IsActive
@@ -4160,6 +4168,10 @@ PrefabInstance:
     - target: {fileID: 2223049869280993935, guid: 3de558a65fc487447870e70bd9388893, type: 3}
       propertyPath: m_Name
       value: Enemy_Hallway (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2223049869280993935, guid: 3de558a65fc487447870e70bd9388893, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 2334487042365389339, guid: 3de558a65fc487447870e70bd9388893, type: 3}
       propertyPath: m_IsActive
@@ -5679,6 +5691,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy_Hallway
       objectReference: {fileID: 0}
+    - target: {fileID: 2223049869280993935, guid: 3de558a65fc487447870e70bd9388893, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 2334487042365389339, guid: 3de558a65fc487447870e70bd9388893, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -5845,6 +5861,10 @@ PrefabInstance:
     - target: {fileID: 2223049869280993935, guid: 3de558a65fc487447870e70bd9388893, type: 3}
       propertyPath: m_Name
       value: Enemy_Hallway (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2223049869280993935, guid: 3de558a65fc487447870e70bd9388893, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 2334487042365389339, guid: 3de558a65fc487447870e70bd9388893, type: 3}
       propertyPath: m_IsActive
@@ -6892,6 +6912,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy_Hallway (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 2223049869280993935, guid: 3de558a65fc487447870e70bd9388893, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 2334487042365389339, guid: 3de558a65fc487447870e70bd9388893, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -6981,6 +7005,10 @@ PrefabInstance:
     - target: {fileID: 2223049869280993935, guid: 3de558a65fc487447870e70bd9388893, type: 3}
       propertyPath: m_Name
       value: Enemy_Hallway (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2223049869280993935, guid: 3de558a65fc487447870e70bd9388893, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 2334487042365389339, guid: 3de558a65fc487447870e70bd9388893, type: 3}
       propertyPath: m_IsActive
@@ -7210,6 +7238,10 @@ PrefabInstance:
     - target: {fileID: 2223049869280993935, guid: 3de558a65fc487447870e70bd9388893, type: 3}
       propertyPath: m_Name
       value: Enemy_Hallway (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2223049869280993935, guid: 3de558a65fc487447870e70bd9388893, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 2334487042365389339, guid: 3de558a65fc487447870e70bd9388893, type: 3}
       propertyPath: m_IsActive
@@ -10018,6 +10050,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy_Hallway (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 2223049869280993935, guid: 3de558a65fc487447870e70bd9388893, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 2334487042365389339, guid: 3de558a65fc487447870e70bd9388893, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -10290,6 +10326,10 @@ PrefabInstance:
     - target: {fileID: 2223049869280993935, guid: 3de558a65fc487447870e70bd9388893, type: 3}
       propertyPath: m_Name
       value: Enemy_Hallway (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2223049869280993935, guid: 3de558a65fc487447870e70bd9388893, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 2334487042365389339, guid: 3de558a65fc487447870e70bd9388893, type: 3}
       propertyPath: m_IsActive
@@ -12064,6 +12104,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy_Hallway (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 2223049869280993935, guid: 3de558a65fc487447870e70bd9388893, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 2334487042365389339, guid: 3de558a65fc487447870e70bd9388893, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -13110,6 +13154,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy_Hallway (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 2223049869280993935, guid: 3de558a65fc487447870e70bd9388893, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 2334487042365389339, guid: 3de558a65fc487447870e70bd9388893, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -13321,6 +13369,10 @@ PrefabInstance:
     - target: {fileID: 2223049869280993935, guid: 3de558a65fc487447870e70bd9388893, type: 3}
       propertyPath: m_Name
       value: Enemy_Hallway (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2223049869280993935, guid: 3de558a65fc487447870e70bd9388893, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 2334487042365389339, guid: 3de558a65fc487447870e70bd9388893, type: 3}
       propertyPath: m_IsActive
@@ -14181,6 +14233,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy_Hallway (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 2223049869280993935, guid: 3de558a65fc487447870e70bd9388893, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 2334487042365389339, guid: 3de558a65fc487447870e70bd9388893, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -14901,6 +14957,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy_Hallway (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 2223049869280993935, guid: 3de558a65fc487447870e70bd9388893, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 2334487042365389339, guid: 3de558a65fc487447870e70bd9388893, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -15272,6 +15332,10 @@ PrefabInstance:
     - target: {fileID: 2223049869280993935, guid: 3de558a65fc487447870e70bd9388893, type: 3}
       propertyPath: m_Name
       value: Enemy_Hallway (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2223049869280993935, guid: 3de558a65fc487447870e70bd9388893, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 2334487042365389339, guid: 3de558a65fc487447870e70bd9388893, type: 3}
       propertyPath: m_IsActive
