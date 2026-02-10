@@ -38,10 +38,16 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IS
         // skillpointsNeededText.text = skillPointsNeeded.ToString();
         skillIcon.sprite = lockedSprite;
     }
-
+    public void ResetNode()
+    {
+        skillIcon.sprite = lockedSprite;
+        IsUsed = false;
+        IsUnlocked = false;
+        ResetConnectingPaths();
+    }
     public void Unlock()
     {
-        Debug.Log("Unlocked");
+        //Debug.Log("Unlocked");
         IsUnlocked = true;
        // skillIcon.sprite
     }
@@ -57,7 +63,7 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IS
 
         //Update GameManager and SkillTree UI and Update PlayerAbility
         GameManager.Instance.DecreaseSkillPoints(skillPointsNeeded);
-        skillTree.UpdateSkillTree();
+        skillTree.UpdateSkillTrees();
         GameObject.FindAnyObjectByType<PlayerAbilities>().ActivateAbility(Value);
 
         skillIcon.sprite = selectedSprite;
@@ -70,12 +76,12 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IS
 
         if(haveSkillbarIcon)
         {
-            AbilityBarManager.Instance.SetNewIcon(skillbarSprite, skillbarCooldownSprite);
+            AbilityBarManager.Instance.SetNewIcon(skillbarSprite, skillbarCooldownSprite, Unique_ID);
         }
       
 
 
-        skillTree.UpdateSkillTree();
+        skillTree.UpdateSkillTrees();
     }
     private IEnumerator UsingCoroutine()
     {
@@ -102,6 +108,13 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IS
                 yield return null;
             }
         }
+    }
+    public void ResetConnectingPaths()
+    {
+        ConnectingPaths.ForEach(c => { 
+            c.gameObject.SetActive(false);
+            c.color = Color.white;
+        });
     }
     //TODO: Fix the code here, I just made it quickly to make it work
     public void OnPointerEnter(PointerEventData eventData)
@@ -140,7 +153,7 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IS
 
     public void Save(GameData gameData)
     {
-        Debug.Log("What about now?");
+        //Debug.Log("What about now?");
         foreach (SkillsNodeData node in gameData.SkillsNodeData)
         {
             if (node.ID == Unique_ID)
@@ -148,11 +161,19 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IS
                 node.IsUsed = IsUsed;
                 node.IsUnlocked = IsUnlocked;
                 node.SkillName = skillName;
+                if (ConnectingPaths == null) continue;
+                if (node.ConnectingPaths == null) continue;
+                for (int i = 0; i < ConnectingPaths.Count; i++)
+                {
+                    if (node.ConnectingPaths == null) return;
+                    node.ConnectingPaths[i] = IsUsed is true ? true : false;
+                }
                 return;
             }
         }
-        Debug.Log("Came here");
-        gameData.SkillsNodeData.Add(new SkillsNodeData() { ID = Unique_ID, SkillName = skillName, IsUsed = IsUsed, IsUnlocked = IsUnlocked });
+       // Debug.Log("Came here");
+        var newBoolList = ConnectingPaths.ConvertAll(i => IsUsed is true);
+        gameData.SkillsNodeData.Add(new SkillsNodeData() { ID = Unique_ID, SkillName = skillName, IsUsed = IsUsed, IsUnlocked = IsUnlocked, ConnectingPaths = newBoolList });
     }
 
     public void Load(GameData gameData)
@@ -169,6 +190,19 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IS
                 if(IsUsed)
                 {
                     skillIcon.sprite = selectedSprite;
+                }
+                if (ConnectingPaths == null) continue;
+                for (int i = 0; i < node.ConnectingPaths.Count; i++)
+                {
+                    if (node.ConnectingPaths[i] is true)
+                    {
+                        ConnectingPaths[i].color = Color.darkRed;
+                        ConnectingPaths[i].gameObject.SetActive(true);
+                    }
+                    else
+                    {
+                        ConnectingPaths[i].color = Color.white;
+                    }
                 }
                 return;
             }

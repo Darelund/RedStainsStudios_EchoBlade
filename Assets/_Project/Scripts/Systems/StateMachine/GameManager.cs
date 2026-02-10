@@ -39,7 +39,7 @@ public class GameManager : StateMachine, ISavable
 
 
         if (Instance == null || Instance == this) Instance = this;
-        else Destroy(this);
+        else Destroy(this.gameObject);
     }
 
     private void Start()
@@ -95,9 +95,11 @@ public class GameManager : StateMachine, ISavable
     {
         currentSkillPoints += skillPointsUsed;
         skillPointsUsed = 0;
-
+        FindAnyObjectByType<SkillTree>().UpdateSkillTrees(); //Change back points in skilltree
+        FindAnyObjectByType<SkillTree>().ResetSkillTrees();
+        AbilityBarManager.Instance.ResetEveryAbilityBar();
         //TODO: Change back IconSprites
         //TODO: Reset AbilityBar images
-      //  AbilityBarManager.Instance.
+        //  AbilityBarManager.Instance.
     }
 }

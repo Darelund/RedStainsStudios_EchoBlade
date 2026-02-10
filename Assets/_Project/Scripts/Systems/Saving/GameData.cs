@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 [System.Serializable]
@@ -39,6 +40,7 @@ public class GameData
     //Empty save, which is when we get a new save
     public GameData()
     {
+        //Debug.LogError("NEW GAME DATA");
         NewGame = true;
 
         PlayerAbilityData = new List<PlayerAbilityData>()
@@ -98,6 +100,7 @@ public class SkillsNodeData //What skills in the SkillTree that have been bought
     public string SkillName;
     public bool IsUsed;
     public bool IsUnlocked;
+    public List<bool> ConnectingPaths = new List<bool>();
 }
 [System.Serializable]
 public class AbilityBarData //What Abilities that you have

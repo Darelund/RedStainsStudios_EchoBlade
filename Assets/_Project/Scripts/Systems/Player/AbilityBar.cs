@@ -21,7 +21,6 @@ public class AbilityBar : MonoBehaviour, ISavable
     {
         isEmpty = true;
         iconImage.sprite = defaultEmptySprite;
-
     }
 
     public void SetNewIcon(Sprite newSprite, Sprite newCooldownSprite)

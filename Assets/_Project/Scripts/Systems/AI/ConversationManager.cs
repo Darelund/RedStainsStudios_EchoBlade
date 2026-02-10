@@ -47,7 +47,7 @@ public class ConversationManager : MonoBehaviour
     {
         if (instance != null)
         {
-            Destroy(instance);
+            Destroy(gameObject);
             return;
         }
 

@@ -19,7 +19,20 @@ public class Tree
             node.gameObject.SetActive(true);
         }
     }
-
+    public void ResetSkillTree(Node tree)
+    {
+        LevelOrder(tree, out List<Node> nodesOrder);
+       
+        foreach (var node in nodesOrder)
+        {
+            node.ResetNode();
+            if (node == Root)
+            {
+                node.IsUnlocked = true;
+                node.IsUsed = false;
+            }
+        }
+    }
 
     private int Depth(Node node, int currentDepth)
     {
@@ -64,7 +77,7 @@ public class Tree
         while (queue.Count > 0)
         {
             Node current = queue.Dequeue();
-            if (current.IsUnlocked)
+            //if (current.IsUnlocked)
                 nodesOrder.Add(current);
             for (int i = 0; i < current.Children.Length; i++)
             {
