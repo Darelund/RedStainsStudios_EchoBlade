@@ -733,7 +733,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 88101212}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 910624761}
+        m_TargetAssemblyTypeName: SimpleGraphicsSettings, Assembly-CSharp
+        m_MethodName: SetQualityHigh
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &88101212
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1900,7 +1912,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 177137341}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 910624761}
+        m_TargetAssemblyTypeName: SimpleGraphicsSettings, Assembly-CSharp
+        m_MethodName: SetFullscreen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &177137341
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3318,7 +3342,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 303088935}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 910624761}
+        m_TargetAssemblyTypeName: S_GraphicsMenu, Assembly-CSharp
+        m_MethodName: SetResolution1440p
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &303088935
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4577,7 +4613,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ???
+  m_text: Full Screen
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9fa503fbc917eb24aaefd8d77b636de8, type: 2}
   m_sharedMaterial: {fileID: -8032638008704455548, guid: 9fa503fbc917eb24aaefd8d77b636de8, type: 2}
@@ -6995,7 +7031,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 620152144}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 910624761}
+        m_TargetAssemblyTypeName: SimpleGraphicsSettings, Assembly-CSharp
+        m_MethodName: SetWindowed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &620152144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8347,7 +8395,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ???
+  m_text: Borderless
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9fa503fbc917eb24aaefd8d77b636de8, type: 2}
   m_sharedMaterial: {fileID: -8032638008704455548, guid: 9fa503fbc917eb24aaefd8d77b636de8, type: 2}
@@ -10020,6 +10068,7 @@ GameObject:
   m_Component:
   - component: {fileID: 910624757}
   - component: {fileID: 910624760}
+  - component: {fileID: 910624761}
   - component: {fileID: 910624759}
   - component: {fileID: 910624758}
   m_Layer: 5
@@ -10050,7 +10099,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -4.7}
+  m_AnchoredPosition: {x: 0, y: -4.700012}
   m_SizeDelta: {x: 960.24, y: 2030}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &910624758
@@ -10117,6 +10166,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 910624756}
   m_CullTransparentMesh: 1
+--- !u!114 &910624761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 910624756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2ce805f66d1f554297296cbda6ba1f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::S_GraphicsMenu
 --- !u!1 &910660771
 GameObject:
   m_ObjectHideFlags: 0
@@ -10871,7 +10932,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 993054642}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 910624761}
+        m_TargetAssemblyTypeName: SimpleGraphicsSettings, Assembly-CSharp
+        m_MethodName: SetQualityMedium
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &993054642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12752,7 +12825,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1111107956}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 910624756}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1290306344}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1111107956
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15397,7 +15494,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1437728007}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 910624761}
+        m_TargetAssemblyTypeName: SimpleGraphicsSettings, Assembly-CSharp
+        m_MethodName: SetQualityLow
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1437728007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15518,7 +15627,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1439350686}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 910624761}
+        m_TargetAssemblyTypeName: S_GraphicsMenu, Assembly-CSharp
+        m_MethodName: SetResolution720p
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1439350686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16207,7 +16328,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1556264207}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 910624761}
+        m_TargetAssemblyTypeName: S_GraphicsMenu, Assembly-CSharp
+        m_MethodName: SetResolution1080p
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1556264207
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17640,7 +17773,7 @@ MonoBehaviour:
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
-  m_DynamicPixelsPerUnit: 1
+  m_DynamicPixelsPerUnit: 100
   m_PresetInfoIsWorld: 1
 --- !u!223 &1691761937
 Canvas:
@@ -18526,7 +18659,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1766110266}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 910624761}
+        m_TargetAssemblyTypeName: SimpleGraphicsSettings, Assembly-CSharp
+        m_MethodName: SetBorderless
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1766110266
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21084,7 +21229,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1949753482}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1290306344}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 910624756}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1949753482
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22841,7 +23010,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ???
+  m_text: Window
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9fa503fbc917eb24aaefd8d77b636de8, type: 2}
   m_sharedMaterial: {fileID: -8032638008704455548, guid: 9fa503fbc917eb24aaefd8d77b636de8, type: 2}
@@ -23052,7 +23221,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1981203907773425319 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1981203909159679351, guid: 475182105b47df94f850a3f3f468d13d, type: 3}
@@ -23113,7 +23282,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1626852041525896529}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 72ece51f2901e7445ab60da3685d6b5f, type: 3}
   m_Name: 
@@ -23359,7 +23528,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1626852041525896529}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!4 &3566637585803268429
 Transform:
   m_ObjectHideFlags: 0
@@ -23383,7 +23552,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1626852041525896529}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
   m_Name: 
@@ -23593,7 +23762,7 @@ Camera:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1626852041525896529}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}

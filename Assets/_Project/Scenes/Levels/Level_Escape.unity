@@ -4143,9 +4143,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1840821127}
     - target: {fileID: 4504863182622153260, guid: 1b41de319d5afc547a67415555cf811b, type: 3}
+      propertyPath: musicSlider
+      value: 
+      objectReference: {fileID: 1840821128}
+    - target: {fileID: 4504863182622153260, guid: 1b41de319d5afc547a67415555cf811b, type: 3}
       propertyPath: volumeSaver
       value: 
       objectReference: {fileID: 1532341066}
+    - target: {fileID: 4504863182622153260, guid: 1b41de319d5afc547a67415555cf811b, type: 3}
+      propertyPath: masterSlider
+      value: 
+      objectReference: {fileID: 718455480}
+    - target: {fileID: 4504863182622153260, guid: 1b41de319d5afc547a67415555cf811b, type: 3}
+      propertyPath: MasterAudioMixer
+      value: 
+      objectReference: {fileID: 24100000, guid: cb630b219fc465d4c95e7cf50f146a8e, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5536,6 +5548,10 @@ PrefabInstance:
       propertyPath: m_Resource
       value: 
       objectReference: {fileID: 8300000, guid: 934c73bb8f190ef43b7c619d0e5beb82, type: 3}
+    - target: {fileID: 9210238572327967619, guid: feeb66ececfd23c408e2d65f509eecb8, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 871426059424870250, guid: cb630b219fc465d4c95e7cf50f146a8e, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5546,17 +5562,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4562810746480573392, guid: feeb66ececfd23c408e2d65f509eecb8, type: 3}
   m_PrefabInstance: {fileID: 633635408}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &633635410 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3290975172571089829, guid: feeb66ececfd23c408e2d65f509eecb8, type: 3}
-  m_PrefabInstance: {fileID: 633635408}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4622ee5695922564f97c07fcdc7396b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::NewMonoBehaviourScript
 --- !u!1001 &634957423
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6640,6 +6645,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1261610772957058720, guid: ec5fbaee07c9f8c448cc5b39e6f698ee, type: 3}
   m_PrefabInstance: {fileID: 706871399}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &718455480 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3687075077594809586, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
+  m_PrefabInstance: {fileID: 1455486843}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Slider
 --- !u!1001 &728330291
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12657,6 +12673,26 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3687075077594809586, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3687075077594809586, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 465132725}
+    - target: {fileID: 3687075077594809586, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetMasterVolume
+      objectReference: {fileID: 0}
+    - target: {fileID: 3687075077594809586, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SFXManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3687075077594809586, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3942371809299023524, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
       propertyPath: Value
       value: 5
@@ -12756,10 +12792,14 @@ PrefabInstance:
     - target: {fileID: 6199995730067037116, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 633635410}
+      objectReference: {fileID: 465132725}
     - target: {fileID: 6199995730067037116, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SliderEvent_SetVolume
+      value: SetMusicVolume
+      objectReference: {fileID: 0}
+    - target: {fileID: 6199995730067037116, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SFXManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6537280958817347432, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
       propertyPath: Value
