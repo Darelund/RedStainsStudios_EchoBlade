@@ -45,17 +45,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpriteDataBase
   sprites:
-  - {fileID: 21300000, guid: d2753b9347d64ec42b920cf76fdf6b1a, type: 3}
-  - {fileID: 21300000, guid: 16e1f6f9379adb442b809f09905bb33c, type: 3}
-  - {fileID: 21300000, guid: c74e32451aab77a418d9c1a0f9e75308, type: 3}
-  - {fileID: 21300000, guid: 0285fc3e4c729844c9e60e3a3b4a6ac0, type: 3}
-  - {fileID: 21300000, guid: a6f7b446d9fa2a34093501e04d5ab4ca, type: 3}
-  - {fileID: 21300000, guid: a123e8378dfbf1c4898be5b1f6c33d9c, type: 3}
-  - {fileID: 21300000, guid: 5494a82d8073e234b81ad665540eea64, type: 3}
-  - {fileID: 21300000, guid: 09ed87032f50e7d479f03e1292d19259, type: 3}
-  - {fileID: 21300000, guid: b88fec6f0193610449ae6f7e935cdce1, type: 3}
-  - {fileID: 21300000, guid: 17e35067f077f2244b2604d51eb77fa7, type: 3}
-  - {fileID: 21300000, guid: 31c67fb47edf13f4babc86f4d6a81269, type: 3}
-  - {fileID: 21300000, guid: c2aa3e2704948a449861d06d4cb65a1a, type: 3}
+  - {fileID: 21300000, guid: f989ef108c652c5428e6c0ef3c9f6d08, type: 3}
+  - {fileID: 21300000, guid: 255a5340320ce194c966d6d62a85a446, type: 3}
+  - {fileID: 21300000, guid: 9bff83bdf8d927e46bfec52b7a983c1a, type: 3}
+  - {fileID: 21300000, guid: 4c141e57e62a4a349b1ea30c4e81f97a, type: 3}
+  - {fileID: 21300000, guid: 9db941dab20d6384f9b2b6c1f58a15f0, type: 3}
+  - {fileID: 21300000, guid: a44c4ec4005b6e646b930b7709aa5340, type: 3}
+  - {fileID: 21300000, guid: f6e3765b4ded18c4caeeabd1d4c42a73, type: 3}
+  - {fileID: 21300000, guid: 30f1adfa59be0a740a221a22b285a6e3, type: 3}
+  - {fileID: 21300000, guid: 952193f6a87ce0647be0956a5860d8bd, type: 3}
+  - {fileID: 21300000, guid: 7b7ba88f00296084abf80d2c37014819, type: 3}
+  - {fileID: 21300000, guid: 4b0b9ae809a309e41bb2753dc51e103f, type: 3}
+  - {fileID: 21300000, guid: 6d415b1a69d73a84ab7cf32aafc88a9f, type: 3}
   - {fileID: 21300000, guid: e1d01772221e2e549a23a2c8d3155d9e, type: 3}
   - {fileID: 21300000, guid: 785998e32930f874199a33704d3d844d, type: 3}
