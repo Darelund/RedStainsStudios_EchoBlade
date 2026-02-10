@@ -13,7 +13,7 @@ public class AIManager : MonoBehaviour
     {
         if (instance != null)
         {
-            Destroy(instance);
+            Destroy(gameObject);
             return;
         }
 

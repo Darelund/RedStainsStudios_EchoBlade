@@ -52,7 +52,7 @@ public class Lure : MonoBehaviour
             {
                 EnemyController enemy = hitCollider.gameObject.GetComponent<EnemyController>();
 
-                enemy.PointOfInterest = transform.position + offset;
+                enemy.PointOfInterest.Position = transform.position + offset;
                 offset += new Vector3(0.5f, 0, 0.5f);
                 //lures the enemies to one specific point with a small offset
                 enemy.SwitchState<EnemyInvestigateState>();

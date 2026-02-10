@@ -201,10 +201,14 @@ public class Movement : MonoBehaviour
             if (isRunning is true && movement.magnitude > 0 && footstepPerSecond < footstepPerSecondTimer)
             {
                 footstepPerSecondTimer = 0;
-                HearingManager.Instance.OnSoundWasEmitted(transform.position, SoundType.Footstep, new HearingManager.SoundWaveData(2, 5, Random.Range(0.0f, 1.0f), true));
+
+            var dir = (transform.position - oldPos).normalized * 2;
+                HearingManager.Instance.OnSoundWasEmitted(transform.position + dir, SoundType.Footstep, new HearingManager.SoundWaveData(10, 0, Random.Range(1.0f, 1.0f), true));
             }
+            oldPos = transform.position;
     }
-    private float footstepPerSecond = 0.1f;
+    private Vector3 oldPos;
+    private float footstepPerSecond = 0.75f;
     private float footstepPerSecondTimer;
 
     IEnumerator Phase()

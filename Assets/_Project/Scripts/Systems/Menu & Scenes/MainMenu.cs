@@ -7,7 +7,7 @@ public class MainMenu : MonoBehaviour, ISavable
     [SerializeField] private Button GraveyardBtn;
     [SerializeField] private Button ManorBtn;
     [SerializeField] private Button EscapeBtn;
-    [SerializeField] private string selectedLevel;
+    [SerializeField] public string selectedLevel;
 
 
 
@@ -37,7 +37,7 @@ public class MainMenu : MonoBehaviour, ISavable
     public void Load(GameData gameData)
     {
         selectedLevel = gameData.LastPlayedScene;
-
+        Debug.Log(gameObject.name);
        if (gameData.GraveyardUnlocked is false)
         {
             GraveyardBtn.gameObject.SetActive(false);

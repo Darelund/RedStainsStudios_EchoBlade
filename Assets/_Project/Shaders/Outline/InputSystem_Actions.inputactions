@@ -279,10 +279,10 @@
                 {
                     "name": "",
                     "id": "e72b855b-5192-4463-a473-052dd39f844e",
-                    "path": "<Keyboard>/2",
+                    "path": "<Keyboard>/3",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Keyboard&Mouse",
                     "action": "TakeDown",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -290,7 +290,7 @@
                 {
                     "name": "",
                     "id": "80f0b5ac-176b-42d0-9f14-2541fda4c00d",
-                    "path": "<Keyboard>/3",
+                    "path": "<Keyboard>/4",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -301,7 +301,7 @@
                 {
                     "name": "",
                     "id": "6ac4a527-7eda-4f94-8734-73259d6b1dc8",
-                    "path": "<Keyboard>/4",
+                    "path": "<Keyboard>/2",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",

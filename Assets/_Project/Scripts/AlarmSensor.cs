@@ -48,7 +48,7 @@ public class AlarmSensor : MonoBehaviour
 
 
         Instantiate(alarmIcon, controller.transform);
-        controller.PointOfInterest = investigationPoint.position - offset;
+        controller.PointOfInterest.Position = investigationPoint.position - offset;
         offset += new Vector3(0.5f, 0, 0.5f);
         controller.InvestigationType = InvestigationType.InvestigateAlarm;
         controller.SwitchState<EnemyAlertedState>();

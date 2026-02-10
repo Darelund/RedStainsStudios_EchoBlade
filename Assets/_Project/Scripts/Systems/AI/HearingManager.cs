@@ -20,7 +20,7 @@ public class HearingManager : MonoBehaviour
     {
         if(instance != null)
         {
-            Destroy(instance);
+            Destroy(gameObject);
             return;
         }
 

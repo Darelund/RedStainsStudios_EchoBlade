@@ -12,7 +12,7 @@ public class AbilityBarManager : MonoBehaviour
     {
         if (instance != null)
         {
-            Destroy(instance);
+            Destroy(gameObject);
             return;
         }
 
@@ -24,12 +24,12 @@ public class AbilityBarManager : MonoBehaviour
 
    // private int currentEmptyBar = 0;
 
-    public void SetNewIcon(Sprite newSprite, Sprite newCooldownSprite)
+    public void SetNewIcon(Sprite newSprite, Sprite newCooldownSprite, int skillID)
     {
         foreach (var abilityBar in abilityBarList)
         {
             //Debug.Log("Ball");
-            if (abilityBar.IsAbilityBarEmpty())
+            if (abilityBar.IsAbilityBarEmpty() && abilityBarList.IndexOf(abilityBar) == skillID)
             {
                 Debug.Log("Change Icon!!");
                 abilityBar.SetNewIcon(newSprite, newCooldownSprite);
@@ -38,11 +38,11 @@ public class AbilityBarManager : MonoBehaviour
         }
         Debug.LogError("NO SKILLBARS LEFT, anyways. Probably a dog problem");
     }
-    public void ResetAbilityBar()
+    public void ResetEveryAbilityBar()
     {
         foreach (var abilityBar in abilityBarList)
         {
-           // abilityBar.
+            abilityBar.ResetAbilityBar();
         }
     }
 }
