@@ -14,14 +14,18 @@ public class S_AsyncLoadingManager : MonoBehaviour
     public GameObject LoadingScreen;
     public Image LoadingBarFillImage;
 
-    public void LoadScene(int SceneID)
+    public void LoadScene()
     {
-        StartCoroutine(LoadSceneAsync(SceneID));
+        var selectedLevel = GameObject.FindAnyObjectByType<MainMenu>().selectedLevel;
+        Debug.Log("SelectedLevel : " + selectedLevel);
+        var sceneIndex = SceneManager.GetSceneByName(selectedLevel).buildIndex;
+        Debug.Log(sceneIndex);
+        StartCoroutine(LoadSceneAsync(sceneIndex));
     }
 
     IEnumerator LoadSceneAsync(int SceneID)
     {
-        AsyncOperation operation = SceneManager.LoadSceneAsync(SceneID);
+        AsyncOperation operation = SceneManager.LoadSceneAsync(GameObject.FindAnyObjectByType<MainMenu>().selectedLevel);
         
         LoadingScreen.SetActive(true);
         

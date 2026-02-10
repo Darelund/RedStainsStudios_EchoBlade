@@ -4501,9 +4501,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7975007526162914956, guid: c7f67f2d04638cc4a80b33ab56d2cf82, type: 3}
+      propertyPath: abilityBarUI
+      value: 
+      objectReference: {fileID: 1617669299}
+    - target: {fileID: 7975007526162914956, guid: c7f67f2d04638cc4a80b33ab56d2cf82, type: 3}
       propertyPath: pauseScreenUI
       value: 
       objectReference: {fileID: 1978428879}
+    - target: {fileID: 7975007526162914956, guid: c7f67f2d04638cc4a80b33ab56d2cf82, type: 3}
+      propertyPath: questScreenUI
+      value: 
+      objectReference: {fileID: 1617669295}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -21984,6 +21992,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1805732292716287500, guid: 1b41de319d5afc547a67415555cf811b, type: 3}
   m_PrefabInstance: {fileID: 815770773}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &815770775 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4504863182622153260, guid: 1b41de319d5afc547a67415555cf811b, type: 3}
+  m_PrefabInstance: {fileID: 815770773}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1544fd63f8633c84c9c7aeabca9e43c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SFXManager
 --- !u!1 &821046249
 GameObject:
   m_ObjectHideFlags: 0
@@ -39725,6 +39744,10 @@ PrefabInstance:
       value: Enemy_Hallway
       objectReference: {fileID: 0}
     - target: {fileID: 6684550963020421671, guid: 3de558a65fc487447870e70bd9388893, type: 3}
+      propertyPath: waypoints.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6684550963020421671, guid: 3de558a65fc487447870e70bd9388893, type: 3}
       propertyPath: 'waypoints.Array.data[0]'
       value: 
       objectReference: {fileID: 55329669}
@@ -41640,9 +41663,37 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2050467918}
+    - target: {fileID: 2579014051571595439, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
+      propertyPath: Children.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3169131163241011048, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
+      propertyPath: Children.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3441983322220606677, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3687075077594809586, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3687075077594809586, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 815770775}
+    - target: {fileID: 3687075077594809586, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetMasterVolume
+      objectReference: {fileID: 0}
+    - target: {fileID: 3687075077594809586, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SFXManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3687075077594809586, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4618544554634781060, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
       propertyPath: m_AnchorMax.y
@@ -41672,10 +41723,46 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 419780457}
+    - target: {fileID: 5916635367989151657, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
+      propertyPath: Children.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5934334300614243139, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 419780457}
+    - target: {fileID: 5934334300614243139, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ResetSkillPoints
+      objectReference: {fileID: 0}
+    - target: {fileID: 5934334300614243139, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6199995730067037116, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 815770775}
+    - target: {fileID: 6199995730067037116, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetMusicVolume
+      objectReference: {fileID: 0}
+    - target: {fileID: 6199995730067037116, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SFXManager, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 7841172270545173968, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 419780457}
+    - target: {fileID: 8606247047767500614, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 815770775}
+    - target: {fileID: 8606247047767500614, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetSFXVolume
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -41692,6 +41779,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 997ffe3909698d547b8182b0af68de51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SkillTree
+--- !u!1 &1617669295 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6968712930857224208, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
+  m_PrefabInstance: {fileID: 1617669293}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1617669296 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7913657445954667094, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
@@ -41713,6 +41805,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!1 &1617669299 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7257727479999072186, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
+  m_PrefabInstance: {fileID: 1617669293}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1617917452
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -54400,7 +54497,7 @@ MonoBehaviour:
     m_Flags: 0
   door: {fileID: 1320558677}
   doorClip: {fileID: 8300000, guid: 3d2da22e88caf7947b9416b44bfad3e8, type: 3}
-  axisRotation: 90
+  axisRotation: 180
   rotationDuration: 2
 --- !u!4 &2098674697 stripped
 Transform:

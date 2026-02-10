@@ -380,7 +380,7 @@ Transform:
   m_GameObject: {fileID: 6306463159368933397}
   serializedVersion: 2
   m_LocalRotation: {x: 0.4304593, y: -0.5609857, z: 0.43045968, w: 0.56098527}
-  m_LocalPosition: {x: -14.481098, y: 18, z: 0}
+  m_LocalPosition: {x: 3, y: 18, z: 0}
   m_LocalScale: {x: 1.298381, y: 1.2983809, z: 1.2983809}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -751,13 +751,47 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e5fe5088c83511d4581ea0c354f93aef, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7594710993243757618}
   m_SourcePrefab: {fileID: 100100000, guid: e5fe5088c83511d4581ea0c354f93aef, type: 3}
+--- !u!4 &4178118691408010439 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6110471695799780156, guid: e5fe5088c83511d4581ea0c354f93aef, type: 3}
+  m_PrefabInstance: {fileID: 7869874811545247739}
+  m_PrefabAsset: {fileID: 0}
 --- !u!95 &4349910820343407210 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: e5fe5088c83511d4581ea0c354f93aef, type: 3}
   m_PrefabInstance: {fileID: 7869874811545247739}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &6713731398616272258 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -5756552144314822023, guid: e5fe5088c83511d4581ea0c354f93aef, type: 3}
+  m_PrefabInstance: {fileID: 7869874811545247739}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7058830154168001194 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: e5fe5088c83511d4581ea0c354f93aef, type: 3}
+  m_PrefabInstance: {fileID: 7869874811545247739}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7594710993243757618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7058830154168001194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62ec90481f28b5f4ea6bedcb789b473a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::S_SoundWave
+  prefab: {fileID: 8836685087178423749, guid: 74fa063d36c4d36438ba57f2e8caf4b1, type: 3}
+  leftSpawnPoint: {fileID: 4178118691408010439}
+  rightSpawnPoint: {fileID: 6713731398616272258}
+  lifeTime: 5
 --- !u!4 &7691532491367102480 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e5fe5088c83511d4581ea0c354f93aef, type: 3}

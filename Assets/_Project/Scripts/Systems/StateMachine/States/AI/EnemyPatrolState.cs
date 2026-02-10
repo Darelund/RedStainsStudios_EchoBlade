@@ -22,6 +22,15 @@ public class EnemyPatrolState : NonMonoState
     public EnemyPatrolState(NonMonoBehaviourStateMachine nonMonoStateMachine, List<Transform> waypoints, DetectionHelper detectionHelper) : base(nonMonoStateMachine)
     {
         this.waypoints = waypoints;
+
+        //Fail safes
+        if(this.waypoints.Count <= 0)
+        {
+            nonMonoStateMachine.SwitchState<EnemyStationaryState>();
+        }
+        this.waypoints = this.waypoints.FindAll(w => w != null); //Should remove all null waypoints
+
+
         this.detectionHelper = detectionHelper;
 
         agent = nonMonoStateMachine.GetComponent<NavMeshAgent>();

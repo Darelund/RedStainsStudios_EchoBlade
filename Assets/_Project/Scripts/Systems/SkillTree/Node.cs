@@ -76,7 +76,7 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IS
 
         if(haveSkillbarIcon)
         {
-            AbilityBarManager.Instance.SetNewIcon(skillbarSprite, skillbarCooldownSprite);
+            AbilityBarManager.Instance.SetNewIcon(skillbarSprite, skillbarCooldownSprite, Unique_ID);
         }
       
 
@@ -162,8 +162,10 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IS
                 node.IsUnlocked = IsUnlocked;
                 node.SkillName = skillName;
                 if (ConnectingPaths == null) continue;
+                if (node.ConnectingPaths == null) continue;
                 for (int i = 0; i < ConnectingPaths.Count; i++)
                 {
+                    if (node.ConnectingPaths == null) return;
                     node.ConnectingPaths[i] = IsUsed is true ? true : false;
                 }
                 return;

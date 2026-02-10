@@ -24,12 +24,12 @@ public class AbilityBarManager : MonoBehaviour
 
    // private int currentEmptyBar = 0;
 
-    public void SetNewIcon(Sprite newSprite, Sprite newCooldownSprite)
+    public void SetNewIcon(Sprite newSprite, Sprite newCooldownSprite, int skillID)
     {
         foreach (var abilityBar in abilityBarList)
         {
             //Debug.Log("Ball");
-            if (abilityBar.IsAbilityBarEmpty())
+            if (abilityBar.IsAbilityBarEmpty() && abilityBarList.IndexOf(abilityBar) == skillID)
             {
                 Debug.Log("Change Icon!!");
                 abilityBar.SetNewIcon(newSprite, newCooldownSprite);
