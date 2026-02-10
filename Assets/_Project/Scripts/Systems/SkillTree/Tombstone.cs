@@ -93,6 +93,7 @@ public class Tombstone : MonoBehaviour, ISavable
 
     public void Load(GameData gameData)
     {
+        if (gameData.altarData == null) return;
         if (gameData.altarData.Count <= 0) return;
 
 

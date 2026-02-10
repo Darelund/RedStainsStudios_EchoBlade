@@ -178,7 +178,8 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IS
 
     public void Load(GameData gameData)
     {
-        if (gameData.altarData.Count <= 0) return;
+        if (gameData.SkillsNodeData == null) return;
+        if (gameData.SkillsNodeData.Count <= 0) return;
 
 
         foreach (SkillsNodeData node in gameData.SkillsNodeData)

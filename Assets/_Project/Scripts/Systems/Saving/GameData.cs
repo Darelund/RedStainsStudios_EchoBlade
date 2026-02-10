@@ -38,12 +38,13 @@ public class GameData
 
 
     //Empty save, which is when we get a new save
-    public GameData()
+    public static GameData CreateNewGameData()
     {
+        GameData gameData = new GameData();
         //Debug.LogError("NEW GAME DATA");
-        NewGame = true;
+        gameData.NewGame = true;
 
-        PlayerAbilityData = new List<PlayerAbilityData>()
+        gameData.PlayerAbilityData = new List<PlayerAbilityData>()
         {
             new PlayerAbilityData() { PlayerAbility = PlayerAbility.ShadowWalk, HasAbility = false },
             new PlayerAbilityData() { PlayerAbility = PlayerAbility.Tail, HasAbility = false },
@@ -57,19 +58,21 @@ public class GameData
             new PlayerAbilityData() { PlayerAbility = PlayerAbility.DetectionReduction, HasAbility = false}
 
         };
-        altarData = new List<AltarData>();
-        SkillsNodeData = new List<SkillsNodeData>();
-        abilityBarData = new List<AbilityBarData>();
-        SkillPointsLeft = 0;
-        SkillsPointsUsed = 0;
+        gameData.altarData = new List<AltarData>();
+        gameData.SkillsNodeData = new List<SkillsNodeData>();
+        gameData.abilityBarData = new List<AbilityBarData>();
+        gameData.SkillPointsLeft = 0;
+        gameData.SkillsPointsUsed = 0;
+ 
+        gameData.Deaths = 0;
+        gameData.TimePlayed = new TimePlayedData(0, 0, 0);
+      
+        gameData.LastPlayedScene = "Level_Graveyard";
+        gameData.GraveyardUnlocked = true;
+        gameData.ManorUnlocked = false;
+        gameData.EscapeUnlocked = false;
 
-        Deaths = 0;
-        TimePlayed = new TimePlayedData(0, 0, 0);
-
-        LastPlayedScene = "Level_Graveyard";
-        GraveyardUnlocked = true;
-        ManorUnlocked = false;
-        EscapeUnlocked = false;
+        return gameData;
     }
 }
 [System.Serializable]
@@ -110,6 +113,7 @@ public class AbilityBarData //What Abilities that you have
     public bool IsEmpty;
     public string CooldownSpriteID;
     public string IconSpriteID;
+    public int AbilityBarKey; //Weird, only some abilites use keys. So this is kinda dumb
 }
 [System.Serializable]
 public class PlayerAbilityData //What abilites are unlocked
