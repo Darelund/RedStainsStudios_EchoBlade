@@ -63,7 +63,7 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IS
 
         //Update GameManager and SkillTree UI and Update PlayerAbility
         GameManager.Instance.DecreaseSkillPoints(skillPointsNeeded);
-        skillTree.UpdateSkillTrees();
+        skillTree.UpdateSkillTreesText();
         GameObject.FindAnyObjectByType<PlayerAbilities>().ActivateAbility(Value);
 
         skillIcon.sprite = selectedSprite;
@@ -81,7 +81,7 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IS
       
 
 
-        skillTree.UpdateSkillTrees();
+        skillTree.UpdateSkillTreesText();
     }
     private IEnumerator UsingCoroutine()
     {
@@ -163,7 +163,7 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IS
                 node.SkillName = skillName;
                 if (ConnectingPaths == null) continue;
                 if (node.ConnectingPaths == null) continue;
-                for (int i = 0; i < ConnectingPaths.Count; i++)
+                for (int i = 0; i < node.ConnectingPaths.Count; i++)
                 {
                     if (node.ConnectingPaths == null) return;
                     node.ConnectingPaths[i] = IsUsed is true ? true : false;

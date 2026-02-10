@@ -6957,6 +6957,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 733682050}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &739036429 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3010021726470848746, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
+  m_PrefabInstance: {fileID: 1455486843}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0aaa969d92c2ab47b25b6b99bf957fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Node
 --- !u!114 &739219476 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6539865714335638253, guid: 9f64805503237ea448f51b663252870e, type: 3}
@@ -12513,6 +12524,22 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1074822000312800887, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2070724040}
+    - target: {fileID: 1074822000312800887, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ResetSkillPoints
+      objectReference: {fileID: 0}
+    - target: {fileID: 1074822000312800887, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1074822000312800887, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1177602521710905592, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
       propertyPath: Value
       value: 2
@@ -12698,9 +12725,17 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4213362302559779018, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
-      propertyPath: skillPointsText
+      propertyPath: skilltreeUI
       value: 
       objectReference: {fileID: 1455486848}
+    - target: {fileID: 4213362302559779018, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
+      propertyPath: skillPointsText
+      value: 
+      objectReference: {fileID: 1983406063}
+    - target: {fileID: 4213362302559779018, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
+      propertyPath: trees.Array.data[0].Root
+      value: 
+      objectReference: {fileID: 739036429}
     - target: {fileID: 4618544554634781060, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -12834,7 +12869,8 @@ PrefabInstance:
       value: SetSFXVolume
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 7913657445954667094, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
@@ -12870,20 +12906,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 997ffe3909698d547b8182b0af68de51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SkillTree
---- !u!114 &1455486848 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6032032574575227748, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
-  m_PrefabInstance: {fileID: 1455486843}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
---- !u!1 &1455486849 stripped
+--- !u!1 &1455486848 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 7913657445954667094, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
+  m_CorrespondingSourceObject: {fileID: 5048907797104732277, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
   m_PrefabInstance: {fileID: 1455486843}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1455486850 stripped
@@ -17429,6 +17454,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb3e3227eac171d4aa8fd0d321bf8a36, type: 3}
+--- !u!114 &1983406063 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8680040437668665671, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
+  m_PrefabInstance: {fileID: 1455486843}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1001 &1995253725
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18561,7 +18597,7 @@ PrefabInstance:
     - target: {fileID: 4953810097499512662, guid: c7f67f2d04638cc4a80b33ab56d2cf82, type: 3}
       propertyPath: skillTreeUI
       value: 
-      objectReference: {fileID: 1455486849}
+      objectReference: {fileID: 1455486848}
     - target: {fileID: 5483204559562370831, guid: c7f67f2d04638cc4a80b33ab56d2cf82, type: 3}
       propertyPath: m_LocalPosition.x
       value: -11.49967
