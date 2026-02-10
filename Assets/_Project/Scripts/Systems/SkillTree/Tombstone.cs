@@ -26,12 +26,12 @@ public class Tombstone : MonoBehaviour, ISavable
 
     private void Interact_performed(InputAction.CallbackContext obj)
     {
-        if (hasBeenActivated) return; //Nothing to do here, already used
+        //if (hasBeenActivated) return; //Nothing to do here, already used
 
         if (player != null)
         {
-
-            GameManager.Instance.IncreaseSkillPoints(skillPoints); //Or maybe we will have the skillpoints in the GameManager? I don't know
+            if (hasBeenActivated is false)
+                GameManager.Instance.IncreaseSkillPoints(skillPoints); //Or maybe we will have the skillpoints in the GameManager? I don't know
             StartCoroutine(ActivatingCoroutine());
 
         }
