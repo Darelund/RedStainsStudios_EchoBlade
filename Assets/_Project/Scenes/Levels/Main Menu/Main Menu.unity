@@ -3732,8 +3732,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: LevelButtons, Assembly-CSharp
+      - m_Target: {fileID: 1410905252}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: Exit
         m_Mode: 1
         m_Arguments:
@@ -11857,7 +11857,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1078690202}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1410905252}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: SelectLevel
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Level_Manor
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1078690202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19394,7 +19406,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1811677735}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1410905252}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: SelectLevel
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Level_Escape
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1811677735
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20833,7 +20857,7 @@ MonoBehaviour:
       - m_Target: {fileID: 1981203907773425319}
         m_TargetAssemblyTypeName: S_AsyncLoadingManager, Assembly-CSharp
         m_MethodName: LoadScene
-        m_Mode: 3
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -21343,7 +21367,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2003137206}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1410905252}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: SelectLevel
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Level_Graveyard
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2003137206
 MonoBehaviour:
   m_ObjectHideFlags: 0

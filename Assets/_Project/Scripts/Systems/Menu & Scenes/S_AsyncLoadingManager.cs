@@ -16,7 +16,9 @@ public class S_AsyncLoadingManager : MonoBehaviour
 
     public void LoadScene()
     {
-        var sceneIndex = SceneManager.GetSceneByName(GameObject.FindAnyObjectByType<MainMenu>().selectedLevel).buildIndex;
+        var selectedLevel = GameObject.FindAnyObjectByType<MainMenu>().selectedLevel;
+        Debug.Log("SelectedLevel : " + selectedLevel);
+        var sceneIndex = SceneManager.GetSceneByName(selectedLevel).buildIndex;
         Debug.Log(sceneIndex);
         StartCoroutine(LoadSceneAsync(sceneIndex));
     }
