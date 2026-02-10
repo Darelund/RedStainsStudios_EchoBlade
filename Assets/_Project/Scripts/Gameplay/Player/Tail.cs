@@ -123,17 +123,32 @@ public class Tail : MonoBehaviour
 
         gameObject.layer = 0;
 
-        Vector3 leaveTail = new Vector3(Input.mousePosition.x, transform.position.y, Input.mousePosition.z);
+        //Vector3 leaveTail = new Vector3(Input.mousePosition.x, transform.position.y, Input.mousePosition.z);
 
-        //if (leaveTail.x > 1.5f) leaveTail.x = 1.5f;
-        //    else if (leaveTail.x < -1.5f) leaveTail.x = -1.5f;
+        ////if (leaveTail.x > 1.5f) leaveTail.x = 1.5f;
+        ////    else if (leaveTail.x < -1.5f) leaveTail.x = -1.5f;
 
-        //if (leaveTail.z > 1.5f) leaveTail.z = 1.5f;
-        //    else if (leaveTail.z < -1.5f) leaveTail.z = -1.5f;
+        ////if (leaveTail.z > 1.5f) leaveTail.z = 1.5f;
+        ////    else if (leaveTail.z < -1.5f) leaveTail.z = -1.5f;
 
-        Vector3 clamp = leaveTail - transform.position;
+        //Vector3 clamp = leaveTail - transform.position;
 
-        transform.position = Vector3.Lerp(Vector3.ClampMagnitude(clamp, 1.5f), transform.position, 0.3f);
+        Camera cam = Camera.main;
+        if (cam != null)
+        {
+            // convert mouse screen pos to world at the tail's current depth
+            float screenZ = cam.WorldToScreenPoint(transform.position).z;
+            Vector3 screenPos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenZ);
+            Vector3 targetWorldPos = cam.ScreenToWorldPoint(screenPos);
+
+            // compute world-space delta, clamp magnitude, then add the clamped delta to current position
+            Vector3 delta = targetWorldPos - transform.position;
+            Vector3 clampedDelta = Vector3.ClampMagnitude(delta, 1.5f);
+
+            transform.position = transform.position + clampedDelta;
+        }
+
+       // transform.position = Vector3.Lerp(Vector3.ClampMagnitude(clamp, 1.5f), transform.position, 0.3f);
 
         if (PlayerAbilities.Instance.GetAbilityState(PlayerAbility.AbilityHaste))
         {

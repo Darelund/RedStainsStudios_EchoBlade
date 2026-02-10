@@ -50,13 +50,11 @@ public class PlayerAbilities : MonoBehaviour, ISavable
     }
     public void ActivateAbility(PlayerAbility playerAbility)
     {
-        Debug.Log($"{abilities[playerAbility]} ability");
         if (playerAbility == PlayerAbility.MovementSpeed)
         {
             GameObject.FindGameObjectWithTag("Player").GetComponent<Movement>().speed *= 1.15f;
         }
         abilities[playerAbility] = true;
-        Debug.Log($"{abilities[playerAbility]} ability");
     }
    
 

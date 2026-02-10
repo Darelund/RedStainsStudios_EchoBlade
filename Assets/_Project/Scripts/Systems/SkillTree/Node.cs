@@ -36,7 +36,16 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IS
         //gameObject.SetActive(false);
         skillName = gameObject.name;
         // skillpointsNeededText.text = skillPointsNeeded.ToString();
-        skillIcon.sprite = lockedSprite;
+      
+        if (IsUsed)
+        {
+            skillIcon.sprite = selectedSprite;
+        }
+        else
+        {
+
+            skillIcon.sprite = lockedSprite;
+        }
     }
     public void ResetNode()
     {
@@ -174,6 +183,7 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IS
        // Debug.Log("Came here");
         var newBoolList = ConnectingPaths.ConvertAll(i => IsUsed is true);
         gameData.SkillsNodeData.Add(new SkillsNodeData() { ID = Unique_ID, SkillName = skillName, IsUsed = IsUsed, IsUnlocked = IsUnlocked, ConnectingPaths = newBoolList });
+        Debug.Log($"Saved skill: {skillName}");
     }
 
     public void Load(GameData gameData)
@@ -205,6 +215,7 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IS
                         ConnectingPaths[i].color = Color.white;
                     }
                 }
+               
                 return;
             }
         }
