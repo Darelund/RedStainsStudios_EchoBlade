@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AbilityBarManager : MonoBehaviour
 {
@@ -21,7 +22,7 @@ public class AbilityBarManager : MonoBehaviour
     #endregion
 
     [SerializeField] private List<AbilityBar> abilityBarList = new List<AbilityBar>();
-
+   // private List<Image> abilityBarCooldown
    // private int currentEmptyBar = 0;
 
     public void SetNewIcon(Sprite newSprite, Sprite newCooldownSprite, int nodeId)

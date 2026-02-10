@@ -88,6 +88,7 @@ public class Tail : MonoBehaviour
     IEnumerator TailEnemy(GameObject enemy)
     {
         // Enable tail effect
+        GetComponent<Movement>().UseGravity = false;
         Debug.Log("Tail effect activated");
 
         gameObject.layer = 9;
@@ -145,6 +146,7 @@ public class Tail : MonoBehaviour
 
         // Disable tail effect
         Debug.Log("Tail effect deactivated");
+        GetComponent<Movement>().UseGravity = true;
     }
 
     private void OnDrawGizmos()

@@ -30,6 +30,7 @@ public class Movement : MonoBehaviour
     private bool isPhasing = false;
     [SerializeField] private bool isRunning = false;
     [SerializeField] private bool isGrounded;
+    public bool UseGravity = true;
 
 
     public CharacterController controller;
@@ -176,11 +177,16 @@ public class Movement : MonoBehaviour
         }
         Vector3 movement = new Vector3(moveInput.x, 0, moveInput.y);
 
-        isGrounded = Physics.Raycast(transform.position, Vector3.down, out _, 0.2f);
-        if(isGrounded is false)
+        if(UseGravity)
         {
-            controller.Move(new Vector3(0, (isGrounded is false ? -9.81f : 0), 0));
+            isGrounded = Physics.Raycast(transform.position, Vector3.down, out _, 0.2f);
+            if (isGrounded is false)
+            {
+                controller.Move(new Vector3(0, (isGrounded is false ? -9.81f : 0), 0));
+            }
+
         }
+        
 
         movement = Quaternion.Euler(0, Camera.main.transform.eulerAngles.y, 0) * movement;
 
