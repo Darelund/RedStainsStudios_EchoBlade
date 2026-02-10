@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.EventSystems.EventTrigger;
 
 public class EnemyController : NonMonoBehaviourStateMachine
 {
@@ -19,9 +20,9 @@ public class EnemyController : NonMonoBehaviourStateMachine
     public HearingTarget hearingTarget;
     public InvestigationType InvestigationType;
 
-    private void Awake()
+   public bool IsDead()
     {
-     
+        return GetCurrentState().GetType() == typeof(EnemyDeathState);
     }
 
     private void Start()

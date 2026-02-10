@@ -195,6 +195,7 @@ MonoBehaviour:
   phasetime: 2
   isRunning: 0
   isGrounded: 0
+  UseGravity: 1
   controller: {fileID: 0}
 --- !u!114 &5480911438008690309
 MonoBehaviour:
@@ -336,7 +337,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 790fb55d486b42046a1773e4f1d76ff8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Hide
-  range: 5
+  range: 2
   inputActions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   hide:
     m_Name: Hide
@@ -380,7 +381,7 @@ Transform:
   m_GameObject: {fileID: 6306463159368933397}
   serializedVersion: 2
   m_LocalRotation: {x: 0.4304593, y: -0.5609857, z: 0.43045968, w: 0.56098527}
-  m_LocalPosition: {x: 3, y: 18, z: 0}
+  m_LocalPosition: {x: -14.481098, y: 18, z: 0}
   m_LocalScale: {x: 1.298381, y: 1.2983809, z: 1.2983809}
   m_ConstrainProportionsScale: 0
   m_Children: []

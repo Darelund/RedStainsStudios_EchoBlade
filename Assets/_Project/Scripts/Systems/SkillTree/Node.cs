@@ -137,7 +137,7 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IS
         DescriptionBoxUI.transform.GetChild(1).gameObject.SetActive(true);
 
         //Ignore skills that are already bought
-        if (skillIcon.sprite != selectedSprite)
+        if (skillIcon.sprite != selectedSprite && IsUnlocked)
         {
             skillIcon.sprite = unlockedSprite;
         }
@@ -154,7 +154,7 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IS
         DescriptionBoxUI.transform.GetChild(1).gameObject.SetActive(false);
 
         //Ignore skills that are already bought
-        if (skillIcon.sprite != selectedSprite)
+        if (skillIcon.sprite != selectedSprite && IsUnlocked)
         {
             skillIcon.sprite = IsUsed ? selectedSprite : lockedSprite;
         }
