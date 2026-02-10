@@ -76,6 +76,8 @@ public class Tail : MonoBehaviour
         foreach (GameObject enemy in enemies)
         {
             float distance = Vector3.Distance(transform.position, enemy.transform.position);
+            if (enemy.GetComponent<EnemyController>().GetCurrentState().GetType() == typeof(EnemyDeathState)) continue;
+
             if (distance < closestDistance)
             {
                 closestDistance = distance;
