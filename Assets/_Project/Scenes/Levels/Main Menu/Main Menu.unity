@@ -3645,7 +3645,6 @@ GameObject:
   - component: {fileID: 339768162}
   - component: {fileID: 339768161}
   - component: {fileID: 339768164}
-  - component: {fileID: 339768165}
   m_Layer: 5
   m_Name: B_Exit
   m_TagString: Untagged
@@ -3717,8 +3716,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 339768165}
-        m_TargetAssemblyTypeName: LevelButtons, Assembly-CSharp
+      - m_Target: {fileID: 1410905252}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: Exit
         m_Mode: 1
         m_Arguments:
@@ -3789,22 +3788,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &339768165
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 339768159}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fa26ffccbba0ea4cac4986e25141cbd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LevelButtons
-  GraveyardBtn: {fileID: 0}
-  ManorBtn: {fileID: 0}
-  EscapeBtn: {fileID: 0}
-  selectedLevel: 
 --- !u!1001 &341663992
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20820,7 +20803,7 @@ MonoBehaviour:
       - m_Target: {fileID: 1981203907773425319}
         m_TargetAssemblyTypeName: S_AsyncLoadingManager, Assembly-CSharp
         m_MethodName: LoadScene
-        m_Mode: 3
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
