@@ -7,7 +7,7 @@ public class IntermissionText : MonoBehaviour
     [SerializeField] private CanvasGroup blackScreen;
     [SerializeField] private GameObject[] texts;
     [SerializeField] private float fadeDuration = 1f;
-    [SerializeField] private int sceneToLoad;
+    [SerializeField] private string sceneToLoad;
     public bool isDone;
 
 
