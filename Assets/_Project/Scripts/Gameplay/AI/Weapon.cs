@@ -2,7 +2,7 @@ using UnityEngine;
 
 
 //Basic script for testing damage on player
-public class DamageTest : MonoBehaviour
+public class Weapon : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
