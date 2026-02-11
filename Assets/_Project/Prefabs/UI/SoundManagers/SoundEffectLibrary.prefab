@@ -1,0 +1,90 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2831119633818770743
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3903314060830221129}
+  - component: {fileID: 6659968486553356242}
+  m_Layer: 0
+  m_Name: SoundEffectLibrary
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3903314060830221129
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2831119633818770743}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6659968486553356242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2831119633818770743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7989e4c28acf5a44855813c3a9e4fa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SoundEffectLibrary
+  soundEffectGroups:
+  - name: GroundFootStep
+    audioClips:
+    - {fileID: 8300000, guid: 39d4a0e0c6581cd4abbd11ae25cd62e0, type: 3}
+    - {fileID: 8300000, guid: c0765c546d9040d4f8e58f2160981ae0, type: 3}
+    - {fileID: 8300000, guid: face2a2644691fc4a889f4ba5dd15726, type: 3}
+    - {fileID: 8300000, guid: 43e08158eb8767f49a68e2ac87ac8581, type: 3}
+    - {fileID: 8300000, guid: 0f861c8136415ea41a74d7b781540c10, type: 3}
+    - {fileID: 8300000, guid: 66a64c38d9d29f14e83ed06b80cd30a7, type: 3}
+    - {fileID: 8300000, guid: a05e1fbc31b1c6b48b0fc499d99da449, type: 3}
+    - {fileID: 8300000, guid: 48373dc989606784589a2f7b4cf9fc70, type: 3}
+    - {fileID: 8300000, guid: 11b1831286d413244b02b1bdf8d7f3d1, type: 3}
+  - name: WoodenFloorFootstep
+    audioClips:
+    - {fileID: 8300000, guid: 5f6928d5a371b484f9631ff320336f3c, type: 3}
+    - {fileID: 8300000, guid: dd034f5cc10052645ba07a357360b279, type: 3}
+    - {fileID: 8300000, guid: e14531d3d55de4c4c8fb5ffa593551f2, type: 3}
+    - {fileID: 8300000, guid: a9be3ace0d4509144beb406d389ce8bc, type: 3}
+    - {fileID: 8300000, guid: fd6e4a4bd1035fe41a5641bc9f778824, type: 3}
+    - {fileID: 8300000, guid: 5f790dd68206f8a49bfb4d0d29eacdfd, type: 3}
+    - {fileID: 8300000, guid: 35d7510b7c988ac4c985170dfdec644b, type: 3}
+    - {fileID: 8300000, guid: 3986b710bb012634f91c84a1b42fa1e7, type: 3}
+    - {fileID: 8300000, guid: 08b47942d01432d4a93ed6eb495dc894, type: 3}
+    - {fileID: 8300000, guid: ad0554e31c96ad14583c0ac1a8c3a58c, type: 3}
+  - name: LeverPull
+    audioClips:
+    - {fileID: 8300000, guid: fe32d538f640e774584f8e70dabc2310, type: 3}
+  - name: DoorOpen
+    audioClips:
+    - {fileID: 8300000, guid: d56ddeccdec6e4e4bbdbf661483d1c4a, type: 3}
+  - name: ShadowWalk
+    audioClips:
+    - {fileID: 8300000, guid: 3778f1bb20eb23a45954f208cc76110f, type: 3}
+    - {fileID: 8300000, guid: a15d439223865114a9b729db5037c3c0, type: 3}
+    - {fileID: 8300000, guid: 999b6ecd8d9b4d34db9176ab73b5baf9, type: 3}
+  - name: MainMenu_Gravestone
+    audioClips:
+    - {fileID: 8300000, guid: b41ae851dcc533647ad9cecef99ac376, type: 3}
+  - name: MainMenu_MenuButton
+    audioClips:
+    - {fileID: 8300000, guid: 58c6f74181a85ed41a5c36032e2c6c3e, type: 3}
+  - name: MainMenu_GameLoading
+    audioClips:
+    - {fileID: 8300000, guid: 490daf06f231880479efe23e7a86f08b, type: 3}
