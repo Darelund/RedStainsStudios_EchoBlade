@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
-public class MusicManager : MonoBehaviour
+public class NewMonoBehaviourScript : MonoBehaviour
 {
     private AudioSource audioSource;
     [SerializeField] private Slider musicSlider;
@@ -9,8 +9,8 @@ public class MusicManager : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         if (volumeSaver != null)
-        {
-            float savedVolume = volumeSaver.LoadData("music");
+                {
+                    float savedVolume = volumeSaver.LoadData("music");
             if (musicSlider != null)
             {
                 musicSlider.SetValueWithoutNotify(savedVolume);
@@ -18,7 +18,7 @@ public class MusicManager : MonoBehaviour
             audioSource.volume = savedVolume;
 
 
-        }
+                }
     }
 
     public void SliderEvent_SetVolume(float volume)
