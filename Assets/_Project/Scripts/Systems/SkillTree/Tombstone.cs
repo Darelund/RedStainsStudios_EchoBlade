@@ -68,11 +68,8 @@ public class Tombstone : MonoBehaviour, ISavable
     private IEnumerator ActivatingCoroutine()
     {
         hasBeenActivated = true;
-        textMeshRenderer.material = activatedMat;
         yield return new WaitForSeconds(1.0f);
         GameManager.Instance.SwitchState<SkillTreeState>();
-        //Destroy(gameObject); //maybe make it fade away later. So as you leave the SkillTreeUI you see it fade away
-        //skillTree.transform.GetChild(0).gameObject.SetActive(true);
     }
 
     public void Save(GameData gameData)
