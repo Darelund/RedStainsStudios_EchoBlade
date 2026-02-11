@@ -15,7 +15,7 @@ public class EnemyInvestigateState : NonMonoState
     private NavMeshAgent agent;
 
 
-    private float stopThreshold = 0.4f;
+    private float stopThreshold = 2.5f;
     public bool isGoingTowardsInvestigatingPoint;
     public bool isAtInvestigationPoint = false;
 
@@ -88,6 +88,7 @@ public class EnemyInvestigateState : NonMonoState
                 }
 
                 Debug.Log($"Distance is to far away from {interestingpoint} it is {Vector3.Distance(agent.transform.position, interestingpoint)}m away");
+                Debug.Log($"Interestingpoint is {interestingpoint} high");
                 if (Vector3.Distance(agent.transform.position, interestingpoint) < stopThreshold) //We want this threshold to be quit small, so the enemy "remembers" in what direction the player last went to. This will make it look in the last direction it saw the player and if the player isn't there then it will start looking around in confusion
                 {
                     Debug.Log("Close enough");
