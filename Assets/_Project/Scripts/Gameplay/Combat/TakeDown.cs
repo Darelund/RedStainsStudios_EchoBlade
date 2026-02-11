@@ -41,7 +41,7 @@ public class TakeDown : MonoBehaviour
             StartCoroutine(CooldownCoroutine());
             Debug.Log("Takedown Executed!");
             GetComponentInChildren<Animator>().SetTrigger("AnimSilentTakedown");
-            GetComponentInChildren<Animator>().Play("Kill");
+            GetComponentInChildren<Animator>().Play("SilentTakedownKill");
             Debug.Log(enemy.name);
             enemy.GetComponent<EnemyController>().SwitchState<EnemyDeathState>();
             HearingManager.Instance.OnSoundWasEmitted(transform.position, SoundType.TakeDown, new HearingManager.SoundWaveData(4, 5, 4, true));
