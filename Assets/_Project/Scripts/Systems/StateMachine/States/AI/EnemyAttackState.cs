@@ -60,27 +60,6 @@ public class EnemyAttackState : NonMonoState
             nonMonoStateMachine.GetComponent<EnemyController>().InvestigationType = InvestigationType.InvestigateLostTrackOf;
             nonMonoStateMachine.SwitchState<EnemyInvestigateState>();
         }
-
-        //DetectionState detectionState = detectionHelper.Detect();
-        //switch (detectionState)
-        //{
-        //    case DetectionState.DetectNone:
-        //        PatrolMoving();
-        //        break;
-        //    case DetectionState.Chase:
-        //        //Debug.Log("Switching to chasing");
-        //        nonMonoStateMachine.SwitchState<EnemyChaseState>();
-        //        break;
-        //    case DetectionState.Detect:
-        //        //Be still, look at the thing you detected
-        //        if (agent.hasPath)
-        //            agent.ResetPath();
-        //        break;
-        //    case DetectionState.Investigate:
-        //        nonMonoStateMachine.GetComponent<EnemyController>().InvestigationType = InvestigationType.InvestigateSaw;
-        //        nonMonoStateMachine.SwitchState<EnemyInvestigateState>();
-        //        break;
-        //}
     }
     private void SwingSword()
     {
