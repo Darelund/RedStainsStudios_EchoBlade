@@ -43,7 +43,6 @@ public class RotateingLever : MonoBehaviour
     private IEnumerator RotateDoor()
     {
         GameManager.Instance.SwitchState<PauseState>();
-        GameManager.Instance
         yield return new WaitForSeconds(0.5f);
         camera.Target.TrackingTarget = door.transform;
         yield return new WaitForSeconds(1f);
