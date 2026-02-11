@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -14,7 +15,8 @@ public class Movement : MonoBehaviour
     [SerializeField] private float maxSpeed = 10;
     [SerializeField] private float cooldown;
 
-    [SerializeField] private Image coolDownImage;
+    //[SerializeField] public Image coolDownImage; //All images should be seperate with an event. Now I have to do a dumb solution in the AbilityBar to make this work. We need to come up with a less dumb solution later - Vidar
+    public static event Action<float> OnPhaseCoolDown;
 
     private float timer = 0;
 
@@ -40,8 +42,8 @@ public class Movement : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        if (coolDownImage != null)
-            coolDownImage.fillAmount = 1;
+        //if (coolDownImage != null)
+        //    coolDownImage.fillAmount = 1;
 
         controller = GetComponent<CharacterController>();
         //moveAction = inputActions.FindActionMap("Player").FindAction("Move");
@@ -172,8 +174,8 @@ public class Movement : MonoBehaviour
         if (timer >= 0)
         {
             timer -= Time.deltaTime;
-            if (coolDownImage != null)
-                coolDownImage.fillAmount = Mathf.Lerp(0, 1, timer);
+            OnPhaseCoolDown?.Invoke(Mathf.Lerp(0, 1, timer));
+          
         }
         Vector3 movement = new Vector3(moveInput.x, 0, moveInput.y);
 
@@ -209,7 +211,7 @@ public class Movement : MonoBehaviour
                 footstepPerSecondTimer = 0;
 
             var dir = (transform.position - oldPos).normalized * 2;
-                HearingManager.Instance.OnSoundWasEmitted(transform.position + dir, SoundType.Footstep, new HearingManager.SoundWaveData(10, 0, Random.Range(1.0f, 1.0f), true));
+                HearingManager.Instance.OnSoundWasEmitted(transform.position + dir, SoundType.Footstep, new HearingManager.SoundWaveData(10, 0, UnityEngine.Random.Range(1.0f, 1.0f), true));
             }
             oldPos = transform.position;
     }

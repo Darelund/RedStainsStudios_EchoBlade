@@ -148,6 +148,7 @@ public class AbilityBarData //What Abilities that you have
     public string CooldownSpriteID;
     public string IconSpriteID;
     public int AbilityBarKey; //Weird, only some abilites use keys. So this is kinda dumb
+    public PlayerAbility PlayerAbility;
 }
 [System.Serializable]
 public class PlayerAbilityData //What abilites are unlocked

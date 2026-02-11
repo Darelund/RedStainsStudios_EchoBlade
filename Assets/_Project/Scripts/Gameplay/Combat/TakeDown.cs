@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -9,7 +10,9 @@ public class TakeDown : MonoBehaviour
     [SerializeField] private InputAction takeDown;
 
     [SerializeField] private float cooldown;
-    [SerializeField] private Image coolDownImage;
+    //[SerializeField] public Image coolDownImage;//All images should be seperate with an event. Now I have to do a dumb solution in the AbilityBar to make this work. We need to come up with a less dumb solution later - Vidar
+    public static event Action<float> OnTakeDownCoolDown;
+
 
     private float timer = 0;
 
@@ -20,8 +23,8 @@ public class TakeDown : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        if (coolDownImage != null)
-            coolDownImage.fillAmount = 1;
+        //if (coolDownImage != null)
+        //    coolDownImage.fillAmount = 1;
         takeDown = inputActions.FindActionMap("Player").FindAction("TakeDown");
 
         takeDown.performed += TakeDown_performed;
@@ -52,8 +55,9 @@ public class TakeDown : MonoBehaviour
             {
                 timer = cooldown;
             }
-            if (coolDownImage != null)
-                coolDownImage.fillAmount = 0;
+            OnTakeDownCoolDown?.Invoke(0);
+            //if (coolDownImage != null)
+            //    coolDownImage.fillAmount = 0;
         }
     }
 
@@ -73,8 +77,9 @@ public class TakeDown : MonoBehaviour
         if (timer >= 0)
         {
             timer -= Time.deltaTime;
-            if (coolDownImage != null)
-                coolDownImage.fillAmount = Mathf.Lerp(0, 1, timer);
+            OnTakeDownCoolDown?.Invoke(Mathf.Lerp(0, 1, timer));
+            //if (coolDownImage != null)
+            //    coolDownImage.fillAmount = ;
         }
     }
 

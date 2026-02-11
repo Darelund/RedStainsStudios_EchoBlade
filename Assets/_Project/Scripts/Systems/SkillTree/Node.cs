@@ -85,7 +85,7 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IS
 
         if(haveSkillbarIcon)
         {
-            AbilityBarManager.Instance.SetNewIcon(skillbarSprite, skillbarCooldownSprite, Unique_ID);
+            AbilityBarManager.Instance.SetNewIcon(skillbarSprite, skillbarCooldownSprite, Unique_ID, Value);
         }
       
 

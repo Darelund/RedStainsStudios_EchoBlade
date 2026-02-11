@@ -25834,61 +25834,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4946564921223385631, guid: 08441e675aa177c45a27d34fb11c3114, type: 3}
   m_PrefabInstance: {fileID: 252313802}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &991522086 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1270930400199340863, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
-  m_PrefabInstance: {fileID: 1617669293}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
---- !u!114 &991522087 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2988406933611501403, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
-  m_PrefabInstance: {fileID: 1617669293}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
---- !u!114 &991522088 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8623227016349206014, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
-  m_PrefabInstance: {fileID: 1617669293}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
---- !u!114 &991522089 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2730973633830264972, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
-  m_PrefabInstance: {fileID: 1617669293}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
---- !u!114 &991522090 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3899537692707623001, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
-  m_PrefabInstance: {fileID: 1617669293}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
 --- !u!1 &991650483
 GameObject:
   m_ObjectHideFlags: 0
@@ -38953,11 +38898,11 @@ PrefabInstance:
     - target: {fileID: 1861463871596049050, guid: 9f64805503237ea448f51b663252870e, type: 3}
       propertyPath: coolDownImage
       value: 
-      objectReference: {fileID: 991522087}
+      objectReference: {fileID: 0}
     - target: {fileID: 2576390160327085996, guid: 9f64805503237ea448f51b663252870e, type: 3}
       propertyPath: coolDownImage
       value: 
-      objectReference: {fileID: 991522089}
+      objectReference: {fileID: 0}
     - target: {fileID: 4716509805505160708, guid: 9f64805503237ea448f51b663252870e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -14.481098
@@ -38989,11 +38934,11 @@ PrefabInstance:
     - target: {fileID: 5311648305151296392, guid: 9f64805503237ea448f51b663252870e, type: 3}
       propertyPath: coolDownImage
       value: 
-      objectReference: {fileID: 991522088}
+      objectReference: {fileID: 0}
     - target: {fileID: 5480911438008690309, guid: 9f64805503237ea448f51b663252870e, type: 3}
       propertyPath: coolDownImage
       value: 
-      objectReference: {fileID: 991522090}
+      objectReference: {fileID: 0}
     - target: {fileID: 5965158235604092076, guid: 9f64805503237ea448f51b663252870e, type: 3}
       propertyPath: m_Name
       value: Player Ref
@@ -39005,7 +38950,7 @@ PrefabInstance:
     - target: {fileID: 6539865714335638253, guid: 9f64805503237ea448f51b663252870e, type: 3}
       propertyPath: coolDownImage
       value: 
-      objectReference: {fileID: 991522086}
+      objectReference: {fileID: 0}
     - target: {fileID: 7801413340933072682, guid: 9f64805503237ea448f51b663252870e, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -41541,6 +41486,10 @@ PrefabInstance:
     - target: {fileID: 8606247047767500614, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SetSFXVolume
+      objectReference: {fileID: 0}
+    - target: {fileID: 8623227016349206014, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
+      propertyPath: m_FillAmount
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:

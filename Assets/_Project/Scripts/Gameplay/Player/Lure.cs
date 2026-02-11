@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -7,7 +8,8 @@ public class Lure : MonoBehaviour
     [SerializeField] private float range;
     [SerializeField] private float cooldown;
 
-    [SerializeField] private Image coolDownImage;
+    //[SerializeField] public Image coolDownImage;//All images should be seperate with an event. Now I have to do a dumb solution in the AbilityBar to make this work. We need to come up with a less dumb solution later - Vidar
+    public static event Action<float> OnLureCoolDown;
 
     private float timer = 0;
 
@@ -19,8 +21,8 @@ public class Lure : MonoBehaviour
     //offset to fix enemies walking into eachother
     private void Start()
     {
-        if (coolDownImage != null)
-            coolDownImage.fillAmount = 1;
+        //if (coolDownImage != null)
+        //    coolDownImage.fillAmount = 1;
 
         lure = inputActions.FindActionMap("Player").FindAction("Lure");
 
@@ -35,8 +37,9 @@ public class Lure : MonoBehaviour
         if (timer >= 0)
         {
             timer -= Time.deltaTime;
-            if (coolDownImage != null)
-                coolDownImage.fillAmount = Mathf.Lerp(0, 1, timer);
+            OnLureCoolDown?.Invoke(Mathf.Lerp(0, 1, timer));
+            //if (coolDownImage != null)
+            //    coolDownImage.fillAmount = ;
         }
     }
 
@@ -68,8 +71,9 @@ public class Lure : MonoBehaviour
         {
             timer = cooldown;
         }
-        if (coolDownImage != null)
-            coolDownImage.fillAmount = 0;
+        OnLureCoolDown?.Invoke(0);
+        //if (coolDownImage != null)
+        //    coolDownImage.fillAmount = 0;
 
         //resets the offset after using the lure
     }
