@@ -172,6 +172,10 @@ public class EnemyInvestigateState : NonMonoState
         Vector3 newpos = new Vector3(Mathf.Sin(SearchAngle), 0, Mathf.Cos(SearchAngle)) * 2 + pos;
         SearchAngle = (int)Random.Range(0, 360);
         //Debug.Log("New look angle");
+        NavMeshPath targetPath = new NavMeshPath();
+        if (agent.CalculatePath(newpos, targetPath) is false) return; //Why not out parameter?
+        //if(Vector3.Distance(targetPath.corners[targetPath.corners.Length - 1], soundLocation) > 0.05f) return;
+        if (targetPath.status == NavMeshPathStatus.PathPartial || targetPath.status == NavMeshPathStatus.PathInvalid) return;
         agent.SetDestination(newpos);     
     }
     //TODO: Make him look around on the investigation spot instead if just standing there
