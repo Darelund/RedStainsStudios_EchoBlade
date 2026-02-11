@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -10,6 +11,8 @@ public class RotateingLever : MonoBehaviour
     [SerializeField] private InputActionAsset actionMap;
     [SerializeField] private InputAction pullAction;
 
+    [SerializeField] private GameObject player;
+    [SerializeField] private CinemachineCamera camera;
     [SerializeField] private GameObject door;
     [SerializeField] private AudioClip doorClip;
 
@@ -39,14 +42,16 @@ public class RotateingLever : MonoBehaviour
 
     private IEnumerator RotateDoor()
     {
+        GameManager.Instance.SwitchState<PauseState>();
+        GameManager.Instance
+        yield return new WaitForSeconds(0.5f);
+        camera.Target.TrackingTarget = door.transform;
+        yield return new WaitForSeconds(1f);
         door.gameObject.GetComponent<AudioSource>().PlayOneShot(doorClip);
-        while (rotationDuration >= 0)
-        {
-            rotationDuration -= Time.deltaTime;
-
-            door.transform.rotation = Quaternion.Lerp(door.transform.rotation, targetRotation, rotationDuration);
-            yield return null;
-        }
+        door.gameObject.GetComponent<Animator>().SetTrigger("OpenDoor");
+        yield return new WaitForSeconds(2f);
+        camera.Target.TrackingTarget = player.transform;
+        GameManager.Instance.SwitchState<PlayingState>();
     }
 
     private void OnTriggerEnter(Collider other)
