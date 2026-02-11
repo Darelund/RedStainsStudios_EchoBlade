@@ -1,7 +1,5 @@
+using System.Collections;
 using UnityEngine;
-using UnityEngine.InputSystem;
-using UnityEngine.Rendering;
-using UnityEngine.Rendering.Universal;
 
 public class CutsceneState : State
 {
@@ -19,8 +17,14 @@ public class CutsceneState : State
     }
     public override void ExitState()
     {
-        AIManager.Instance.ResumeAllAI();
+        StartCoroutine(ResumeState());
+    }
+    
+    private IEnumerator ResumeState()
+    {
         abilityBarUI.SetActive(true);
         questScreenUI.SetActive(true);
+        yield return new WaitForSeconds(.6f);
+        AIManager.Instance.ResumeAllAI();
     }
 }
