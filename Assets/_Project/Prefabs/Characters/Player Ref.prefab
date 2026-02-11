@@ -171,7 +171,6 @@ MonoBehaviour:
   speed: 4
   maxSpeed: 10
   cooldown: 2
-  coolDownImage: {fileID: 0}
   inputActions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   moveAction:
     m_Name: Move
@@ -220,7 +219,6 @@ MonoBehaviour:
     m_SingletonActionBindings: []
     m_Flags: 0
   cooldown: 2
-  coolDownImage: {fileID: 0}
 --- !u!114 &2576390160327085996
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -244,7 +242,6 @@ MonoBehaviour:
     m_SingletonActionBindings: []
     m_Flags: 0
   material: {fileID: 2100000, guid: 71fa024c6925e3346bf175d539580633, type: 2}
-  coolDownImage: {fileID: 0}
   slowMoFactor: 0.5
   disableDuration: 5
   cooldown: 2
@@ -286,9 +283,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ffba57d03435f44e9f052c4de4df92d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Lure
+  _particleSystem: {fileID: 2923413596998191639}
   range: 10
   cooldown: 5
-  coolDownImage: {fileID: 0}
   inputActions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   lure:
     m_Name: Lure
@@ -314,7 +311,6 @@ MonoBehaviour:
   duration: 2
   range: 10
   cooldown: 2
-  coolDownImage: {fileID: 0}
   inputActions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   tail:
     m_Name: Tail
@@ -381,7 +377,7 @@ Transform:
   m_GameObject: {fileID: 6306463159368933397}
   serializedVersion: 2
   m_LocalRotation: {x: 0.4304593, y: -0.5609857, z: 0.43045968, w: 0.56098527}
-  m_LocalPosition: {x: -14.481098, y: 18, z: 0}
+  m_LocalPosition: {x: 34.860004, y: 18, z: -0.5500002}
   m_LocalScale: {x: 1.298381, y: 1.2983809, z: 1.2983809}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -661,6 +657,89 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
+--- !u!1001 &1069179120350629299
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 7691532491367102480}
+    m_Modifications:
+    - target: {fileID: 542738305121348973, guid: fba1c6bbba7d1c54da8154249a563f14, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 542738305121348973, guid: fba1c6bbba7d1c54da8154249a563f14, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.8149998
+      objectReference: {fileID: 0}
+    - target: {fileID: 542738305121348973, guid: fba1c6bbba7d1c54da8154249a563f14, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.19099998
+      objectReference: {fileID: 0}
+    - target: {fileID: 542738305121348973, guid: fba1c6bbba7d1c54da8154249a563f14, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 542738305121348973, guid: fba1c6bbba7d1c54da8154249a563f14, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 542738305121348973, guid: fba1c6bbba7d1c54da8154249a563f14, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 542738305121348973, guid: fba1c6bbba7d1c54da8154249a563f14, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 542738305121348973, guid: fba1c6bbba7d1c54da8154249a563f14, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 542738305121348973, guid: fba1c6bbba7d1c54da8154249a563f14, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 542738305121348973, guid: fba1c6bbba7d1c54da8154249a563f14, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2757453751007332260, guid: fba1c6bbba7d1c54da8154249a563f14, type: 3}
+      propertyPath: looping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2757453751007332260, guid: fba1c6bbba7d1c54da8154249a563f14, type: 3}
+      propertyPath: prewarm
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2757453751007332260, guid: fba1c6bbba7d1c54da8154249a563f14, type: 3}
+      propertyPath: stopAction
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2757453751007332260, guid: fba1c6bbba7d1c54da8154249a563f14, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6999778168320832813, guid: fba1c6bbba7d1c54da8154249a563f14, type: 3}
+      propertyPath: m_Name
+      value: Whistle Variant
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fba1c6bbba7d1c54da8154249a563f14, type: 3}
+--- !u!4 &675061803365097694 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 542738305121348973, guid: fba1c6bbba7d1c54da8154249a563f14, type: 3}
+  m_PrefabInstance: {fileID: 1069179120350629299}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &2923413596998191639 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 2757453751007332260, guid: fba1c6bbba7d1c54da8154249a563f14, type: 3}
+  m_PrefabInstance: {fileID: 1069179120350629299}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7869874811545247739
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -751,7 +830,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: e5fe5088c83511d4581ea0c354f93aef, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 675061803365097694}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e5fe5088c83511d4581ea0c354f93aef, type: 3}
       insertIndex: -1
