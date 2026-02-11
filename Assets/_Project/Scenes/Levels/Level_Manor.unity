@@ -38960,11 +38960,11 @@ PrefabInstance:
       objectReference: {fileID: 991522089}
     - target: {fileID: 4716509805505160708, guid: 9f64805503237ea448f51b663252870e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.5502272
+      value: -14.481098
       objectReference: {fileID: 0}
     - target: {fileID: 4716509805505160708, guid: 9f64805503237ea448f51b663252870e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 13.130891
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 4716509805505160708, guid: 9f64805503237ea448f51b663252870e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -41306,6 +41306,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 1074822000312800887, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 419780457}
+    - target: {fileID: 1074822000312800887, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ResetSkillPoints
+      objectReference: {fileID: 0}
+    - target: {fileID: 1074822000312800887, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1074822000312800887, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1284699529404108924, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -41390,6 +41406,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2013864744868516471, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2013864744868516471, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2013864744868516471, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2157576383604537442, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -41430,6 +41458,18 @@ PrefabInstance:
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 4213362302559779018, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
+      propertyPath: skilltreeUI
+      value: 
+      objectReference: {fileID: 1617669296}
+    - target: {fileID: 4213362302559779018, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
+      propertyPath: skillPointsText
+      value: 
+      objectReference: {fileID: 2130477398}
+    - target: {fileID: 4213362302559779018, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
+      propertyPath: trees.Array.data[0].Root
+      value: 
+      objectReference: {fileID: 1844044647}
     - target: {fileID: 4618544554634781060, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -41452,6 +41492,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4618544554634781060, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5048907797104732277, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5844117002794410258, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
@@ -41499,7 +41543,8 @@ PrefabInstance:
       value: SetSFXVolume
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 7913657445954667094, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
@@ -41521,7 +41566,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1617669296 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 7913657445954667094, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
+  m_CorrespondingSourceObject: {fileID: 5048907797104732277, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
   m_PrefabInstance: {fileID: 1617669293}
   m_PrefabAsset: {fileID: 0}
 --- !u!224 &1617669297 stripped
@@ -47812,6 +47857,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1843899366}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1844044647 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3010021726470848746, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
+  m_PrefabInstance: {fileID: 1617669293}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0aaa969d92c2ab47b25b6b99bf957fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Node
 --- !u!4 &1846783322 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4387147051817022, guid: f219e44f8c45a5148ace498ba060743a, type: 3}
@@ -54397,6 +54453,7 @@ Transform:
   - {fileID: 946312273}
   - {fileID: 2094045471}
   - {fileID: 585559837}
+  - {fileID: 1750409773}
   m_Father: {fileID: 821047037}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2115468330
@@ -54763,6 +54820,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb1a4f99f33e980409e2b8e378dd0cae, type: 3}
+--- !u!114 &2130477398 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8680040437668665671, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
+  m_PrefabInstance: {fileID: 1617669293}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1 &2132186022
 GameObject:
   m_ObjectHideFlags: 0

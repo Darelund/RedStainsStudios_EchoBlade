@@ -132,7 +132,7 @@ public class SavingManager : MonoBehaviour
         {
             Debug.LogError("Seems like this is your first time loading?" +
                 "That means I will create a new save for you");
-            gameData = new GameData();
+            gameData = GameData.CreateNewGameData();
            
         }
         foreach (var savable in savables)

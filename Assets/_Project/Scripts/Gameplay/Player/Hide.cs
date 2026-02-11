@@ -27,22 +27,23 @@ public class Hide : MonoBehaviour
         }
 
 
-        Collider[] colliders = Physics.OverlapSphere(transform.position, range);
+        Collider[] thingsToHideIn = Physics.OverlapSphere(transform.position, range, 1 << 11);
 
-        List<GameObject> thingsToHideIn = new List<GameObject>();
+        //List<GameObject> thingsToHideIn = new List<GameObject>();
+     
 
-        foreach (Collider collider in colliders)
-        {
-            if (collider.gameObject.layer == LayerMask.NameToLayer("Hideable"))
-            {
-                thingsToHideIn.Add(collider.gameObject);
-            }
-        }
-
-        if (thingsToHideIn.Count > 0)
-        {
-            HideInObject(thingsToHideIn[0]);
-        }
+        //foreach (Collider collider in colliders)
+        //{
+        //    if (collider.gameObject.layer == LayerMask.NameToLayer("Hideable"))
+        //    {
+        //        thingsToHideIn.Add(collider.gameObject);
+        //    }
+        //}
+        if (thingsToHideIn == null || thingsToHideIn.Length <= 0) return;
+        Debug.Log(thingsToHideIn[0].name);
+        Debug.Log(thingsToHideIn[0].gameObject.transform.position);
+       
+        HideInObject(thingsToHideIn[0].gameObject);
 
     }
     private void OnDisable()
@@ -65,6 +66,7 @@ public class Hide : MonoBehaviour
 
     IEnumerator HideCoroutine(GameObject thingsToHideIn)
     {
+        GetComponent<Movement>().UseGravity = false;
         playerStartPoint = transform.position;
 
         var startPoint = transform.position;
@@ -78,7 +80,8 @@ public class Hide : MonoBehaviour
             transform.position = Vector3.Lerp(startPoint, endPoint, start);
             yield return null;
         }
-        transform.position = endPoint;
+        //transform.position = endPoint;
+        
     }
     IEnumerator RevealCoroutine()
     {
@@ -95,5 +98,6 @@ public class Hide : MonoBehaviour
         }
         transform.position = endPoint;
         playerStartPoint = Vector3.zero;
+        GetComponent<Movement>().UseGravity = true;
     }
 }

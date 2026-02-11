@@ -11,13 +11,13 @@ public class SkillTree : MonoBehaviour
 
     private void Start()
     {
-        UpdateSkillTrees();
+        UpdateSkillTreesText();
 
         skilltreeUI.SetActive(false);
     }
 
 
-    public void UpdateSkillTrees()
+    public void UpdateSkillTreesText()
     {
         skillPointsText.text = $"Skill Points: {GameManager.Instance.GetCurrentSkillPoints().ToString()}";
 

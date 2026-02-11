@@ -1,4 +1,6 @@
+using System.Security.Cryptography;
 using System.Xml;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,23 +13,31 @@ public class AbilityBar : MonoBehaviour, ISavable
 
     private bool isEmpty = true;
     public int Unique_ID;
-
+    private TMP_Text keyText;
+    private int keyNumber;
     private void Awake()
     {
         iconImage.sprite = defaultEmptySprite;
+        keyText = GetComponentInChildren<TMP_Text>();
+        keyText.text = keyNumber.ToString();
+        if (isEmpty is true)
+            GetComponentInChildren<TMP_Text>().enabled = false;
     }
 
     public void ResetAbilityBar()
     {
         isEmpty = true;
         iconImage.sprite = defaultEmptySprite;
+        GetComponentInChildren<TMP_Text>().enabled = false;
     }
 
-    public void SetNewIcon(Sprite newSprite, Sprite newCooldownSprite)
+    public void SetNewIcon(Sprite newSprite, Sprite newCooldownSprite, int Id)
     {
         if (IsAbilityBarEmpty() is false) return;
         isEmpty = false;
-
+        GetComponentInChildren<TMP_Text>().enabled = true;
+        keyNumber = (Id + 1);
+        keyText.text = keyNumber.ToString();
         iconImage.sprite = newSprite;
         cooldownImage.sprite = newCooldownSprite;
     }
@@ -46,16 +56,18 @@ public class AbilityBar : MonoBehaviour, ISavable
                 abilityData.IsEmpty = isEmpty;
                 abilityData.IconSpriteID = iconImage.sprite.name;
                 abilityData.CooldownSpriteID = cooldownImage.sprite.name;
+                abilityData.AbilityBarKey = keyNumber;
                 return;
             }
         }
 
-        gameData.abilityBarData.Add(new AbilityBarData() { ID = Unique_ID, IsEmpty = isEmpty, IconSpriteID = iconImage.sprite.name, CooldownSpriteID = cooldownImage.sprite.name });
+        gameData.abilityBarData.Add(new AbilityBarData() { ID = Unique_ID, IsEmpty = isEmpty, IconSpriteID = iconImage.sprite.name, CooldownSpriteID = cooldownImage.sprite.name, AbilityBarKey = keyNumber });
     }
 
     public void Load(GameData gameData)
     {
-        if (gameData.altarData.Count <= 0) return;
+        if (gameData.abilityBarData == null) return;
+        if (gameData.abilityBarData.Count <= 0) return;
 
 
         foreach (AbilityBarData abilityData in gameData.abilityBarData)
@@ -65,6 +77,12 @@ public class AbilityBar : MonoBehaviour, ISavable
                 isEmpty = abilityData.IsEmpty;
                 iconImage.sprite = SpriteDataBase.Instance.Get(abilityData.IconSpriteID);
                 cooldownImage.sprite = SpriteDataBase.Instance.Get(abilityData.CooldownSpriteID);
+                keyNumber = abilityData.AbilityBarKey;
+                keyText.text = keyNumber.ToString();
+                if (isEmpty is false)
+                {
+                    GetComponentInChildren<TMP_Text>().enabled = true;
+                }
                 return;
             }
         }

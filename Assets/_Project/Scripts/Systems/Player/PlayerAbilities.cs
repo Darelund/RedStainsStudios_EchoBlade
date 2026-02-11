@@ -48,13 +48,13 @@ public class PlayerAbilities : MonoBehaviour, ISavable
     {
         return abilities[playerAbility];
     }
-    public bool ActivateAbility(PlayerAbility playerAbility)
+    public void ActivateAbility(PlayerAbility playerAbility)
     {
         if (playerAbility == PlayerAbility.MovementSpeed)
         {
             GameObject.FindGameObjectWithTag("Player").GetComponent<Movement>().speed *= 1.15f;
         }
-        return abilities[playerAbility] = true;
+        abilities[playerAbility] = true;
     }
    
 

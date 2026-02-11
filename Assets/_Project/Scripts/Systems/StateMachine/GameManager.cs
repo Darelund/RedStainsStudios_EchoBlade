@@ -95,9 +95,10 @@ public class GameManager : StateMachine, ISavable
     {
         currentSkillPoints += skillPointsUsed;
         skillPointsUsed = 0;
-        FindAnyObjectByType<SkillTree>().UpdateSkillTrees(); //Change back points in skilltree
-        FindAnyObjectByType<SkillTree>().ResetSkillTrees();
         AbilityBarManager.Instance.ResetEveryAbilityBar();
+        FindAnyObjectByType<SkillTree>().ResetSkillTrees();
+        FindAnyObjectByType<SkillTree>().UpdateSkillTreesText(); //Change back points in skilltree
+      
         //TODO: Change back IconSprites
         //TODO: Reset AbilityBar images
         //  AbilityBarManager.Instance.

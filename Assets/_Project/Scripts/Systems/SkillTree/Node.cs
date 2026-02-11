@@ -36,7 +36,16 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IS
         //gameObject.SetActive(false);
         skillName = gameObject.name;
         // skillpointsNeededText.text = skillPointsNeeded.ToString();
-        skillIcon.sprite = lockedSprite;
+      
+        if (IsUsed)
+        {
+            skillIcon.sprite = selectedSprite;
+        }
+        else
+        {
+
+            skillIcon.sprite = lockedSprite;
+        }
     }
     public void ResetNode()
     {
@@ -63,7 +72,7 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IS
 
         //Update GameManager and SkillTree UI and Update PlayerAbility
         GameManager.Instance.DecreaseSkillPoints(skillPointsNeeded);
-        skillTree.UpdateSkillTrees();
+        skillTree.UpdateSkillTreesText();
         GameObject.FindAnyObjectByType<PlayerAbilities>().ActivateAbility(Value);
 
         skillIcon.sprite = selectedSprite;
@@ -81,7 +90,7 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IS
       
 
 
-        skillTree.UpdateSkillTrees();
+        skillTree.UpdateSkillTreesText();
     }
     private IEnumerator UsingCoroutine()
     {
@@ -128,7 +137,7 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IS
         DescriptionBoxUI.transform.GetChild(1).gameObject.SetActive(true);
 
         //Ignore skills that are already bought
-        if (skillIcon.sprite != selectedSprite)
+        if (skillIcon.sprite != selectedSprite && IsUnlocked)
         {
             skillIcon.sprite = unlockedSprite;
         }
@@ -145,7 +154,7 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IS
         DescriptionBoxUI.transform.GetChild(1).gameObject.SetActive(false);
 
         //Ignore skills that are already bought
-        if (skillIcon.sprite != selectedSprite)
+        if (skillIcon.sprite != selectedSprite && IsUnlocked)
         {
             skillIcon.sprite = IsUsed ? selectedSprite : lockedSprite;
         }
@@ -163,7 +172,7 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IS
                 node.SkillName = skillName;
                 if (ConnectingPaths == null) continue;
                 if (node.ConnectingPaths == null) continue;
-                for (int i = 0; i < ConnectingPaths.Count; i++)
+                for (int i = 0; i < node.ConnectingPaths.Count; i++)
                 {
                     if (node.ConnectingPaths == null) return;
                     node.ConnectingPaths[i] = IsUsed is true ? true : false;
@@ -174,11 +183,13 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IS
        // Debug.Log("Came here");
         var newBoolList = ConnectingPaths.ConvertAll(i => IsUsed is true);
         gameData.SkillsNodeData.Add(new SkillsNodeData() { ID = Unique_ID, SkillName = skillName, IsUsed = IsUsed, IsUnlocked = IsUnlocked, ConnectingPaths = newBoolList });
+        Debug.Log($"Saved skill: {skillName}");
     }
 
     public void Load(GameData gameData)
     {
-        if (gameData.altarData.Count <= 0) return;
+        if (gameData.SkillsNodeData == null) return;
+        if (gameData.SkillsNodeData.Count <= 0) return;
 
 
         foreach (SkillsNodeData node in gameData.SkillsNodeData)
@@ -204,6 +215,7 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IS
                         ConnectingPaths[i].color = Color.white;
                     }
                 }
+               
                 return;
             }
         }

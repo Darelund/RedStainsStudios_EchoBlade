@@ -38,39 +38,76 @@ public class GameData
 
 
     //Empty save, which is when we get a new save
-    public GameData()
+    public static GameData CreateNewGameData()
     {
+        GameData gameData = new GameData();
         //Debug.LogError("NEW GAME DATA");
-        NewGame = true;
+        gameData.NewGame = true;
 
-        PlayerAbilityData = new List<PlayerAbilityData>()
+        gameData.PlayerAbilityData = new List<PlayerAbilityData>()
         {
-            new PlayerAbilityData() { PlayerAbility = PlayerAbility.ShadowWalk, HasAbility = false },
-            new PlayerAbilityData() { PlayerAbility = PlayerAbility.Tail, HasAbility = false },
-            new PlayerAbilityData() { PlayerAbility = PlayerAbility.Lure, HasAbility = false },
-            new PlayerAbilityData() { PlayerAbility = PlayerAbility.Jeff, HasAbility = false },
-            new PlayerAbilityData() { PlayerAbility = PlayerAbility.SilentDakeDown, HasAbility = false },
-            new PlayerAbilityData() { PlayerAbility = PlayerAbility.LightsOut, HasAbility = false },
-            new PlayerAbilityData() { PlayerAbility = PlayerAbility.MovementSpeed, HasAbility = false },
-            new PlayerAbilityData() { PlayerAbility = PlayerAbility.AbilityHaste, HasAbility = false },
-            new PlayerAbilityData() { PlayerAbility = PlayerAbility.AbilityDuration, HasAbility = false },
-            new PlayerAbilityData() { PlayerAbility = PlayerAbility.DetectionReduction, HasAbility = false}
+            new PlayerAbilityData(PlayerAbility.ShadowWalk, false) {},
+            new PlayerAbilityData(PlayerAbility.Tail, false) {},
+            new PlayerAbilityData(PlayerAbility.Lure, false) {},
+            new PlayerAbilityData(PlayerAbility.Jeff, false) {},
+            new PlayerAbilityData(PlayerAbility.SilentDakeDown, false) { },
+            new PlayerAbilityData(PlayerAbility.LightsOut, false) { },
+            new PlayerAbilityData(PlayerAbility.MovementSpeed, false) { },
+            new PlayerAbilityData(PlayerAbility.AbilityHaste, false) { },
+            new PlayerAbilityData(PlayerAbility.AbilityDuration, false) { },
+            new PlayerAbilityData(PlayerAbility.DetectionReduction, false) { }
 
         };
-        altarData = new List<AltarData>();
-        SkillsNodeData = new List<SkillsNodeData>();
-        abilityBarData = new List<AbilityBarData>();
-        SkillPointsLeft = 0;
-        SkillsPointsUsed = 0;
+        gameData.altarData = new List<AltarData>();
+        gameData.SkillsNodeData = new List<SkillsNodeData>();
+        gameData.abilityBarData = new List<AbilityBarData>();
+        gameData.SkillPointsLeft = 0;
+        gameData.SkillsPointsUsed = 0;
+ 
+        gameData.Deaths = 0;
+        gameData.TimePlayed = new TimePlayedData(0, 0, 0);
+      
+        gameData.LastPlayedScene = "Level_Graveyard";
+        gameData.GraveyardUnlocked = true;
+        gameData.ManorUnlocked = false;
+        gameData.EscapeUnlocked = false;
 
-        Deaths = 0;
-        TimePlayed = new TimePlayedData(0, 0, 0);
-
-        LastPlayedScene = "Level_Graveyard";
-        GraveyardUnlocked = true;
-        ManorUnlocked = false;
-        EscapeUnlocked = false;
+        return gameData;
     }
+
+    //public GameData()
+    //{
+       
+    //    NewGame = true;
+    //    PlayerAbilityData = new List<PlayerAbilityData>()
+    //    {
+    //        new PlayerAbilityData(PlayerAbility.ShadowWalk, false) {},
+    //        new PlayerAbilityData(PlayerAbility.Tail, false) {},
+    //        new PlayerAbilityData(PlayerAbility.Lure, false) {},
+    //        new PlayerAbilityData(PlayerAbility.Jeff, false) {},
+    //        new PlayerAbilityData(PlayerAbility.SilentDakeDown, false) { },
+    //        new PlayerAbilityData(PlayerAbility.LightsOut, false) { },
+    //        new PlayerAbilityData(PlayerAbility.MovementSpeed, false) { },
+    //        new PlayerAbilityData(PlayerAbility.AbilityHaste, false) { },
+    //        new PlayerAbilityData(PlayerAbility.AbilityDuration, false) { },
+    //        new PlayerAbilityData(PlayerAbility.DetectionReduction, false) { }
+
+    //    };
+    //    altarData = new List<AltarData>();
+    //    SkillsNodeData = new List<SkillsNodeData>();
+    //    abilityBarData = new List<AbilityBarData>();
+    //    SkillPointsLeft = 0;
+    //    SkillsPointsUsed = 0;
+
+    //    Deaths = 0;
+    //    TimePlayed = new TimePlayedData(0, 0, 0);
+
+    //    LastPlayedScene = "Level_Graveyard";
+    //    GraveyardUnlocked = true;
+    //    ManorUnlocked = false;
+    //    EscapeUnlocked = false;
+
+    //}
 }
 [System.Serializable]
 public class TimePlayedData
@@ -110,6 +147,7 @@ public class AbilityBarData //What Abilities that you have
     public bool IsEmpty;
     public string CooldownSpriteID;
     public string IconSpriteID;
+    public int AbilityBarKey; //Weird, only some abilites use keys. So this is kinda dumb
 }
 [System.Serializable]
 public class PlayerAbilityData //What abilites are unlocked
@@ -137,8 +175,10 @@ public class PlayerAbilityData //What abilites are unlocked
     public string AbilityName;
     public PlayerAbility PlayerAbility;
     public bool HasAbility;
-    public PlayerAbilityData()
+    public PlayerAbilityData(PlayerAbility playerAbility, bool hasAbility)
     {
+        this.PlayerAbility = playerAbility;
+        this.HasAbility = hasAbility;
         AbilityName = Convert.ToString(PlayerAbility);
     }
 }

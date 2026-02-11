@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AbilityBarManager : MonoBehaviour
 {
@@ -21,18 +22,18 @@ public class AbilityBarManager : MonoBehaviour
     #endregion
 
     [SerializeField] private List<AbilityBar> abilityBarList = new List<AbilityBar>();
-
+   // private List<Image> abilityBarCooldown
    // private int currentEmptyBar = 0;
 
-    public void SetNewIcon(Sprite newSprite, Sprite newCooldownSprite, int skillID)
+    public void SetNewIcon(Sprite newSprite, Sprite newCooldownSprite, int nodeId)
     {
         foreach (var abilityBar in abilityBarList)
         {
             //Debug.Log("Ball");
-            if (abilityBar.IsAbilityBarEmpty() && abilityBarList.IndexOf(abilityBar) == skillID)
+            if (abilityBar.IsAbilityBarEmpty())
             {
                 Debug.Log("Change Icon!!");
-                abilityBar.SetNewIcon(newSprite, newCooldownSprite);
+                abilityBar.SetNewIcon(newSprite, newCooldownSprite, nodeId);
                 return;
             }
         }
