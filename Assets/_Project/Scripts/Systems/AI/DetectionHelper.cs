@@ -12,7 +12,10 @@ public enum DetectionState
     Detect,
     Investigate
 }
-public struct InterestPoint
+
+
+[System.Serializable]
+public class InterestPoint
 {
     public Vector3 Position;
     public Vector3 Direction;
@@ -21,6 +24,7 @@ public struct InterestPoint
         Position = position;
         Direction = direction;
     }
+    public InterestPoint() { }
 }
 public class DetectionHelper
 {

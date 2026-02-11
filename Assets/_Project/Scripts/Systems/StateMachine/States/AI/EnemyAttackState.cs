@@ -39,20 +39,14 @@ public class EnemyAttackState : NonMonoState
     }
     private void AttackTarget()
     {
-
-       
-        //Debug.Log("Attacking target");
-        //TODO: Attack player
         agent.transform.rotation = Quaternion.Lerp(agent.transform.rotation, Quaternion.LookRotation((targetTransform.transform.position - agent.transform.position).normalized), Time.deltaTime);
      
         SwingSword();
      
         if (Vector3.Distance(transform.position, targetTransform.transform.position) > attackRange)
         {
-            Debug.Log(Vector3.Distance(transform.position, targetTransform.transform.position));
             nonMonoStateMachine.GetComponent<Conversationable>().OverrideTalkDelay();
             nonMonoStateMachine.SwitchState<EnemyChaseState>();
-            //currentEnemyState = EnemyState.Chase;
         }
         if (detectionHelper.PlayerAround2() is false)
         {

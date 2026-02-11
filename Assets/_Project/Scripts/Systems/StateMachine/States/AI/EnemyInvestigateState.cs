@@ -1,8 +1,5 @@
-
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.InputSystem.XR;
 
 public enum InvestigationType
 {
@@ -16,7 +13,6 @@ public class EnemyInvestigateState : NonMonoState
 {
     private DetectionHelper detectionHelper;
     private NavMeshAgent agent;
-    private List<GameObject> enemies = new List<GameObject>();
 
 
     private float stopThreshold = 0.4f;
@@ -27,13 +23,11 @@ public class EnemyInvestigateState : NonMonoState
     [SerializeField] private float currentInvestigationTime;
     private Vector3 interestingpoint;
 
-    private int TalkingDistance = 2;
 
     private int SearchAngle = 0;
     private float NextSearch = 0;
     private InvestigationType investigationType;
-
-    //[], [][], [,]  [][,]  [,][]
+    public int investigationState = 0;
 
     public bool CanTalk;
 
@@ -47,7 +41,7 @@ public class EnemyInvestigateState : NonMonoState
     public override void EnterState()
     {
         //Investigate(); //How to give it an interesting point
-        interestingpoint = nonMonoStateMachine.GetComponent<EnemyController>().PointOfInterest.Position;
+        interestingpoint = nonMonoStateMachine.GetComponent<EnemyController>().PointOfInterest.Position /*+ new Vector3(0, -0.3f, 0)*/;
         SearchAngle = (int)Random.Range(0, 360);
         investigationType = nonMonoStateMachine.GetComponent<EnemyController>().InvestigationType;
         CanTalk = true;
@@ -81,32 +75,50 @@ public class EnemyInvestigateState : NonMonoState
         }
        
         var detectionState = detectionHelper.Detect(1, 0.5f);
+        Debug.Log(detectionState);
 
         switch (detectionState)
         {
             case DetectionState.DetectNone:
 
-                if (nonMonoStateMachine.GetComponent<Conversationable>().IsConversing) return;
+                if (nonMonoStateMachine.GetComponent<Conversationable>().IsConversing)
+                {
+                    Debug.Log($"Conversering makes it stuck");
+                    return;
+                }
 
+                Debug.Log($"Distance is to far away from {interestingpoint} it is {Vector3.Distance(agent.transform.position, interestingpoint)}m away");
                 if (Vector3.Distance(agent.transform.position, interestingpoint) < stopThreshold) //We want this threshold to be quit small, so the enemy "remembers" in what direction the player last went to. This will make it look in the last direction it saw the player and if the player isn't there then it will start looking around in confusion
                 {
-
-                    if(isAtInvestigationPoint is false && CanTalk)
+                    Debug.Log("Close enough");
+                    if (isAtInvestigationPoint is false && CanTalk)
                     {
                         isAtInvestigationPoint = true;
                         CanTalk = false;
+                        Debug.Log("Stuck 1");
                         SparkConversation();
                     }
-                    NextSearch += Time.deltaTime;
-                    //Debug.Log($"NextSearch countdown: {NextSearch}");
-                    if (NextSearch > 0.2f)
+                    if(investigationState == 0)
                     {
-                        CircleSearch(interestingpoint);
-                        NextSearch = 0;
-                        return;
+                        LookAtLastPlayerPoint(interestingpoint);
+                        Debug.Log("Stuck 2");
+                        investigationState = 1;
                     }
+                    else if (investigationState == 1)
+                    {
+                        Debug.Log("Stuck 3");
+                        NextSearch += Time.deltaTime;
+                        Debug.Log($"Next Search in: {NextSearch} / 0.2 ");
+                        if (NextSearch > 0.2f)
+                        {
+                            Debug.Log("Do a circle");
+                            CircleSearch(interestingpoint);
+                            NextSearch = 0;
+                            return;
+                        }
+                    }
+                    InvestigateArea();
                 }
-                InvestigateArea();
                 break;
             case DetectionState.Chase:
                 nonMonoStateMachine.GetComponent<Conversationable>().OverrideTalkDelay();
@@ -116,6 +128,9 @@ public class EnemyInvestigateState : NonMonoState
             case DetectionState.Investigate:
                 nonMonoStateMachine.SwitchState<EnemyInvestigateState>();
                 isGoingTowardsInvestigatingPoint = false;
+                break;
+            case DetectionState.Detect:
+                Debug.Log("Detect???");
                 break;
         }
     }
@@ -141,20 +156,30 @@ public class EnemyInvestigateState : NonMonoState
         }
     }
 
-    //TODO: Fix circle again
-    private void CircleSearch(Vector3 pos)
+  
+    //Should be like investigation stages
+    //First one is stage 1, which is look at last known position of the player
+    private void LookAtLastPlayerPoint(Vector3 pos)
     {
         if (nonMonoStateMachine.GetComponent<EnemyController>().PointOfInterest.Direction.magnitude <= Mathf.Epsilon) return;
-        //Vector3 newpos = new Vector3(Mathf.Sin(SearchAngle), 0, Mathf.Cos(SearchAngle)) * 2 + pos;
-        //SearchAngle = (int)Random.Range(0, 360);
+        
+        agent.SetDestination(pos + nonMonoStateMachine.GetComponent<EnemyController>().PointOfInterest.Direction);
+    }
+    //Second stage is to look around for the player
+    private void CircleSearch(Vector3 pos)
+    {
+        //if (nonMonoStateMachine.GetComponent<EnemyController>().PointOfInterest.Direction.magnitude <= Mathf.Epsilon) return;
+        Vector3 newpos = new Vector3(Mathf.Sin(SearchAngle), 0, Mathf.Cos(SearchAngle)) * 2 + pos;
+        SearchAngle = (int)Random.Range(0, 360);
         //Debug.Log("New look angle");
-        agent.SetDestination(pos + nonMonoStateMachine.GetComponent<EnemyController>().PointOfInterest.Direction);     
+        agent.SetDestination(newpos);     
     }
     //TODO: Make him look around on the investigation spot instead if just standing there
  
     private void InvestigateArea()
     {
         currentInvestigationTime += Time.deltaTime;
+        Debug.Log($"Investigate time: {currentInvestigationTime}");
         //Debug.Log($"currentInvestigationTime: {currentInvestigationTime}");
         //  Debug.Log("currentinvestigation time" + currentInvestigationTime + " " + " investigation time" + investigationTime);
         if (currentInvestigationTime >= investigationTime)

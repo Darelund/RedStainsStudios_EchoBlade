@@ -40,8 +40,8 @@ public class SavingManager : MonoBehaviour
         savables = GameObject.FindObjectsByType<MonoBehaviour>(FindObjectsInactive.Include, FindObjectsSortMode.None).
            OfType<ISavable>().ToList();
 
-        savables.ForEach(s =>
-            Debug.Log(s.GetType()));
+        //savables.ForEach(s =>
+        //    Debug.Log(s.GetType()));
         // savables = GameObject.FindObjectsOfType<MonoBehaviour>()
 
         fileSaver = new JsonSaver();
@@ -131,10 +131,11 @@ public class SavingManager : MonoBehaviour
     }
     public void LoadData()
     {
-        gameData = fileSaver.Load();
+        if (gameData == null)
+            gameData = fileSaver.Load();
 
 
-        if(gameData == null)
+        if (gameData == null)
         {
             Debug.LogError("Seems like this is your first time loading?" +
                 "That means I will create a new save for you");

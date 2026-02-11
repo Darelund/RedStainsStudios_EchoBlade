@@ -12,8 +12,8 @@ public class EnemyController : NonMonoBehaviourStateMachine, ISavable
     [SerializeField] private LightChanger lightChanger;
     [SerializeField] List<Transform> waypoints = new List<Transform>();
     [SerializeField] GameObject weapon;
-
-    public InterestPoint PointOfInterest = new InterestPoint();
+    [NonSerialized] public GameObject Player;
+    [SerializeField] public InterestPoint PointOfInterest = new InterestPoint();
     public bool ShouldPatrol = true;
     public float hearingRange;
     public bool ShowGizmos = false;
@@ -33,6 +33,7 @@ public class EnemyController : NonMonoBehaviourStateMachine, ISavable
 
     private void Start()
     {
+        Player = FindAnyObjectByType<Movement>().gameObject;
         detectionHelper = new DetectionHelper(transform, eyes.transform, lightChanger);
 
 
