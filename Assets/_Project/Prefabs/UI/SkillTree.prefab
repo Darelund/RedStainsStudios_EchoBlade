@@ -1796,6 +1796,14 @@ PrefabInstance:
       propertyPath: skillbarCooldownSprite
       value: 
       objectReference: {fileID: 21300000, guid: 4c141e57e62a4a349b1ea30c4e81f97a, type: 3}
+    - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
+      propertyPath: ConnectingPaths.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
+      propertyPath: 'ConnectingPaths.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8252763427157159140}
     - target: {fileID: 1417644961575734543, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -2054,7 +2062,11 @@ PrefabInstance:
     - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
       propertyPath: 'ConnectingPaths.Array.data[0]'
       value: 
-      objectReference: {fileID: 8516208597000220175}
+      objectReference: {fileID: 6809384142357998306}
+    - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
+      propertyPath: 'ConnectingPaths.Array.data[1]'
+      value: 
+      objectReference: {fileID: 6809384142357998306}
     - target: {fileID: 1417644961575734543, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -2316,12 +2328,12 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 7b7ba88f00296084abf80d2c37014819, type: 3}
     - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
       propertyPath: ConnectingPaths.Array.size
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
       propertyPath: 'ConnectingPaths.Array.data[0]'
       value: 
-      objectReference: {fileID: 8953425868888323179}
+      objectReference: {fileID: 1734008678350399230}
     - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
       propertyPath: 'ConnectingPaths.Array.data[1]'
       value: 
@@ -2330,6 +2342,10 @@ PrefabInstance:
       propertyPath: 'ConnectingPaths.Array.data[2]'
       value: 
       objectReference: {fileID: 7531443448914855980}
+    - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
+      propertyPath: 'ConnectingPaths.Array.data[3]'
+      value: 
+      objectReference: {fileID: 1734008678350399230}
     - target: {fileID: 1417644961575734543, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -2497,13 +2513,13 @@ PrefabInstance:
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 5476530682461403083, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 5105241481800907909}
+    - targetCorrespondingSourceObject: {fileID: 5476530682461403083, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 3167169011386031320}
     - targetCorrespondingSourceObject: {fileID: 5476530682461403083, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1553098883952883078}
-    - targetCorrespondingSourceObject: {fileID: 5476530682461403083, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 5105241481800907909}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
 --- !u!114 &1713361292483401438 stripped
@@ -2601,7 +2617,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 30f1adfa59be0a740a221a22b285a6e3, type: 3}
     - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
       propertyPath: ConnectingPaths.Array.size
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
       propertyPath: 'ConnectingPaths.Array.data[0]'
@@ -2610,7 +2626,7 @@ PrefabInstance:
     - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
       propertyPath: 'ConnectingPaths.Array.data[1]'
       value: 
-      objectReference: {fileID: 8252763427157159140}
+      objectReference: {fileID: 1734008678350399230}
     - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
       propertyPath: 'ConnectingPaths.Array.data[2]'
       value: 
@@ -2904,16 +2920,20 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 4b0b9ae809a309e41bb2753dc51e103f, type: 3}
     - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
       propertyPath: ConnectingPaths.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
       propertyPath: 'ConnectingPaths.Array.data[0]'
       value: 
-      objectReference: {fileID: 4020028056791360047}
+      objectReference: {fileID: 8953425868888323179}
     - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
       propertyPath: 'ConnectingPaths.Array.data[1]'
       value: 
       objectReference: {fileID: 9046666308400958287}
+    - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
+      propertyPath: 'ConnectingPaths.Array.data[2]'
+      value: 
+      objectReference: {fileID: 8953425868888323179}
     - target: {fileID: 1417644961575734543, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -3069,10 +3089,10 @@ PrefabInstance:
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 5476530682461403083, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 17954079696250587}
+      addedObject: {fileID: 8883798262702201579}
     - targetCorrespondingSourceObject: {fileID: 5476530682461403083, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 8883798262702201579}
+      addedObject: {fileID: 17954079696250587}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
 --- !u!224 &1281446656519651054 stripped
@@ -3172,6 +3192,14 @@ PrefabInstance:
       propertyPath: skillbarCooldownSprite
       value: 
       objectReference: {fileID: 21300000, guid: 255a5340320ce194c966d6d62a85a446, type: 3}
+    - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
+      propertyPath: ConnectingPaths.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
+      propertyPath: 'ConnectingPaths.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8516208597000220175}
     - target: {fileID: 1417644961575734543, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -3425,6 +3453,14 @@ PrefabInstance:
       propertyPath: 'Children.Array.data[0]'
       value: 
       objectReference: {fileID: 6615723535095547980}
+    - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
+      propertyPath: ConnectingPaths.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
+      propertyPath: 'ConnectingPaths.Array.data[0]'
+      value: 
+      objectReference: {fileID: 7531443448914855980}
     - target: {fileID: 1417644961575734543, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -3676,6 +3712,14 @@ PrefabInstance:
       propertyPath: 'Children.Array.data[0]'
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
+      propertyPath: ConnectingPaths.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
+      propertyPath: 'ConnectingPaths.Array.data[0]'
+      value: 
+      objectReference: {fileID: 4020028056791360047}
     - target: {fileID: 1417644961575734543, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -3923,6 +3967,14 @@ PrefabInstance:
       propertyPath: 'Children.Array.data[0]'
       value: 
       objectReference: {fileID: 8285849520465358963}
+    - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
+      propertyPath: ConnectingPaths.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
+      propertyPath: 'ConnectingPaths.Array.data[0]'
+      value: 
+      objectReference: {fileID: 5981071665929159834}
     - target: {fileID: 1417644961575734543, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -4264,6 +4316,14 @@ PrefabInstance:
       propertyPath: 'Children.Array.data[0]'
       value: 
       objectReference: {fileID: 6010844670147815565}
+    - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
+      propertyPath: ConnectingPaths.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
+      propertyPath: 'ConnectingPaths.Array.data[0]'
+      value: 
+      objectReference: {fileID: 9046666308400958287}
     - target: {fileID: 1417644961575734543, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
       propertyPath: m_IsActive
       value: 0
