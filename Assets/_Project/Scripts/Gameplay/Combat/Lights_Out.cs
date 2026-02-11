@@ -11,12 +11,15 @@ public class Lights_Out : MonoBehaviour
     [SerializeField] private InputActionAsset inputActions;
     [SerializeField] private InputAction lightsOut;
     [SerializeField] private Material material;
+    [SerializeField] private LayerMask targetMask;
 
     //[SerializeField] public Image coolDownImage;//All images should be seperate with an event. Now I have to do a dumb solution in the AbilityBar to make this work. We need to come up with a less dumb solution later - Vidar
     public static event Action<float> OnLightOutCoolDown;
 
     [SerializeField] private float slowMoFactor = 0.5f;
     [SerializeField] private float disableDuration = 5f;
+
+    [SerializeField] private float range;
 
     [SerializeField] private float cooldown;
 
@@ -26,6 +29,8 @@ public class Lights_Out : MonoBehaviour
 
     private bool throwRay;
     [SerializeField] public bool ShowDebugs;
+
+    private GameObject[] objects;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -40,14 +45,15 @@ public class Lights_Out : MonoBehaviour
 
     private void LightsOut_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
     {
-       // if (PlayerAbilities.Instance.GetAbilityState(PlayerAbility.LightsOut) is false) return;
+        // if (PlayerAbilities.Instance.GetAbilityState(PlayerAbility.LightsOut) is false) return;
         if (timer <= 0)
         {
-            if(ShowDebugs)
-            Debug.Log("Lights Out Activated!");
+            if (ShowDebugs)
+                Debug.Log("Lights Out Activated!");
             Time.timeScale = slowMoFactor;
 
-            GameObject[] objects = FindLights();
+            objects = FindObjectsWithLayer();
+            
             if (ShowDebugs)
                 Debug.Log("Found " + objects.Length + " lights to disable.");
 
@@ -65,10 +71,10 @@ public class Lights_Out : MonoBehaviour
                 renderers.Add(renderer);
             }
 
-            
-            
+
+
         }
-        
+
     }
     private void OnDisable()
     {
@@ -86,13 +92,12 @@ public class Lights_Out : MonoBehaviour
 
         if (throwRay)
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out RaycastHit hitInfo, 999, 1 << 8) && Input.GetMouseButton(0))
+
+            if (Input.GetMouseButton(0))
             {
                 if (ShowDebugs)
-                    Debug.Log("Selected Light");
-                StartCoroutine(DisableLight(hitInfo.collider.gameObject,
-                    hitInfo.collider.gameObject.GetComponentInChildren<AlarmSensor>()));
+                    Debug.Log("Disable Lights");
+                StartCoroutine(DisableLight(objects));
 
                 foreach (MeshRenderer renderer in renderers)
                 {
@@ -129,33 +134,62 @@ public class Lights_Out : MonoBehaviour
         }
     }
 
-    private GameObject[] FindLights()
+    private GameObject[] FindObjectsWithLayer()
     {
-        GameObject[] objects = FindObjectsByType<GameObject>(FindObjectsSortMode.None);
+        GameObject[] objects = GameObject.FindGameObjectsWithTag("Light");
+        List<GameObject> found = new List<GameObject>();
 
-        List<GameObject> lights = new List<GameObject>();
-
-        foreach (GameObject light in objects)
+        foreach (GameObject obj in objects)
         {
-            if (light.layer == 8)
-            {
-                lights.Add(light);
-            }
+            float distance = Vector3.Distance(transform.position, obj.transform.position);
+
+            if (distance < range) found.Add(obj);
+
+
         }
 
-        return lights.ToArray();
+        return found.ToArray();
     }
 
-    IEnumerator DisableLight(GameObject light, AlarmSensor sensor)
-    {
-        Light lightComponent = light.GetComponentInChildren<Light>();
+    //private GameObject[] FindLights()
+    //{
+    //    GameObject[] objects = FindObjectsByType<GameObject>(FindObjectsSortMode.None);
 
-        lightComponent.enabled = false;
-        sensor.isDisabled = true;
+    //    List<GameObject> lights = new List<GameObject>();
+
+    //    foreach (GameObject light in objects)
+    //    {
+    //        if (light.layer == 8)
+    //        {
+    //            lights.Add(light);
+    //        }
+    //    }
+
+    //    return lights.ToArray();
+    //}
+
+    IEnumerator DisableLight(GameObject[] light)
+    {
+
+        foreach (GameObject obj in light)
+        {
+            Light lightComponent = obj.GetComponentInChildren<Light>();
+            AlarmSensor sensor = obj.GetComponentInChildren<AlarmSensor>();
+
+            lightComponent.enabled = false;
+            sensor.isDisabled = true;
+        }
 
         yield return new WaitForSeconds(disableDuration);
 
-        lightComponent.enabled = true;
-        sensor.isDisabled = false;
+        foreach (GameObject obj in light)
+        {
+            Light lightComponent = obj.GetComponentInChildren<Light>();
+            AlarmSensor sensor = obj.GetComponentInChildren<AlarmSensor>();
+
+            lightComponent.enabled = true;
+            sensor.isDisabled = false;
+        }
+
     }
 }

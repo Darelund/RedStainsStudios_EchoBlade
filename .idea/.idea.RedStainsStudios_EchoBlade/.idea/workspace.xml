@@ -6,6 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="1da759cc-d91c-4100-ae63-758c3494afb7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RedStainsStudios_EchoBlade/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RedStainsStudios_EchoBlade/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Art/EmaceArt/Cemetery Statue/Meshes/EA_Characters_Statue_Clean_1d.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Art/EmaceArt/Cemetery Statue/Meshes/EA_Characters_Statue_Clean_1d.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Art/Joelle_Assets/EmaceArt 1/Slavic World Free.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Art/Joelle_Assets/EmaceArt 1/Slavic World Free.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Art/Joelle_Assets/EmaceArt 1/Slavic World Free/URP_Support.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Art/Joelle_Assets/EmaceArt 1/Slavic World Free/URP_Support.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Art/Joelle_Assets/EmaceArt 1/Slavic World Free/URP_Support/URP.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Art/Joelle_Assets/EmaceArt 1/Slavic World Free/URP_Support/URP.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/AlarmSensor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/AlarmSensor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Systems/SkillTree/Tombstone.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Systems/SkillTree/Tombstone.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,19 +42,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="$PROJECT_DIR$/../RSS - EB Test\EchoBlade.exe" />
@@ -109,6 +116,7 @@
       <option name="presentableId" value="Default" />
       <updated>1770718679469</updated>
       <workItem from="1770718682323" duration="445000" />
+      <workItem from="1770822427104" duration="333000" />
     </task>
     <servers />
   </component>
