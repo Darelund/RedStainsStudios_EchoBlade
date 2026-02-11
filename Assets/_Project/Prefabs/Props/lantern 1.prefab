@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8829855255317929437}
   m_Layer: 8
   m_Name: lantern 1
-  m_TagString: Untagged
+  m_TagString: Light
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
