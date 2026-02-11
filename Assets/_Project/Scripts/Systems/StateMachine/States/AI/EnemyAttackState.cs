@@ -8,14 +8,15 @@ public class EnemyAttackState : NonMonoState
     private Transform transform;
     private float attackRange = 2.3f;
     private NavMeshAgent agent;
-
+    private DetectionHelper detectionHelper;
     private bool isAttacking;
     private float attackCooldown = 1f;
     //private 
-    public EnemyAttackState(NonMonoBehaviourStateMachine nonMonoStateMachine) : base(nonMonoStateMachine)
+    public EnemyAttackState(NonMonoBehaviourStateMachine nonMonoStateMachine, DetectionHelper detectionHelper) : base(nonMonoStateMachine)
     {
         transform = nonMonoStateMachine.transform;
         agent = nonMonoStateMachine.GetComponent<NavMeshAgent>();
+        this.detectionHelper = detectionHelper;
     }
     public override void EnterState()
     {
@@ -53,6 +54,33 @@ public class EnemyAttackState : NonMonoState
             nonMonoStateMachine.SwitchState<EnemyChaseState>();
             //currentEnemyState = EnemyState.Chase;
         }
+        if (detectionHelper.PlayerAround2() is false)
+        {
+            nonMonoStateMachine.GetComponent<EnemyController>().PointOfInterest.Position = targetTransform.transform.position;
+            nonMonoStateMachine.GetComponent<EnemyController>().InvestigationType = InvestigationType.InvestigateLostTrackOf;
+            nonMonoStateMachine.SwitchState<EnemyInvestigateState>();
+        }
+
+        //DetectionState detectionState = detectionHelper.Detect();
+        //switch (detectionState)
+        //{
+        //    case DetectionState.DetectNone:
+        //        PatrolMoving();
+        //        break;
+        //    case DetectionState.Chase:
+        //        //Debug.Log("Switching to chasing");
+        //        nonMonoStateMachine.SwitchState<EnemyChaseState>();
+        //        break;
+        //    case DetectionState.Detect:
+        //        //Be still, look at the thing you detected
+        //        if (agent.hasPath)
+        //            agent.ResetPath();
+        //        break;
+        //    case DetectionState.Investigate:
+        //        nonMonoStateMachine.GetComponent<EnemyController>().InvestigationType = InvestigationType.InvestigateSaw;
+        //        nonMonoStateMachine.SwitchState<EnemyInvestigateState>();
+        //        break;
+        //}
     }
     private void SwingSword()
     {

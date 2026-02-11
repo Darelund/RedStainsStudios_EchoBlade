@@ -35,7 +35,7 @@ public class EnemyController : NonMonoBehaviourStateMachine
         states.Add(new EnemyChaseState(this, detectionHelper));
         states.Add(new EnemyInvestigateState(this, detectionHelper));
         states.Add(new EnemyAlertedState(this));
-        states.Add(new EnemyAttackState(this));
+        states.Add(new EnemyAttackState(this, detectionHelper));
         states.Add(new EnemyStationaryState(this, detectionHelper));
         states.Add(new EnemyDeathState(this, weapon));
         states.Add(new EnemyTalkState(this));

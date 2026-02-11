@@ -26,7 +26,7 @@ public class GameData
 
     public int Deaths;
     public TimePlayedData TimePlayed;
-
+    public List<EnemyData> EnemiesData;
 
 
     public string LastPlayedScene;
@@ -66,7 +66,9 @@ public class GameData
  
         gameData.Deaths = 0;
         gameData.TimePlayed = new TimePlayedData(0, 0, 0);
-      
+        gameData.EnemiesData = new List<EnemyData>();
+
+
         gameData.LastPlayedScene = "Level_Graveyard";
         gameData.GraveyardUnlocked = true;
         gameData.ManorUnlocked = false;
@@ -74,40 +76,6 @@ public class GameData
 
         return gameData;
     }
-
-    //public GameData()
-    //{
-       
-    //    NewGame = true;
-    //    PlayerAbilityData = new List<PlayerAbilityData>()
-    //    {
-    //        new PlayerAbilityData(PlayerAbility.ShadowWalk, false) {},
-    //        new PlayerAbilityData(PlayerAbility.Tail, false) {},
-    //        new PlayerAbilityData(PlayerAbility.Lure, false) {},
-    //        new PlayerAbilityData(PlayerAbility.Jeff, false) {},
-    //        new PlayerAbilityData(PlayerAbility.SilentDakeDown, false) { },
-    //        new PlayerAbilityData(PlayerAbility.LightsOut, false) { },
-    //        new PlayerAbilityData(PlayerAbility.MovementSpeed, false) { },
-    //        new PlayerAbilityData(PlayerAbility.AbilityHaste, false) { },
-    //        new PlayerAbilityData(PlayerAbility.AbilityDuration, false) { },
-    //        new PlayerAbilityData(PlayerAbility.DetectionReduction, false) { }
-
-    //    };
-    //    altarData = new List<AltarData>();
-    //    SkillsNodeData = new List<SkillsNodeData>();
-    //    abilityBarData = new List<AbilityBarData>();
-    //    SkillPointsLeft = 0;
-    //    SkillsPointsUsed = 0;
-
-    //    Deaths = 0;
-    //    TimePlayed = new TimePlayedData(0, 0, 0);
-
-    //    LastPlayedScene = "Level_Graveyard";
-    //    GraveyardUnlocked = true;
-    //    ManorUnlocked = false;
-    //    EscapeUnlocked = false;
-
-    //}
 }
 [System.Serializable]
 public class TimePlayedData
@@ -154,25 +122,6 @@ public class AbilityBarData //What Abilities that you have
 public class PlayerAbilityData //What abilites are unlocked
 {
     //Don't have time to make dictionary work
-
-    //public Dictionary<PlayerAbility, bool> Ability;
-
-    //public PlayerAbilityData()
-    //{
-    //    Ability = new Dictionary<PlayerAbility, bool>()
-    //    {
-    //        [PlayerAbility.ShadowWalk] = false,
-    //        [PlayerAbility.Tail] = false,
-    //        [PlayerAbility.Lure] = false,
-    //        [PlayerAbility.Jeff] = false,
-    //        [PlayerAbility.SilentDakeDown] = false,
-    //        [PlayerAbility.LightsOut] = false,
-    //        [PlayerAbility.MovementSpeed] = false,
-    //        [PlayerAbility.AbilityHaste] = false,
-    //        [PlayerAbility.AbilityDuration] = false,
-    //        [PlayerAbility.DetectionReduction] = false,
-    //    };
-    //}
     public string AbilityName;
     public PlayerAbility PlayerAbility;
     public bool HasAbility;
@@ -182,4 +131,15 @@ public class PlayerAbilityData //What abilites are unlocked
         this.HasAbility = hasAbility;
         AbilityName = Convert.ToString(PlayerAbility);
     }
+}
+
+
+[System.Serializable]
+public class EnemyData
+{
+    public string ID; //Name + level to identify it
+    public bool IsDead;
+    public Vector3 Position;
+    public Quaternion Rotation; //Not sure I can save Quaternion, will try
+    //public NonMonoState NonMonoState; Might use this one later
 }
