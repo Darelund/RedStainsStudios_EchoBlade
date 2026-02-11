@@ -59,7 +59,8 @@ public class EnemyAttackState : NonMonoState
         if (isAttacking is true) return;
 
         isAttacking = true;
-        nonMonoStateMachine.GetComponent<Animator>().SetTrigger("Attacking");
+        nonMonoStateMachine.GetComponentInChildren<Animator>().Play("Attack");
+        nonMonoStateMachine.GetComponentInChildren<Animator>().SetTrigger("AnimAttack");
         nonMonoStateMachine.StartCoroutine(AttackCooldown());
     }
     private IEnumerator AttackCooldown()

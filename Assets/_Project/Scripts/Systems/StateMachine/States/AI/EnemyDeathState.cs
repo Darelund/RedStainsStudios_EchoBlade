@@ -17,14 +17,14 @@ public class EnemyDeathState : NonMonoState
     {
         //TODO: Switch to death animation
         //TODO: Play Death Sound
-
+        nonMonoStateMachine.GetComponentInChildren<Animator>().Play("Dying");
         nonMonoStateMachine.GetComponent<NavMeshAgent>().enabled = false;
         nonMonoStateMachine.GetComponent<EnemyController>().enabled = false;
         nonMonoStateMachine.GetComponent<EnemyController>().hearingTarget.StopHearing();
         //nonMonoStateMachine.transform.GetChild(3).rotation = Quaternion.Euler(90, 0, 0);
         Weapon.GetComponent<BoxCollider>().enabled = false;
         //gets the boxcollider of the weapon and disables it
-        nonMonoStateMachine.StartCoroutine(DyingCoroutine());
+        //nonMonoStateMachine.StartCoroutine(DyingCoroutine());
         nonMonoStateMachine.GetComponentsInChildren<Light>().ToList().ForEach(x => x.gameObject.SetActive(false));
     }
   

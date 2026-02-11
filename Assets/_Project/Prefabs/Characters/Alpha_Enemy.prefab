@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 4448146107113067494}
   - component: {fileID: 8654448589478923518}
   - component: {fileID: 4025827548349289605}
-  - component: {fileID: 2224132928512504485}
   - component: {fileID: 1583636481344747677}
   - component: {fileID: 5476894314125235578}
   m_Layer: 0
@@ -148,28 +147,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.6326713
   m_Center: {x: 0.0022964478, y: -0.551319, z: -1.0934194}
---- !u!95 &2224132928512504485
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2223049869280993935}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 7d2cac363098d4e4e913bd57a1f0d1e7, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &1583636481344747677
 MonoBehaviour:
   m_ObjectHideFlags: 0

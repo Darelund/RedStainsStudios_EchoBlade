@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
@@ -11,8 +12,8 @@ public class Tail : MonoBehaviour
     [SerializeField] private float range;
     [SerializeField] private float cooldown;
 
-    [SerializeField] private Image coolDownImage;
-
+    //[SerializeField] public Image coolDownImage;//All images should be seperate with an event. Now I have to do a dumb solution in the AbilityBar to make this work. We need to come up with a less dumb solution later - Vidar
+    public static event Action<float> OnTailCoolDown;
     private float timer = 0;
 
     [SerializeField] private InputActionAsset inputActions;
@@ -21,8 +22,8 @@ public class Tail : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        if (coolDownImage != null)
-            coolDownImage.fillAmount = 1;
+        //if (coolDownImage != null)
+        //    coolDownImage.fillAmount = 1;
 
         tail = inputActions.FindActionMap("Player").FindAction("Tail");
         tail.performed += Tail_Performed;
@@ -64,8 +65,9 @@ public class Tail : MonoBehaviour
         if (timer >= 0)
         {
             timer -= Time.deltaTime;
-            if (coolDownImage != null)
-                coolDownImage.fillAmount = Mathf.Lerp(0, 1, timer);
+            OnTailCoolDown?.Invoke(Mathf.Lerp(0, 1, timer));
+            //if (coolDownImage != null)
+            //    coolDownImage.fillAmount = Mathf.Lerp(0, 1, timer);
         }
     }
 

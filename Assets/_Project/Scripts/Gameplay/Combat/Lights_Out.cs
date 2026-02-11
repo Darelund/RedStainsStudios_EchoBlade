@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,7 +12,8 @@ public class Lights_Out : MonoBehaviour
     [SerializeField] private InputAction lightsOut;
     [SerializeField] private Material material;
 
-    [SerializeField] private Image coolDownImage;
+    //[SerializeField] public Image coolDownImage;//All images should be seperate with an event. Now I have to do a dumb solution in the AbilityBar to make this work. We need to come up with a less dumb solution later - Vidar
+    public static event Action<float> OnLightOutCoolDown;
 
     [SerializeField] private float slowMoFactor = 0.5f;
     [SerializeField] private float disableDuration = 5f;
@@ -28,8 +30,8 @@ public class Lights_Out : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        if(coolDownImage != null)
-        coolDownImage.fillAmount = 1;
+        //if(coolDownImage != null)
+        //coolDownImage.fillAmount = 1;
 
         lightsOut = inputActions.FindActionMap("Player").FindAction("LightsOut");
 
@@ -77,8 +79,9 @@ public class Lights_Out : MonoBehaviour
         if (timer >= 0)
         {
             timer -= Time.deltaTime;
-            if (coolDownImage != null)
-                coolDownImage.fillAmount = Mathf.Lerp(0, 1, timer);
+            OnLightOutCoolDown?.Invoke(Mathf.Lerp(0, 1, timer));
+            //if (coolDownImage != null)
+            //    coolDownImage.fillAmount = Mathf.Lerp(0, 1, timer);
         }
 
         if (throwRay)
@@ -107,8 +110,9 @@ public class Lights_Out : MonoBehaviour
                 {
                     timer = cooldown;
                 }
-                if (coolDownImage != null)
-                    coolDownImage.fillAmount = 0;
+                OnLightOutCoolDown?.Invoke(0);
+                //if (coolDownImage != null)
+                //    coolDownImage.fillAmount = 0;
 
 
             }
