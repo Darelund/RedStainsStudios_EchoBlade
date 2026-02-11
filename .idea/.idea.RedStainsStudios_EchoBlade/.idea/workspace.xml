@@ -6,12 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="1da759cc-d91c-4100-ae63-758c3494afb7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RedStainsStudios_EchoBlade/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RedStainsStudios_EchoBlade/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Art/EmaceArt/Cemetery Statue/Meshes/EA_Characters_Statue_Clean_1d.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Art/EmaceArt/Cemetery Statue/Meshes/EA_Characters_Statue_Clean_1d.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Art/Joelle_Assets/EmaceArt 1/Slavic World Free.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Art/Joelle_Assets/EmaceArt 1/Slavic World Free.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Art/Joelle_Assets/EmaceArt 1/Slavic World Free/URP_Support.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Art/Joelle_Assets/EmaceArt 1/Slavic World Free/URP_Support.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Art/Joelle_Assets/EmaceArt 1/Slavic World Free/URP_Support/URP.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Art/Joelle_Assets/EmaceArt 1/Slavic World Free/URP_Support/URP.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/AlarmSensor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/AlarmSensor.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Systems/SkillTree/Tombstone.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Systems/SkillTree/Tombstone.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
