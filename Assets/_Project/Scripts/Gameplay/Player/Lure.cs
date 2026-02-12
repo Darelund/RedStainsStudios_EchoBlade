@@ -1,4 +1,5 @@
 using System;
+using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -63,6 +64,7 @@ public class Lure : MonoBehaviour
         if (PlayerAbilities.Instance.GetAbilityState(PlayerAbility.Lure) is false || timer > 0) return;
         if (isPlaying == false)
         {
+            _particleSystem.Stop();
             _particleSystem.Play();
             isPlaying = true;
         }

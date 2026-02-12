@@ -242,8 +242,12 @@ MonoBehaviour:
     m_SingletonActionBindings: []
     m_Flags: 0
   material: {fileID: 2100000, guid: 71fa024c6925e3346bf175d539580633, type: 2}
+  targetMask:
+    serializedVersion: 2
+    m_Bits: 0
   slowMoFactor: 0.5
   disableDuration: 5
+  range: 0
   cooldown: 2
   ShowDebugs: 0
 --- !u!143 &1808223517233435165
@@ -715,7 +719,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2757453751007332260, guid: fba1c6bbba7d1c54da8154249a563f14, type: 3}
       propertyPath: stopAction
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2757453751007332260, guid: fba1c6bbba7d1c54da8154249a563f14, type: 3}
       propertyPath: playOnAwake
