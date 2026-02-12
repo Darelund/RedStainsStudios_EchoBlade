@@ -35163,15 +35163,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2313551977482861710, guid: c41f4f17102191741a116c7bd1c3b16a, type: 3}
       propertyPath: m_Quest.Array.size
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2313551977482861710, guid: c41f4f17102191741a116c7bd1c3b16a, type: 3}
       propertyPath: 'm_Quest.Array.data[0]'
-      value: '- Get The Dagger'
+      value: '- Unlock The Library'
       objectReference: {fileID: 0}
     - target: {fileID: 2313551977482861710, guid: c41f4f17102191741a116c7bd1c3b16a, type: 3}
       propertyPath: 'm_Quest.Array.data[1]'
-      value: '- Pull lever'
+      value: '- Unlock The Mess Hall'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2313551977482861710, guid: c41f4f17102191741a116c7bd1c3b16a, type: 3}
+      propertyPath: 'm_Quest.Array.data[2]'
+      value: '- Unlock The Main Hall'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2313551977482861710, guid: c41f4f17102191741a116c7bd1c3b16a, type: 3}
+      propertyPath: 'm_Quest.Array.data[3]'
+      value: '- Unlock The Storage Room'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2313551977482861710, guid: c41f4f17102191741a116c7bd1c3b16a, type: 3}
+      propertyPath: 'm_Quest.Array.data[4]'
+      value: '- Retrieve The Dagger '
       objectReference: {fileID: 0}
     - target: {fileID: 3993263649334981168, guid: c41f4f17102191741a116c7bd1c3b16a, type: 3}
       propertyPath: m_Name
