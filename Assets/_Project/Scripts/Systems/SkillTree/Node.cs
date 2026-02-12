@@ -41,6 +41,10 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IS
         {
             skillIcon.sprite = selectedSprite;
         }
+        else if(IsUnlocked)
+        {
+            skillIcon.sprite = unlockedSprite;
+        }
         else
         {
 
@@ -53,12 +57,17 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IS
         IsUsed = false;
         IsUnlocked = false;
         ResetConnectingPaths();
+
+        if(skillName == "ShadowWalk") //Sorry, ugly solution to quickly make it work
+        {
+            skillIcon.sprite = unlockedSprite;
+        }
     }
     public void Unlock()
     {
         //Debug.Log("Unlocked");
         IsUnlocked = true;
-       // skillIcon.sprite
+        skillIcon.sprite = unlockedSprite;
     }
     public void Use()
     {
@@ -137,10 +146,10 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IS
         DescriptionBoxUI.transform.GetChild(1).gameObject.SetActive(true);
 
         //Ignore skills that are already bought
-        if (skillIcon.sprite != selectedSprite && IsUnlocked)
-        {
-            skillIcon.sprite = unlockedSprite;
-        }
+        //if (skillIcon.sprite != selectedSprite && IsUnlocked)
+        //{
+        //    skillIcon.sprite = unlockedSprite;
+        //}
     }
 
     public void OnPointerExit(PointerEventData eventData)
@@ -154,10 +163,10 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IS
         DescriptionBoxUI.transform.GetChild(1).gameObject.SetActive(false);
 
         //Ignore skills that are already bought
-        if (skillIcon.sprite != selectedSprite && IsUnlocked)
-        {
-            skillIcon.sprite = IsUsed ? selectedSprite : lockedSprite;
-        }
+        //if (skillIcon.sprite != selectedSprite && IsUnlocked)
+        //{
+        //    skillIcon.sprite = IsUsed ? selectedSprite : lockedSprite;
+        //}
     }
 
     public void Save(GameData gameData)
@@ -198,7 +207,11 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IS
             {
                 IsUsed = node.IsUsed;
                 IsUnlocked = node.IsUnlocked;
-                if(IsUsed)
+                if (IsUnlocked)
+                {
+                    skillIcon.sprite = unlockedSprite;
+                }
+                if (IsUsed)
                 {
                     skillIcon.sprite = selectedSprite;
                 }
