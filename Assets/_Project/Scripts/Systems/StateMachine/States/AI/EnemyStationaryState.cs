@@ -52,6 +52,24 @@ public class EnemyStationaryState : NonMonoState
         //        nonMonoStateMachine.SwitchState<EnemyInvestigateState>();
         //        break;
         //}
+
+        var detectionState = detectionHelper.Detect();
+
+        switch (detectionState)
+        {
+            case DetectionState.DetectNone:
+                //Well do nothing
+                break;
+            case DetectionState.Chase:
+                nonMonoStateMachine.GetComponent<Conversationable>().OverrideTalkDelay();
+                nonMonoStateMachine.SwitchState<EnemyChaseState>();
+                break;
+            case DetectionState.Investigate:
+                nonMonoStateMachine.GetComponent<EnemyController>().PointOfInterest.Position = nonMonoStateMachine.GetComponent<EnemyController>().Player.transform.position;
+                nonMonoStateMachine.GetComponent<EnemyController>().InvestigationType = InvestigationType.InvestigateSaw;
+                nonMonoStateMachine.SwitchState<EnemyInvestigateState>();
+                break;
+        }
     }
     public override void ExitState()
     {
