@@ -46,6 +46,11 @@ public class S_AsyncLoadingManager : MonoBehaviour
         StartCoroutine(LoadSceneAsync("IntroScene"));
     }
 
+    public void LoadSceneIntermission(string SceneID)
+    {
+        StartCoroutine(LoadSceneAsync(SceneID));
+    }
+
     IEnumerator LoadSceneAsync(string SceneID)
     {
         AsyncOperation operation = SceneManager.LoadSceneAsync(SceneID);
