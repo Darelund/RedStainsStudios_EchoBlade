@@ -33516,43 +33516,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1.7529896, z: 1.2310549}
   m_Center: {x: -1.3388805e-10, y: 0.37649575, z: 0.11552821}
---- !u!114 &1087150935
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1087150933}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9adcbf3ea0afa644a5ab828b5eede67, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::RotateingLever
-  shouldProgressQuest: 0
-  shouldCompleteMainObjective: 0
-  objectiveCompleteScreen: {fileID: 0}
-  shouldUpdateNavMesh: 0
-  isDaggerblade: 0
-  daggerblade: {fileID: 0}
-  navMeshSurface: {fileID: 0}
-  actionMap: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-  pullAction:
-    m_Name: Pull
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 398bd40e-dd52-41f1-a0eb-bd7a3f1a4744
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
-  player: {fileID: 0}
-  camera: {fileID: 0}
-  lever: {fileID: 0}
-  door: {fileID: 957244853}
-  leverClip: {fileID: 0}
-  doorClip: {fileID: 8300000, guid: 3d2da22e88caf7947b9416b44bfad3e8, type: 3}
-  axisRotation: 90
-  rotationDuration: 2
 --- !u!4 &1087150939 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1577609632647162967, guid: a0164d9c476080e449c72cf58e7709ab, type: 3}
@@ -34448,9 +34411,6 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2575938327731363396, guid: a0164d9c476080e449c72cf58e7709ab, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1087150935}
     - targetCorrespondingSourceObject: {fileID: 2575938327731363396, guid: a0164d9c476080e449c72cf58e7709ab, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1087150934}
