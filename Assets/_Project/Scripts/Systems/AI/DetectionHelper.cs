@@ -105,7 +105,7 @@ public class DetectionHelper
         {
             Vector3 predictedDir = (eyes.position - extremityPoints[i].transform.position).normalized;
            // Vector3 predictedDir = PredictFutureDirection();
-            Physics.Raycast(extremityPoints[i].transform.position, predictedDir, out rayHit, detectionRange, (1 << 0) | (1 << 6) | (1 << 13) | (1 << 11));
+            Physics.Raycast(extremityPoints[i].transform.position, predictedDir, out rayHit, detectionRange, (1 << 0) | (1 << 6) | (1 << 13) | (1 << 15));
             Debug.DrawRay(extremityPoints[i].transform.position, (predictedDir) * detectionRange, Color.darkOliveGreen, 1);
             //Debug.Log($"Extremity position: {extremityPoints[9].GetComponentInParent<Animator>().GetBoneTransform(HumanBodyBones.Head).transform.position}");
             //if (rayHit.collider != null)
@@ -187,7 +187,7 @@ public class DetectionHelper
         {
             Vector3 predictedDir = (eyes.position - extremityPoints[i].position).normalized;
            // Vector3 predictedDir = PredictFutureDirection();
-            Physics.Raycast(extremityPoints[i].transform.position, predictedDir, out rayHit, detectionRange, (1 << 0) | (1 << 6) | (1 << 13) | (1 << 11));
+            Physics.Raycast(extremityPoints[i].transform.position, predictedDir, out rayHit, detectionRange, (1 << 0) | (1 << 6) | (1 << 13) | (1 << 15));
             Debug.DrawRay(extremityPoints[i].transform.position, (predictedDir) * detectionRange, Color.darkOrange, 1);
             if (rayHit.collider != null && rayHit.transform == detectorObject.transform)
                 return true;
@@ -222,7 +222,7 @@ public class DetectionHelper
         {
             Vector3 predictedDir = (eyes.position - extremityPoints[i].position).normalized;
             // Vector3 predictedDir = PredictFutureDirection();
-            Physics.Raycast(extremityPoints[i].transform.position, predictedDir, out rayHit, detectionRange, (1 << 0) | (1 << 6) | (1 << 13) | (1 << 11));
+            Physics.Raycast(extremityPoints[i].transform.position, predictedDir, out rayHit, detectionRange, (1 << 0) | (1 << 6) | (1 << 13) | (1 << 15));
             Debug.DrawRay(extremityPoints[i].transform.position, (predictedDir) * detectionRange, Color.darkOrange, 1);
             if (rayHit.collider != null && rayHit.transform == detectorObject.transform)
                 return true;

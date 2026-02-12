@@ -92,7 +92,10 @@ public class AbilityBar : MonoBehaviour, ISavable
     }
     private void UpdateCoolDown(float value)
     {
-        cooldownImage.fillAmount = value;
+        if (cooldownImage != null)
+        {
+            cooldownImage.fillAmount = value;
+        } 
     }
 
     public void SetNewIcon(Sprite newSprite, Sprite newCooldownSprite, int Id, PlayerAbility Value)

@@ -87,7 +87,6 @@ GameObject:
   - component: {fileID: 5638336265210893346}
   - component: {fileID: 8118166420457255260}
   - component: {fileID: 4861138536361005046}
-  - component: {fileID: 8357906937484221985}
   m_Layer: 5
   m_Name: SoundWave
   m_TagString: Untagged
@@ -178,15 +177,3 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &8357906937484221985
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8836685087178423749}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8df33c2544312a4694dece070d282ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SoundWave

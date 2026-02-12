@@ -36,15 +36,7 @@ public class HearingManager : MonoBehaviour
 
     public void OnSoundWasEmitted(Vector3 soundLocation, SoundType hearingSound, /*,float soundIntensity*/ SoundWaveData soundWaveData)
     {
-        if(soundWaveData.CreateSoundWave)
-        {
-         var soundWave = Instantiate(soundWavePrefab, soundLocation, Quaternion.identity);
-            // soundWave.GetComponentInChildren<ParticleSystem>().dur
-            soundWave.GetComponent<SoundWave>().InitializeSoundWave(soundWaveData.Duration, soundWaveData.MaxSize);
-            //soundWave.GetComponent<SoundWave>().duration = soundWaveData.Duration;
-            //soundWave.GetComponent<SoundWave>().startSize = soundWaveData.MaxSize;
-
-        }
+        
 
 
         OnHearing?.Invoke(new HeardSound(soundLocation, hearingSound /*soundIntensity)*/));
