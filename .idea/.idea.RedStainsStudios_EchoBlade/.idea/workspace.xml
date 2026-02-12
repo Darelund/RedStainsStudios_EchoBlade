@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1da759cc-d91c-4100-ae63-758c3494afb7" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Props/Tombstone.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Prefabs/Props/Tombstone.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scenes/Levels/Level_Graveyard.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scenes/Levels/Level_Graveyard.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/VFX/Armor Effect.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/UX/Angel Light.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/UX/Angel Light.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
