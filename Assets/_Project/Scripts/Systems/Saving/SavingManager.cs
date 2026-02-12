@@ -74,7 +74,12 @@ public class SavingManager : MonoBehaviour
 
     //    //}
     //}
-
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= SceneManager_sceneLoaded;
+        //SceneManager.sceneUnloaded += SceneManager_sceneUnloaded;
+        Application.quitting -= Application_quitting;
+    }
 
 
     #region Saving and Loading between scene changed and application quitting
