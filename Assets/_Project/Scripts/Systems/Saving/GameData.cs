@@ -145,6 +145,7 @@ public class EnemyData
     public Vector3 Position;
     public Quaternion Rotation; //Not sure I can save Quaternion, will try
     //public NonMonoState NonMonoState; Might use this one later
+    public Vector3 StartPosition; //Only used for knowing the start position of stationary enemies
 }
 [System.Serializable]
 public class RotatingLeverData

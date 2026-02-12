@@ -62,6 +62,8 @@ public class EnemyBreakState : NonMonoState
                 nonMonoStateMachine.SwitchState<EnemyChaseState>();
                 break;
             case DetectionState.Investigate:
+                nonMonoStateMachine.GetComponent<EnemyController>().PointOfInterest.Position = nonMonoStateMachine.GetComponent<EnemyController>().Player.transform.position;
+                nonMonoStateMachine.GetComponent<EnemyController>().InvestigationType = InvestigationType.InvestigateSaw;
                 nonMonoStateMachine.SwitchState<EnemyInvestigateState>();
                 break;
         }

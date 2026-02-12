@@ -5,6 +5,7 @@ using System.Xml;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static UnityEngine.EventSystems.EventTrigger;
 
 public class EnemyController : NonMonoBehaviourStateMachine, ISavable
 {
@@ -26,6 +27,7 @@ public class EnemyController : NonMonoBehaviourStateMachine, ISavable
 
     private bool isDead = false;
     public string enemyID;
+    private Vector3 startPos; //Only used for getting the startposition of stationary enemies
 
    public bool IsDead()
     {
@@ -58,7 +60,11 @@ public class EnemyController : NonMonoBehaviourStateMachine, ISavable
             SwitchState<EnemyDeathState>();
             return;
         }
-
+        if (ShouldPatrol is false && startPos != Vector3.zero)
+        {
+            var stat = states.Find(s => s.GetType() == typeof(EnemyStationaryState)) as EnemyStationaryState;
+            stat.startPosition = startPos;
+        }
         if (ShouldPatrol)
             SwitchState<EnemyPatrolState>();
         else
@@ -107,7 +113,13 @@ public class EnemyController : NonMonoBehaviourStateMachine, ISavable
                 return;
             }
         }
-        gameData.EnemiesData.Add(new EnemyData() { ID = enemyID, IsDead = IsDead(), Position = transform.position, Rotation = transform.rotation });
+        var startPosition = Vector3.zero;
+        if (ShouldPatrol is false)
+        {
+            var stat = states.Find(s => s.GetType() == typeof(EnemyStationaryState)) as EnemyStationaryState;
+            startPosition = stat.startPosition;
+        }
+        gameData.EnemiesData.Add(new EnemyData() { ID = enemyID, IsDead = IsDead(), Position = transform.position, Rotation = transform.rotation, StartPosition = startPosition });
     }
 
     public void Load(GameData gameData)
@@ -123,6 +135,11 @@ public class EnemyController : NonMonoBehaviourStateMachine, ISavable
                 if(isDead is true)
                 {
                     Debug.Log($"{gameObject.name} is dead");
+                }
+                if (ShouldPatrol is false)
+                {
+                    //var stat = states.Find(s => s.GetType() == typeof(EnemyStationaryState)) as EnemyStationaryState;
+                   startPos = enemy.StartPosition;
                 }
                 transform.position = enemy.Position;
                 transform.rotation = enemy.Rotation;

@@ -10,8 +10,13 @@ public class EnemyStationaryState : NonMonoState
     private int RotationIndex = 0;
     private float timer = 0;
     private DetectionHelper detectionHelper;
+    public Vector3 startPosition;
+    private bool isAtStartPosition;
+    private bool goingTowardsStartPosition;
+
     public EnemyStationaryState(NonMonoBehaviourStateMachine nonMonoStateMachine, DetectionHelper detectionHelper) : base(nonMonoStateMachine)
     {
+        startPosition = nonMonoStateMachine.transform.position;
         this.RotationList = new List<Quaternion>()
         {
             Quaternion.Euler(0, Random.Range(0, 361), 0),
@@ -26,11 +31,25 @@ public class EnemyStationaryState : NonMonoState
     }
     public override void EnterState()
     {
+        if(isAtStartPosition is false)
+        {
+            agent.SetDestination(startPosition);
+
+        }
         RotationList[RotationIndex] = agent.transform.rotation;
         //sets the rotationlist at the index to the current transform.rotation
     }
     public override void UpdateState()
     {
+        if(isAtStartPosition is false)
+        {
+            if (Vector3.Distance(nonMonoStateMachine.transform.position, startPosition) <= 0.8f)
+            {
+                isAtStartPosition = true;
+            }
+        }
+
+
         while (timer <= 10 && agent.transform.rotation != RotationList[RotationIndex])
         {
             timer += Time.deltaTime;
@@ -73,6 +92,7 @@ public class EnemyStationaryState : NonMonoState
     }
     public override void ExitState()
     {
+        isAtStartPosition = false;
         RotationIndex++;
         if (RotationIndex >= RotationList.Count)
         {
