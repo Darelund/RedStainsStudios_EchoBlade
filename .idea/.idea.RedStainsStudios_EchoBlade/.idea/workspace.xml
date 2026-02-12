@@ -5,13 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1da759cc-d91c-4100-ae63-758c3494afb7" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.RedStainsStudios_EchoBlade/.idea/discord.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RedStainsStudios_EchoBlade/.idea/discord.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RedStainsStudios_EchoBlade/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RedStainsStudios_EchoBlade/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Art/Environments/Door_lever prefab/Lever_Prefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Art/Environments/Door_lever prefab/Lever_Prefab.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Art/Joelle_Assets/EmaceArt 1/Slavic World Free.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Art/Joelle_Assets/EmaceArt 1/Slavic World Free.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scenes/Levels/Level_Graveyard.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scenes/Levels/Level_Graveyard.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Gameplay/Map/RotateingLever.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Gameplay/Map/RotateingLever.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Systems/StateMachine/States/Game/CutsceneState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Systems/StateMachine/States/Game/CutsceneState.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +39,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Lever2DoorInteraction&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;CNEB-189-fix-altar-prefab-and-exchange-all&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -117,6 +111,7 @@
       <workItem from="1770718682323" duration="445000" />
       <workItem from="1770822427104" duration="333000" />
       <workItem from="1770826175378" duration="2658000" />
+      <workItem from="1770889185100" duration="750000" />
     </task>
     <servers />
   </component>
