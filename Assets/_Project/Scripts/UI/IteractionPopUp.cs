@@ -8,12 +8,15 @@ public class IteractionPopUp : MonoBehaviour
     [SerializeField] private GameObject[] texts;
     [SerializeField] private float fadeDuration = 1f;
 
+    private AudioSource audioSource;
     public bool isDone;
 
 
     void Start()
     {
         StartCoroutine(Intermission());
+        audioSource = GetComponent<AudioSource>();
+        audioSource.Play();
     }
 
     IEnumerator Intermission()
@@ -30,10 +33,10 @@ public class IteractionPopUp : MonoBehaviour
         foreach (var text in texts)
         {
             StartCoroutine(FadeIn(text.GetComponent<CanvasGroup>()));
-            yield return new WaitForSeconds(3f);
+            yield return new WaitForSeconds(1f);
         }
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(3f);
 
         foreach (var text in texts)
         {
