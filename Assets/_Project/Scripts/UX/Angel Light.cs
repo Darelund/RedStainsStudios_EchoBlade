@@ -3,10 +3,15 @@ using UnityEngine;
 
 public class AngelLight : MonoBehaviour
 {
+    [Header("Light Settings")]
     [SerializeField] private Light Spotlight;
     [SerializeField] private float Duration = 1.5f;
     [SerializeField] private float T_Intensity = 200f;
-
+    [Space(10)]
+    [Header("Sound Settings")]
+    [SerializeField] private 
+        
+    
     private Coroutine running;
 
     private void OnTriggerEnter(Collider other)
