@@ -8,16 +8,21 @@ public class EnemyDeathState : NonMonoState
     private float deathTime = 1f;
     private float currentDeathTime;
     GameObject Weapon;
-    public EnemyDeathState(NonMonoBehaviourStateMachine nonMonoStateMachine, GameObject weapon) : base(nonMonoStateMachine)
+    ParticleSystem blood1;
+    public EnemyDeathState(NonMonoBehaviourStateMachine nonMonoStateMachine, GameObject weapon, ParticleSystem blood) : base(nonMonoStateMachine)
     {
         Weapon = weapon;
+       blood1 = blood;
     }
 
     public override void EnterState()
     {
         //TODO: Switch to death animation
         //TODO: Play Death Sound
+        Debug.Log("Enemy Died");
+        blood1.Play();
         nonMonoStateMachine.GetComponentInChildren<Animator>().Play("Dying");
+       
         nonMonoStateMachine.GetComponent<NavMeshAgent>().enabled = false;
         nonMonoStateMachine.GetComponent<EnemyController>().enabled = false;
         nonMonoStateMachine.GetComponent<EnemyController>().hearingTarget.StopHearing();
@@ -30,6 +35,8 @@ public class EnemyDeathState : NonMonoState
   
     public override void UpdateState()
     {
+       
+
     }
 
     private IEnumerator DyingCoroutine()
