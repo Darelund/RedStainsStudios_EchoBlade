@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1da759cc-d91c-4100-ae63-758c3494afb7" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.RedStainsStudios_EchoBlade/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RedStainsStudios_EchoBlade/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scenes/Levels/Level_Graveyard.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scenes/Levels/Level_Graveyard.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scenes/Levels/Level_Manor.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scenes/Levels/Level_Manor.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Gameplay/Map/Door.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Gameplay/Map/Door.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Systems/Menu &amp; Scenes/S_AsyncLoadingManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Systems/Menu &amp; Scenes/S_AsyncLoadingManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,7 +120,7 @@
       <workItem from="1770889185100" duration="750000" />
       <workItem from="1770904063801" duration="1844000" />
       <workItem from="1770914445811" duration="2025000" />
-      <workItem from="1770920045717" duration="794000" />
+      <workItem from="1770920045717" duration="1164000" />
     </task>
     <servers />
   </component>

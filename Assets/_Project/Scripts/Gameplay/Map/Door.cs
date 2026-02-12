@@ -14,7 +14,7 @@ public class Door : MonoBehaviour
         {
             //QuestLog.instance.ProgressQuest();
             SavingManager.Instance.SaveData();
-            if (LoadingManager != null) LoadingManager.LoadSceneIntermission("Level_Manor");
+            if (LoadingManager != null) LoadingManager.LoadSceneIntermission(LevelName);
         }
     }
 }
