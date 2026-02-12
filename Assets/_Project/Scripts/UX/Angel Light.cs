@@ -8,8 +8,13 @@ public class AngelLight : MonoBehaviour
     [SerializeField] private float T_Intensity = 200f;
     [SerializeField] private float targetVolume = 0.3f;
 
+    [Header("Spawn")]
+    [SerializeField] private GameObject crow;
+    [SerializeField] private Transform spawnPoint;
+
     AudioSource src;
     Coroutine running;
+    GameObject spawned;
 
     void Awake()
     {
@@ -20,23 +25,21 @@ public class AngelLight : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        // detect player by Movement component (works regardless of tags)
-        if (other.GetComponentInParent<Movement>() == null) return;
-
         if (running != null) StopCoroutine(running);
-        if (src != null) { src.Play(); }
-        running = StartCoroutine(LightAndAudioOn());
+        src?.Play();
+        if (spawned == null && crow != null)
+            spawned = Instantiate(crow, spawnPoint != null ? spawnPoint.position : transform.position, spawnPoint != null ? spawnPoint.rotation : Quaternion.identity);
+        running = StartCoroutine(FadeIn());
     }
 
     void OnTriggerExit(Collider other)
     {
-        if (other.GetComponentInParent<Movement>() == null) return;
-
         if (running != null) StopCoroutine(running);
-        running = StartCoroutine(LightAndAudioOff());
+        if (spawned != null) { Destroy(spawned); spawned = null; }
+        running = StartCoroutine(FadeOut());
     }
 
-    IEnumerator LightAndAudioOn()
+    IEnumerator FadeIn()
     {
         float t = 0f;
         float fromI = Spotlight != null ? Spotlight.intensity : 0f;
@@ -56,7 +59,7 @@ public class AngelLight : MonoBehaviour
         running = null;
     }
 
-    IEnumerator LightAndAudioOff()
+    IEnumerator FadeOut()
     {
         float t = 0f;
         float fromI = Spotlight != null ? Spotlight.intensity : T_Intensity;

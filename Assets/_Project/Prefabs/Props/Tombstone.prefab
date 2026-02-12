@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6763580568913044106}
   - component: {fileID: 7570583017620229133}
   - component: {fileID: 6741329237870969983}
+  - component: {fileID: 1577554751426648625}
   m_Layer: 0
   m_Name: Tombstone
   m_TagString: Untagged
@@ -32,6 +33,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 8559802386798512209}
   - {fileID: 4674054317663982907}
   - {fileID: 7652785919853283393}
   m_Father: {fileID: 0}
@@ -51,6 +53,9 @@ MonoBehaviour:
   Spotlight: {fileID: 7152491447505424525}
   Duration: 1.5
   T_Intensity: 200
+  targetVolume: 0.3
+  crow: {fileID: 8404589616218928829, guid: ad9ec25d25f19da4bb90bf9f53d43fe8, type: 3}
+  spawnPoint: {fileID: 8559802386798512209}
 --- !u!114 &7570583017620229133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91,6 +96,134 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 5, y: 4, z: 8.797031}
   m_Center: {x: -0.000000044740393, y: 2, z: 1.8985074}
+--- !u!82 &1577554751426648625
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 443452132199013798}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -1242680982991743210, guid: cb630b219fc465d4c95e7cf50f146a8e, type: 2}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: 70a8fbdcc917db5499288f3d2b51520c, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.3
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!1 &3475809934553300664
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8559802386798512209}
+  m_Layer: 0
+  m_Name: KevinSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8559802386798512209
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3475809934553300664}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.06075923, z: -0, w: -0.99815243}
+  m_LocalPosition: {x: -0.25952688, y: 3.0291202, z: 0.07737063}
+  m_LocalScale: {x: 0.18683, y: 0.18683, z: 0.18683}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7092473153084983152}
+  m_LocalEulerAnglesHint: {x: 0, y: -192.48, z: 0}
 --- !u!1 &6546544095108129789
 GameObject:
   m_ObjectHideFlags: 0
