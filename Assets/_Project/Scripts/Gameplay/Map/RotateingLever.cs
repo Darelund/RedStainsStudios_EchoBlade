@@ -9,6 +9,8 @@ public class RotateingLever : MonoBehaviour
     private bool isPulled = false;
     private bool canPull = false;
 
+    [SerializeField] private bool shouldProgressQuest;
+
     [SerializeField] private InputActionAsset actionMap;
     [SerializeField] private InputAction pullAction;
 
@@ -40,6 +42,11 @@ public class RotateingLever : MonoBehaviour
             StartCoroutine(PullLever(1f));
             StartCoroutine(RotateDoor());
             isPulled = true;
+            if (shouldProgressQuest)
+            {
+                QuestLog.instance.ProgressQuest();
+            }
+            
         }
     }
 
