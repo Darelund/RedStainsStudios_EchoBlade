@@ -8,18 +8,21 @@ public class SavingManager : MonoBehaviour
     private static SavingManager instance;
     public static SavingManager Instance => instance;
 
-
+    public bool UseSingleton = true;
     private void Awake()
     {
+      
+
         if (instance != null)
         {
             Destroy(gameObject);
             return;
         }
-        DontDestroyOnLoad(gameObject);
         instance = this;
 
         Initialize();
+        if (UseSingleton is false) return;
+        DontDestroyOnLoad(gameObject);
     }
     #endregion
 

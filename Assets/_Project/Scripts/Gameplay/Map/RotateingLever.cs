@@ -12,6 +12,8 @@ public class RotateingLever : MonoBehaviour
     private AudioSource audioSource;
 
     [SerializeField] private bool shouldProgressQuest;
+    [SerializeField] private bool shouldCompleteMainObjective;
+    [SerializeField] private GameObject objectiveCompleteScreen;
     [SerializeField] private bool shouldUpdateNavMesh;
     [SerializeField] private bool isDaggerblade;
     [SerializeField] private GameObject daggerblade;
@@ -109,6 +111,13 @@ public class RotateingLever : MonoBehaviour
         camera.Target.TrackingTarget = player.transform;
         if (shouldUpdateNavMesh)
         navMeshSurface.UpdateNavMesh(navMeshSurface.navMeshData);
+
+        if(shouldCompleteMainObjective)
+        {
+            objectiveCompleteScreen.SetActive(true);
+            yield return new WaitForSeconds(7f);
+        }
+
         yield return new WaitForSeconds(0.6f);
         GameManager.Instance.SwitchState<PlayingState>();
     }
