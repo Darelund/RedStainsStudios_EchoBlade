@@ -15779,7 +15779,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2313551977482861710, guid: c41f4f17102191741a116c7bd1c3b16a, type: 3}
       propertyPath: 'm_Quest.Array.data[0]'
-      value: '- Get The Dagger'
+      value: '- Escape The Manor'
       objectReference: {fileID: 0}
     - target: {fileID: 2313551977482861710, guid: c41f4f17102191741a116c7bd1c3b16a, type: 3}
       propertyPath: 'm_Quest.Array.data[1]'
