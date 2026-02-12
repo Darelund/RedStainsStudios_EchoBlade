@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4025827548349289605}
   - component: {fileID: 1583636481344747677}
   - component: {fileID: 5476894314125235578}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Alpha_Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -86,11 +86,15 @@ MonoBehaviour:
   - {fileID: 0}
   weapon: {fileID: 3351010614528805682}
   blood: {fileID: 3015370255155736177}
+  PointOfInterest:
+    Position: {x: 0, y: 0, z: 0}
+    Direction: {x: 0, y: 0, z: 0}
   ShouldPatrol: 1
   hearingRange: 13
   ShowGizmos: 1
   ShowHearingDebugs: 0
   InvestigationType: 0
+  enemyID: 
 --- !u!195 &4448146107113067494
 NavMeshAgent:
   m_ObjectHideFlags: 0

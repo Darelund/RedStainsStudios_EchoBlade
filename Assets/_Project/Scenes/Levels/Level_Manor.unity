@@ -4472,7 +4472,7 @@ PrefabInstance:
       objectReference: {fileID: 1617669294}
     - target: {fileID: 7570583017620229133, guid: 85320e484edcf3b47b213c73ad459709, type: 3}
       propertyPath: skillPoints
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7570583017620229133, guid: 85320e484edcf3b47b213c73ad459709, type: 3}
       propertyPath: inputActions

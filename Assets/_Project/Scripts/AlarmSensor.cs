@@ -16,7 +16,7 @@ public class AlarmSensor : MonoBehaviour
     }
     private void GetNearbyEnemies(Transform investigationPoint)
     {
-        Collider[] colliders = Physics.OverlapSphere(transform.position, alarmArea, 1 << 9);
+        Collider[] colliders = Physics.OverlapSphere(transform.position, alarmArea, 1 << 15);
         //TODO: Add a tag for enemies so I don't need to do this
         List<EnemyController> nearbyEnemies = new List<EnemyController>();
         foreach (var collider in colliders)
