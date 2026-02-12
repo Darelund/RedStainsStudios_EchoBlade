@@ -8,8 +8,11 @@ public class RotateingLever : MonoBehaviour
 {
     private bool isPulled = false;
     private bool canPull = false;
+    private AudioSource audioSource;
 
     [SerializeField] private bool shouldProgressQuest;
+    [SerializeField] private bool isDaggerblade;
+    [SerializeField] private GameObject daggerblade;
 
     [SerializeField] private InputActionAsset actionMap;
     [SerializeField] private InputAction pullAction;
@@ -18,6 +21,7 @@ public class RotateingLever : MonoBehaviour
     [SerializeField] private CinemachineCamera camera;
     [SerializeField] private GameObject lever;
     [SerializeField] private GameObject door;
+    [SerializeField] private AudioClip leverClip;
     [SerializeField] private AudioClip doorClip;
 
     [SerializeField] private float axisRotation;
@@ -33,6 +37,8 @@ public class RotateingLever : MonoBehaviour
         pullAction = actionMap.FindActionMap("Player").FindAction("Interact");
 
         pullAction.performed += PullAction_performed;
+
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void PullAction_performed(InputAction.CallbackContext obj)
@@ -52,33 +58,43 @@ public class RotateingLever : MonoBehaviour
 
     private IEnumerator PullLever(float duration) 
     {
-        if (duration <= 0f) duration = 0.01f;
-        
-        float timeElapsed = 0f;
-        float StartAngle = -75;
-        float EndAngle = 75;
-
-        while (timeElapsed < rotationDuration)
+        if (isDaggerblade)
         {
-            timeElapsed += Time.deltaTime;
-            float t = Mathf.Clamp01(timeElapsed / duration);
-            float angle = Mathf.Lerp(StartAngle, EndAngle, t);
-            
-            Vector3 Euler = lever.transform.localEulerAngles;
-            Euler.x = angle;
-            lever.transform.localEulerAngles = Euler;
-            
+            daggerblade.SetActive(false);
             yield return null;
         }
-        
-        Vector3 finalEuler = lever.transform.localEulerAngles;
-        finalEuler.x = EndAngle;
-        lever.transform.localEulerAngles = finalEuler;
+
+        else
+        {
+            if (duration <= 0f) duration = 0.01f;
+
+            float timeElapsed = 0f;
+            float StartAngle = -75;
+            float EndAngle = 75;
+
+            while (timeElapsed < rotationDuration)
+            {
+                timeElapsed += Time.deltaTime;
+                float t = Mathf.Clamp01(timeElapsed / duration);
+                float angle = Mathf.Lerp(StartAngle, EndAngle, t);
+
+                Vector3 Euler = lever.transform.localEulerAngles;
+                Euler.x = angle;
+                lever.transform.localEulerAngles = Euler;
+
+                yield return null;
+            }
+
+            Vector3 finalEuler = lever.transform.localEulerAngles;
+            finalEuler.x = EndAngle;
+            lever.transform.localEulerAngles = finalEuler;
+        }
     }
     
     private IEnumerator RotateDoor()
     {
         GameManager.Instance.SwitchState<CutsceneState>();
+        audioSource.PlayOneShot(leverClip);
         yield return new WaitForSeconds(1.5f);
         camera.Target.TrackingTarget = door.transform;
         yield return new WaitForSeconds(1f);
