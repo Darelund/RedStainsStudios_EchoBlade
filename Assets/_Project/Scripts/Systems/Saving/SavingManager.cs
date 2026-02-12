@@ -18,6 +18,8 @@ public class SavingManager : MonoBehaviour
         }
         DontDestroyOnLoad(gameObject);
         instance = this;
+
+        Initialize();
     }
     #endregion
 
@@ -31,18 +33,22 @@ public class SavingManager : MonoBehaviour
 
     private void Start()
     {
+       
+    }
+    private void Initialize()
+    {
         savables = GameObject.FindObjectsByType<MonoBehaviour>(FindObjectsInactive.Include, FindObjectsSortMode.None).
-            OfType<ISavable>().ToList();
+           OfType<ISavable>().ToList();
 
-        savables.ForEach(s =>
-            Debug.Log(s.GetType()) );
-            // savables = GameObject.FindObjectsOfType<MonoBehaviour>()
+        //savables.ForEach(s =>
+        //    Debug.Log(s.GetType()));
+        // savables = GameObject.FindObjectsOfType<MonoBehaviour>()
 
-            fileSaver = new JsonSaver();
+        fileSaver = new JsonSaver();
         //LOAD DAT DATA!!!
         LoadData();
 
-      //  SceneManager.activeSceneChanged += SceneManager_activeSceneChanged;
+        //  SceneManager.activeSceneChanged += SceneManager_activeSceneChanged;
         SceneManager.sceneLoaded += SceneManager_sceneLoaded;
         SceneManager.sceneUnloaded += SceneManager_sceneUnloaded;
         //SceneManager.activeSceneChanged += SceneManager_activeSceneChanged;
@@ -125,10 +131,11 @@ public class SavingManager : MonoBehaviour
     }
     public void LoadData()
     {
-        gameData = fileSaver.Load();
+        if (gameData == null)
+            gameData = fileSaver.Load();
 
 
-        if(gameData == null)
+        if (gameData == null)
         {
             Debug.LogError("Seems like this is your first time loading?" +
                 "That means I will create a new save for you");
