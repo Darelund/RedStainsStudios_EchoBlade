@@ -1,7 +1,8 @@
 using System.Collections;
 using System.Linq;
 using UnityEngine;
-
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 public class DeathState : State, ISavable
 {
     [SerializeField] private GameObject DeathScreenUI;
@@ -18,6 +19,8 @@ public class DeathState : State, ISavable
 
 
 
+        GameObject.FindAnyObjectByType<Volume>().profile.TryGet(out DepthOfField d);
+        d.active = true;
         StartCoroutine(FadeInDeathScreenCoroutine());
     }
     public override void UpdateState()
@@ -40,7 +43,7 @@ public class DeathState : State, ISavable
     //    //    yield return new WaitForSeconds(waitBetweenEachAnimation);
     //    //    waitBetweenEachAnimation = Random.Range(0.01f, 0.15f);
     //    //}
-      
+
     //    StartCoroutine(FadeInDeathScreenCoroutine());
     //}
     private IEnumerator FadeInDeathScreenCoroutine()
