@@ -35,7 +35,6 @@ public class AngelLight : MonoBehaviour
     void OnTriggerExit(Collider other)
     {
         if (running != null) StopCoroutine(running);
-        if (spawned != null) { Destroy(spawned); spawned = null; }
         running = StartCoroutine(FadeOut());
     }
 
