@@ -12,8 +12,9 @@ public class EnemyController : NonMonoBehaviourStateMachine, ISavable
     [SerializeField] private LightChanger lightChanger;
     [SerializeField] List<Transform> waypoints = new List<Transform>();
     [SerializeField] GameObject weapon;
+    [SerializeField] ParticleSystem blood;
     [NonSerialized] public GameObject Player;
-    [SerializeField] public InterestPoint PointOfInterest = new InterestPoint();
+    public InterestPoint PointOfInterest = new InterestPoint();
     public bool ShouldPatrol = true;
     public float hearingRange;
     public bool ShowGizmos = false;
@@ -44,7 +45,7 @@ public class EnemyController : NonMonoBehaviourStateMachine, ISavable
         states.Add(new EnemyAlertedState(this));
         states.Add(new EnemyAttackState(this, detectionHelper));
         states.Add(new EnemyStationaryState(this, detectionHelper));
-        states.Add(new EnemyDeathState(this, weapon));
+        states.Add(new EnemyDeathState(this, weapon, blood));
         states.Add(new EnemyTalkState(this));
         states.Add(new EnemyBreakState(this, detectionHelper));
 

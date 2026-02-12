@@ -1,6 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
-using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -12,9 +10,6 @@ public class RotateingLever : MonoBehaviour
     [SerializeField] private InputActionAsset actionMap;
     [SerializeField] private InputAction pullAction;
 
-    [SerializeField] private GameObject player;
-    [SerializeField] private CinemachineCamera camera;
-    [SerializeField] private GameObject lever;
     [SerializeField] private GameObject door;
     [SerializeField] private AudioClip doorClip;
 
@@ -37,49 +32,21 @@ public class RotateingLever : MonoBehaviour
     {
         if (canPull && !isPulled)
         {
-            StartCoroutine(PullLever(1f));
             StartCoroutine(RotateDoor());
             isPulled = true;
         }
     }
 
-    private IEnumerator PullLever(float duration) 
-    {
-        if (duration <= 0f) duration = 0.01f;
-        
-        float timeElapsed = 0f;
-        float StartAngle = -75;
-        float EndAngle = 75;
-
-        while (timeElapsed < rotationDuration)
-        {
-            timeElapsed += Time.deltaTime;
-            float t = Mathf.Clamp01(timeElapsed / duration);
-            float angle = Mathf.Lerp(StartAngle, EndAngle, t);
-            
-            Vector3 Euler = lever.transform.localEulerAngles;
-            Euler.x = angle;
-            lever.transform.localEulerAngles = Euler;
-            
-            yield return null;
-        }
-        
-        Vector3 finalEuler = lever.transform.localEulerAngles;
-        finalEuler.x = EndAngle;
-        lever.transform.localEulerAngles = finalEuler;
-    }
-    
     private IEnumerator RotateDoor()
     {
-        GameManager.Instance.SwitchState<CutsceneState>();
-        yield return new WaitForSeconds(1.5f);
-        camera.Target.TrackingTarget = door.transform;
-        yield return new WaitForSeconds(1f);
         door.gameObject.GetComponent<AudioSource>().PlayOneShot(doorClip);
-        door.gameObject.GetComponent<Animator>().SetTrigger("OpenDoor");
-        yield return new WaitForSeconds(2f);
-        camera.Target.TrackingTarget = player.transform;
-        GameManager.Instance.SwitchState<PlayingState>();
+        while (rotationDuration >= 0)
+        {
+            rotationDuration -= Time.deltaTime;
+
+            door.transform.rotation = Quaternion.Lerp(door.transform.rotation, targetRotation, rotationDuration);
+            yield return null;
+        }
     }
 
     private void OnTriggerEnter(Collider other)

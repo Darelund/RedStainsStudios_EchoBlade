@@ -12,8 +12,8 @@ public class MenuNavigation : MonoBehaviour
     [SerializeField] private CinemachineCamera cameraTo;
 
     //canvas variables
-    [SerializeField] private GameObject menuToOpen;
-    [SerializeField] private GameObject canvasToClose;
+    /* [SerializeField] private GameObject menuToOpen;
+    [SerializeField] private GameObject canvasToClose; */
 
     public void OnButtonClick()
     {
@@ -23,7 +23,7 @@ public class MenuNavigation : MonoBehaviour
             cameraTo.Priority = 10;
         }
 
-        menuToOpen.SetActive(true);
-        canvasToClose.SetActive(false);
+        /* menuToOpen.SetActive(true);
+        canvasToClose.SetActive(false); */
     }
 }

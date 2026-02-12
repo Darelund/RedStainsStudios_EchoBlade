@@ -33,9 +33,9 @@ public class TakeDown : MonoBehaviour
     private void TakeDown_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
     {
         if (canTakedown && GameObject.FindAnyObjectByType<PlayerAbilities>().GetAbilityState(PlayerAbility.SilentDakeDown) is false) return;
-
         if (timer > 0 || enemy != null)
         {
+
             GetComponent<Movement>().controller.Move(Vector3.zero);
             GetComponent<Movement>().DisableAllActions();
             StartCoroutine(CooldownCoroutine());
