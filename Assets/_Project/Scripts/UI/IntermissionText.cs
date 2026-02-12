@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class IntermissionText : MonoBehaviour
@@ -14,6 +15,13 @@ public class IntermissionText : MonoBehaviour
     void Start()
     {
         StartCoroutine(Intermission());
+    }
+    private void Update()
+    {
+        if(Keyboard.current.spaceKey.wasPressedThisFrame)
+        {
+            SceneManager.LoadScene(sceneToLoad);
+        }
     }
 
     IEnumerator Intermission()
@@ -41,6 +49,7 @@ public class IntermissionText : MonoBehaviour
         }
 
         yield return new WaitForSeconds(2f);
+
         SceneManager.LoadScene(sceneToLoad);
 
 
