@@ -9989,11 +9989,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1158451893}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &752962650 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5675564288394357073, guid: 475182105b47df94f850a3f3f468d13d, type: 3}
-  m_PrefabInstance: {fileID: 1868600272}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &754894492 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4585060622950652, guid: 86d84285ef39db64c986f37878b14861, type: 3}
@@ -10642,78 +10637,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6828340663301431137, guid: 0ccc223d5800a2644998c3a7b41e13f5, type: 3}
   m_PrefabInstance: {fileID: 811177112}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &814777566
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 814777567}
-  - component: {fileID: 814777569}
-  - component: {fileID: 814777568}
-  m_Layer: 5
-  m_Name: Loading Bar Place Holder
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &814777567
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 814777566}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 5807197685545545264}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &814777568
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 814777566}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.RawImage
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Texture: {fileID: 2800000, guid: ed0c2c8a99e92e14ba740ac8aa428288, type: 3}
-  m_UVRect:
-    serializedVersion: 2
-    x: 2
-    y: 2
-    width: 2
-    height: 1
---- !u!222 &814777569
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 814777566}
-  m_CullTransparentMesh: 1
 --- !u!1001 &816796218
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24297,66 +24220,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 777861775}
     m_Modifications:
-    - target: {fileID: 445308755055849788, guid: 475182105b47df94f850a3f3f468d13d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 445308755055849788, guid: 475182105b47df94f850a3f3f468d13d, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 445308755055849788, guid: 475182105b47df94f850a3f3f468d13d, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 445308755055849788, guid: 475182105b47df94f850a3f3f468d13d, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1209773785337410912, guid: 475182105b47df94f850a3f3f468d13d, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1359206195162239381, guid: 475182105b47df94f850a3f3f468d13d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1359206195162239381, guid: 475182105b47df94f850a3f3f468d13d, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1359206195162239381, guid: 475182105b47df94f850a3f3f468d13d, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1359206195162239381, guid: 475182105b47df94f850a3f3f468d13d, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1981203909159679351, guid: 475182105b47df94f850a3f3f468d13d, type: 3}
       propertyPath: MainCamera
       value: 
       objectReference: {fileID: 1819115190}
-    - target: {fileID: 1981203909159679351, guid: 475182105b47df94f850a3f3f468d13d, type: 3}
-      propertyPath: LoadingScreen
-      value: 
-      objectReference: {fileID: 752962650}
-    - target: {fileID: 1981203909159679351, guid: 475182105b47df94f850a3f3f468d13d, type: 3}
-      propertyPath: minLoadingTime
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1981203909159679351, guid: 475182105b47df94f850a3f3f468d13d, type: 3}
-      propertyPath: LoadingBarFillImage
-      value: 
-      objectReference: {fileID: 1556264207}
-    - target: {fileID: 2803782559176832127, guid: 475182105b47df94f850a3f3f468d13d, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5675564288394357073, guid: 475182105b47df94f850a3f3f468d13d, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5807197684079607264, guid: 475182105b47df94f850a3f3f468d13d, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -24441,16 +24308,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Loading Screen Canvas
       objectReference: {fileID: 0}
-    - target: {fileID: 8326260712870869175, guid: 475182105b47df94f850a3f3f468d13d, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 5807197684079607264, guid: 475182105b47df94f850a3f3f468d13d, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 814777567}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 475182105b47df94f850a3f3f468d13d, type: 3}
 --- !u!1001 &1875701411
