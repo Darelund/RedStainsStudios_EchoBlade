@@ -8,7 +8,8 @@ public class DamageTest : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Player"))
         {
-            GameManager.Instance.SwitchState<DeathState>();
+            if (other.gameObject.layer != 11)
+                GameManager.Instance.SwitchState<DeathState>();
         }
     }
 }

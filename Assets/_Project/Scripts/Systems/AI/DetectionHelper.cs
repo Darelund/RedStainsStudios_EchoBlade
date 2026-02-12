@@ -12,7 +12,10 @@ public enum DetectionState
     Detect,
     Investigate
 }
-public struct InterestPoint
+
+
+[System.Serializable]
+public class InterestPoint
 {
     public Vector3 Position;
     public Vector3 Direction;
@@ -21,6 +24,7 @@ public struct InterestPoint
         Position = position;
         Direction = direction;
     }
+    public InterestPoint() { }
 }
 public class DetectionHelper
 {
@@ -204,6 +208,26 @@ public class DetectionHelper
         //        return true;
         //}
         //Debug.Log($"Cant see - distance {distance}");
+        return false;
+
+    }
+    public bool PlayerAround2()
+    {
+        float distance = Vector3.Distance(target.transform.position, detectorObject.position);
+        if (distance > detectionRange) return false;
+
+        RaycastHit rayHit;
+
+        for (int i = 0; i < extremityPoints.Count; i++)
+        {
+            Vector3 predictedDir = (eyes.position - extremityPoints[i].position).normalized;
+            // Vector3 predictedDir = PredictFutureDirection();
+            Physics.Raycast(extremityPoints[i].transform.position, predictedDir, out rayHit, detectionRange, (1 << 0) | (1 << 6) | (1 << 13) | (1 << 9));
+            Debug.DrawRay(extremityPoints[i].transform.position, (predictedDir) * detectionRange, Color.darkOrange, 1);
+            if (rayHit.collider != null && rayHit.transform == detectorObject.transform)
+                return true;
+        }
+        
         return false;
 
     }

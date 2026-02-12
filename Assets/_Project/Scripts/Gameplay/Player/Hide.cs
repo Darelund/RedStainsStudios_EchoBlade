@@ -53,7 +53,7 @@ public class Hide : MonoBehaviour
     private void HideInObject(GameObject thingsToHideIn)
     {
         isHiding = true;
-        gameObject.layer = 9;
+        gameObject.layer = 11;
         StartCoroutine(HideCoroutine(thingsToHideIn));
     }
     private void RevealFromObject()

@@ -8,14 +8,15 @@ public class EnemyAttackState : NonMonoState
     private Transform transform;
     private float attackRange = 2.3f;
     private NavMeshAgent agent;
-
+    private DetectionHelper detectionHelper;
     private bool isAttacking;
     private float attackCooldown = 1f;
     //private 
-    public EnemyAttackState(NonMonoBehaviourStateMachine nonMonoStateMachine) : base(nonMonoStateMachine)
+    public EnemyAttackState(NonMonoBehaviourStateMachine nonMonoStateMachine, DetectionHelper detectionHelper) : base(nonMonoStateMachine)
     {
         transform = nonMonoStateMachine.transform;
         agent = nonMonoStateMachine.GetComponent<NavMeshAgent>();
+        this.detectionHelper = detectionHelper;
     }
     public override void EnterState()
     {
@@ -38,20 +39,20 @@ public class EnemyAttackState : NonMonoState
     }
     private void AttackTarget()
     {
-
-       
-        //Debug.Log("Attacking target");
-        //TODO: Attack player
         agent.transform.rotation = Quaternion.Lerp(agent.transform.rotation, Quaternion.LookRotation((targetTransform.transform.position - agent.transform.position).normalized), Time.deltaTime);
      
         SwingSword();
      
         if (Vector3.Distance(transform.position, targetTransform.transform.position) > attackRange)
         {
-            Debug.Log(Vector3.Distance(transform.position, targetTransform.transform.position));
             nonMonoStateMachine.GetComponent<Conversationable>().OverrideTalkDelay();
             nonMonoStateMachine.SwitchState<EnemyChaseState>();
-            //currentEnemyState = EnemyState.Chase;
+        }
+        if (detectionHelper.PlayerAround2() is false)
+        {
+            nonMonoStateMachine.GetComponent<EnemyController>().PointOfInterest.Position = targetTransform.transform.position;
+            nonMonoStateMachine.GetComponent<EnemyController>().InvestigationType = InvestigationType.InvestigateLostTrackOf;
+            nonMonoStateMachine.SwitchState<EnemyInvestigateState>();
         }
     }
     private void SwingSword()
