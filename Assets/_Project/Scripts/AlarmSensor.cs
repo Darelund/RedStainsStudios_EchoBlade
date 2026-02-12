@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class AlarmSensor : MonoBehaviour
 {
@@ -45,6 +46,8 @@ public class AlarmSensor : MonoBehaviour
             return;
         }
 
+        if (CanEnemyReachTargetPointEnemy(controller, investigationPoint) is false) return; //Not possible for enemy to go to target
+       
 
 
         Instantiate(alarmIcon, controller.transform);
@@ -52,6 +55,15 @@ public class AlarmSensor : MonoBehaviour
         offset += new Vector3(0.5f, 0, 0.5f);
         controller.InvestigationType = InvestigationType.InvestigateAlarm;
         controller.SwitchState<EnemyAlertedState>();
+    }
+    private bool CanEnemyReachTargetPointEnemy(EnemyController controller, Transform investigationPoint)
+    {
+        NavMeshAgent navMeshAgent = controller.GetComponent<NavMeshAgent>();
+        NavMeshPath targetPath = new NavMeshPath();
+        if (navMeshAgent.CalculatePath(investigationPoint.position, targetPath) is false) return false;
+        if (targetPath.status == NavMeshPathStatus.PathPartial || targetPath.status == NavMeshPathStatus.PathInvalid) return false;
+
+        return true;
     }
 }
 
