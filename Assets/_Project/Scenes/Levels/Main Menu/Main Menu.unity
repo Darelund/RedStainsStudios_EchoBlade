@@ -6921,6 +6921,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chaotics Grave
       objectReference: {fileID: 0}
+    - target: {fileID: 4203267918945967487, guid: 7a15335e1dd588e4ca32c274dda3b562, type: 3}
+      propertyPath: m_text
+      value: The Great Mechanic of this realm. She mended the gears of fate until
+        they grinded her to dust.
+      objectReference: {fileID: 0}
     - target: {fileID: 4943820968148151369, guid: 7a15335e1dd588e4ca32c274dda3b562, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.015
@@ -25977,6 +25982,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Movement
   anim: {fileID: 1609952649}
   rotPivot: {fileID: 3566637585803268429}
+  trail: {fileID: 0}
   speed: 4
   maxSpeed: 10
   cooldown: 2
