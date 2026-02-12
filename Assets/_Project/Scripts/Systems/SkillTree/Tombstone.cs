@@ -68,8 +68,8 @@ public class Tombstone : MonoBehaviour, ISavable
     private IEnumerator ActivatingCoroutine()
     {
         hasBeenActivated = true;
-        yield return new WaitForSeconds(1.0f);
         GameManager.Instance.SwitchState<SkillTreeState>();
+        yield return null;
     }
 
     public void Save(GameData gameData)
