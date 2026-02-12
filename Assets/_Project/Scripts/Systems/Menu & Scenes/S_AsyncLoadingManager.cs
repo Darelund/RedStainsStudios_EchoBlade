@@ -22,6 +22,12 @@ public class S_AsyncLoadingManager : MonoBehaviour
         Debug.Log(sceneIndex);
         StartCoroutine(LoadSceneAsync(sceneIndex));
     }
+    public void LoadDefaultScene()
+    {
+        var sceneIndex = SceneManager.GetSceneByName("Level_Graveyard").buildIndex;
+        Debug.Log(sceneIndex);
+        StartCoroutine(LoadSceneAsync(sceneIndex));
+    }
 
     IEnumerator LoadSceneAsync(int SceneID)
     {
