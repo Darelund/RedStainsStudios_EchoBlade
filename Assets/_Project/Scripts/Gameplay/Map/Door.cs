@@ -11,9 +11,7 @@ public class Door : MonoBehaviour
     {
         if (other.gameObject.GetComponent<Movement>() != null)
         {
-            //QuestLog.instance.ProgressQuest();
-            SavingManager.Instance.SaveData();
-            SceneManager.LoadScene(LevelName ??= "LevelManor");
+            
         }
     }
 }
