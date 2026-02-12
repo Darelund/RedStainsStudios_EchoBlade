@@ -52,7 +52,7 @@ public class Movement : MonoBehaviour
         anim = GetComponentInChildren<Animator>();
 
         //inputActions.FindActionMap("Player").Enable();
-
+        playerMaterial = new Material(playerMaterial);
 
     }
     private bool sneaking = false;
