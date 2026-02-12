@@ -1561,8 +1561,6 @@ MonoBehaviour:
   shouldMoveCamera: 1
   cameraFrom: {fileID: 1943060369}
   cameraTo: {fileID: 588720139}
-  menuToOpen: {fileID: 247895664}
-  canvasToClose: {fileID: 0}
 --- !u!95 &123286581
 Animator:
   serializedVersion: 7
@@ -6922,6 +6920,11 @@ PrefabInstance:
     - target: {fileID: 2966687443879595722, guid: 7a15335e1dd588e4ca32c274dda3b562, type: 3}
       propertyPath: m_Name
       value: Chaotics Grave
+      objectReference: {fileID: 0}
+    - target: {fileID: 4203267918945967487, guid: 7a15335e1dd588e4ca32c274dda3b562, type: 3}
+      propertyPath: m_text
+      value: The Great Mechanic of this realm. She mended the gears of fate until
+        they grinded her to dust.
       objectReference: {fileID: 0}
     - target: {fileID: 4943820968148151369, guid: 7a15335e1dd588e4ca32c274dda3b562, type: 3}
       propertyPath: m_LocalPosition.x
@@ -18975,8 +18978,6 @@ MonoBehaviour:
   shouldMoveCamera: 1
   cameraFrom: {fileID: 351752985}
   cameraTo: {fileID: 588720139}
-  menuToOpen: {fileID: 247895664}
-  canvasToClose: {fileID: 0}
 --- !u!95 &1562476236
 Animator:
   serializedVersion: 7
@@ -25593,8 +25594,6 @@ MonoBehaviour:
   shouldMoveCamera: 1
   cameraFrom: {fileID: 588720139}
   cameraTo: {fileID: 351752985}
-  menuToOpen: {fileID: 1691761933}
-  canvasToClose: {fileID: 0}
 --- !u!95 &2097520543
 Animator:
   serializedVersion: 7
@@ -25768,8 +25767,6 @@ MonoBehaviour:
   shouldMoveCamera: 1
   cameraFrom: {fileID: 588720139}
   cameraTo: {fileID: 1943060369}
-  menuToOpen: {fileID: 820882229}
-  canvasToClose: {fileID: 0}
 --- !u!95 &2101404042
 Animator:
   serializedVersion: 7
@@ -26094,6 +26091,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ffba57d03435f44e9f052c4de4df92d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Lure
+  _particleSystem: {fileID: 0}
   range: 10
   cooldown: 5
   inputActions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
@@ -26223,6 +26221,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Movement
   anim: {fileID: 1609952649}
   rotPivot: {fileID: 3566637585803268429}
+  trail: {fileID: 0}
   speed: 4
   maxSpeed: 10
   cooldown: 2

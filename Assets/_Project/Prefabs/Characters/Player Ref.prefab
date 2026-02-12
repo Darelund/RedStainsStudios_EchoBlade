@@ -168,6 +168,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Movement
   anim: {fileID: 4349910820343407210}
   rotPivot: {fileID: 8100161980760626185}
+  trail: {fileID: 9088561611068395820}
   speed: 4
   maxSpeed: 10
   cooldown: 2
@@ -717,6 +718,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: VFX_Shadow
       objectReference: {fileID: 0}
+    - target: {fileID: 8748237501110578706, guid: 57e226f26a7fd2c4e99526e5128bcec7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -725,6 +730,11 @@ PrefabInstance:
 --- !u!4 &8056937488274335993 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7532561733208446919, guid: 57e226f26a7fd2c4e99526e5128bcec7, type: 3}
+  m_PrefabInstance: {fileID: 524375829707865918}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &9088561611068395820 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8748237501110578706, guid: 57e226f26a7fd2c4e99526e5128bcec7, type: 3}
   m_PrefabInstance: {fileID: 524375829707865918}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1069179120350629299
