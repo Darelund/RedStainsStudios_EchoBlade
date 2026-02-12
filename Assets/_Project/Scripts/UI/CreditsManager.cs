@@ -14,14 +14,32 @@ public class CreditsManager : MonoBehaviour
     {
         mainMenuCameraPoint.Priority = 0;
         cameraPoints[0].Priority = 10;
-        cameraPoints[0] = currentCameraPoint;
+        currentCameraPoint = cameraPoints[0];
     }
 
     public void ChangeGravestone()
     {
         currentCameraPoint.Priority = 0;
-        cameraPoints[System.Array.IndexOf(cameraPoints, currentCameraPoint)+1].Priority = 10;
-        currentCameraPoint = cameraPoints[System.Array.IndexOf(cameraPoints, currentCameraPoint)+1];
+
+        if(System.Array.IndexOf(cameraPoints, currentCameraPoint) == 10)
+        {
+            cameraPoints[0].Priority = 10;
+            currentCameraPoint = cameraPoints[0];
+        }
+
+        else
+        {
+            cameraPoints[System.Array.IndexOf(cameraPoints, currentCameraPoint) + 1].Priority = 10;
+            currentCameraPoint = cameraPoints[System.Array.IndexOf(cameraPoints, currentCameraPoint) + 1];
+        }
+
+    }
+
+    public void ExitCredits()
+    {
+        currentCameraPoint.Priority = 0;
+        mainMenuCameraPoint.Priority = 10;
+        gameObject.SetActive(false);
     }
 
     // Update is called once per frame
