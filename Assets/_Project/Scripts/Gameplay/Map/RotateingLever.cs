@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.AI.Navigation;
 using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -11,8 +12,10 @@ public class RotateingLever : MonoBehaviour
     private AudioSource audioSource;
 
     [SerializeField] private bool shouldProgressQuest;
+    [SerializeField] private bool shouldUpdateNavMesh;
     [SerializeField] private bool isDaggerblade;
     [SerializeField] private GameObject daggerblade;
+    [SerializeField] private NavMeshSurface navMeshSurface;
 
     [SerializeField] private InputActionAsset actionMap;
     [SerializeField] private InputAction pullAction;
@@ -39,6 +42,8 @@ public class RotateingLever : MonoBehaviour
         pullAction.performed += PullAction_performed;
 
         audioSource = GetComponent<AudioSource>();
+
+        navMeshSurface = FindAnyObjectByType<NavMeshSurface>();
     }
 
     private void PullAction_performed(InputAction.CallbackContext obj)
@@ -102,6 +107,9 @@ public class RotateingLever : MonoBehaviour
         door.gameObject.GetComponent<Animator>().SetTrigger("OpenDoor");
         yield return new WaitForSeconds(2f);
         camera.Target.TrackingTarget = player.transform;
+        if (shouldUpdateNavMesh)
+        navMeshSurface.UpdateNavMesh(navMeshSurface.navMeshData);
+        yield return new WaitForSeconds(0.6f);
         GameManager.Instance.SwitchState<PlayingState>();
     }
 
