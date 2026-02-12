@@ -9,7 +9,7 @@ public class Movement : MonoBehaviour
 {
     [SerializeField] private Animator anim;
     [SerializeField] private Transform rotPivot;
-
+    [SerializeField] private GameObject trail;
 
     public float speed;
     [SerializeField] private float maxSpeed = 10;
@@ -52,7 +52,7 @@ public class Movement : MonoBehaviour
         anim = GetComponentInChildren<Animator>();
 
         //inputActions.FindActionMap("Player").Enable();
-
+        playerMaterial = new Material(playerMaterial);
 
     }
     private bool sneaking = false;
@@ -158,6 +158,7 @@ public class Movement : MonoBehaviour
 
         if (!isPhasing && timer <= 0)
         {
+            trail.SetActive(true);
             isPhasing = true;
             StartCoroutine(Phase());
             anim.SetTrigger("isSneaking");
@@ -245,7 +246,7 @@ public class Movement : MonoBehaviour
         isPhasing = false;
 
         controller.excludeLayers = 0;
-
+        trail.SetActive(false);
 
         if (PlayerAbilities.Instance.GetAbilityState(PlayerAbility.AbilityHaste))
         {
