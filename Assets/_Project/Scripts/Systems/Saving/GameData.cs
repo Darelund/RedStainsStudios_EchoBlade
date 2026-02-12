@@ -69,7 +69,7 @@ public class GameData
         gameData.EnemiesData = new List<EnemyData>();
 
 
-        gameData.LastPlayedScene = "Level_Graveyard";
+        gameData.LastPlayedScene = "IntroScene";
         gameData.GraveyardUnlocked = true;
         gameData.ManorUnlocked = false;
         gameData.EscapeUnlocked = false;

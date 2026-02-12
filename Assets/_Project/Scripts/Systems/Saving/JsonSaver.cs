@@ -35,7 +35,13 @@ public class JsonSaver : IFileSaver
     }
    public void DeleteFile()
     {
-        if (FileExists() is false) return;
+        Debug.Log("Deleted files");
+        if (FileExists() is false)
+        {
+            Debug.Log("Does it exist" + File.Exists(FullPath));
+            Debug.Log(FullPath);
+            return;
+        }
         File.Delete(FullPath);
     }
 }

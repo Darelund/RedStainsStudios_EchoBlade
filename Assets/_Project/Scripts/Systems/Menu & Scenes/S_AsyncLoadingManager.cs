@@ -17,21 +17,24 @@ public class S_AsyncLoadingManager : MonoBehaviour
     public void LoadScene()
     {
         var selectedLevel = GameObject.FindAnyObjectByType<MainMenu>().selectedLevel;
-        Debug.Log("SelectedLevel : " + selectedLevel);
-        var sceneIndex = SceneManager.GetSceneByName(selectedLevel).buildIndex;
-        Debug.Log(sceneIndex);
-        StartCoroutine(LoadSceneAsync(sceneIndex));
+        //Debug.Log("SelectedLevel : " + selectedLevel);
+        //Debug.Log(Application.dataPath + "/_Project/Scenes/Levels/" + selectedLevel + ".unity");
+        //var sceneIndex = SceneUtility.GetBuildIndexByScenePath(Application.dataPath + "/_Project/Scenes/Levels/" + selectedLevel + ".unity");
+        //Debug.Log(sceneIndex);
+        Debug.Log("Switching scene");
+        StartCoroutine(LoadSceneAsync(selectedLevel));
     }
     public void LoadDefaultScene()
     {
-        var sceneIndex = SceneManager.GetSceneByName("Level_Graveyard").buildIndex;
-        Debug.Log(sceneIndex);
-        StartCoroutine(LoadSceneAsync(sceneIndex));
+        var sceneIndex = SceneManager.GetSceneByName("IntroScene").buildIndex;
+        //Debug.Log(sceneIndex);
+        StartCoroutine(LoadSceneAsync("IntroScene"));
     }
 
-    IEnumerator LoadSceneAsync(int SceneID)
+    IEnumerator LoadSceneAsync(string SceneID)
     {
-        AsyncOperation operation = SceneManager.LoadSceneAsync(GameObject.FindAnyObjectByType<MainMenu>().selectedLevel);
+        yield return new WaitForSeconds(5f);
+        AsyncOperation operation = SceneManager.LoadSceneAsync(SceneID);
         
         LoadingScreen.SetActive(true);
         
@@ -44,5 +47,6 @@ public class S_AsyncLoadingManager : MonoBehaviour
             
             yield return null;
         }
+        Debug.Log("Switched scene");
     }
 }
