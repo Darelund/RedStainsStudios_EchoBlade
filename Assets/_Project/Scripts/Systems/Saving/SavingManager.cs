@@ -42,7 +42,7 @@ public class SavingManager : MonoBehaviour
     {
         savables = GameObject.FindObjectsByType<MonoBehaviour>(FindObjectsInactive.Include, FindObjectsSortMode.None).
            OfType<ISavable>().ToList();
-
+        savables.ForEach(s => Debug.Log(s));
         fileSaver = new JsonSaver();
         LoadData();
 
@@ -87,6 +87,7 @@ public class SavingManager : MonoBehaviour
     {
         savables = GameObject.FindObjectsByType<MonoBehaviour>(FindObjectsInactive.Include, FindObjectsSortMode.None).
            OfType<ISavable>().ToList();
+     
         LoadData();
         if (arg0.name != null && GameManager.Instance != null && GameManager.Instance.ScenesUnlocked.ContainsKey(arg0.name) is true)
         {

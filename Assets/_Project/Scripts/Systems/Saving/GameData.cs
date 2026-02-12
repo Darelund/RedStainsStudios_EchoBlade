@@ -17,6 +17,7 @@ public class GameData
     //Unlocked scenes
     public bool NewGame;
 
+    
     public List<PlayerAbilityData> PlayerAbilityData;
     public List<AltarData> altarData;
     public List<SkillsNodeData> SkillsNodeData;
@@ -27,7 +28,7 @@ public class GameData
     public int Deaths;
     public TimePlayedData TimePlayed;
     public List<EnemyData> EnemiesData;
-
+    public List<RotatingLeverData> RotatingLeverData;
 
     public string LastPlayedScene;
 
@@ -67,6 +68,8 @@ public class GameData
         gameData.Deaths = 0;
         gameData.TimePlayed = new TimePlayedData(0, 0, 0);
         gameData.EnemiesData = new List<EnemyData>();
+
+        gameData.RotatingLeverData = new List<RotatingLeverData>();
 
 
         gameData.LastPlayedScene = "IntroScene";
@@ -142,4 +145,11 @@ public class EnemyData
     public Vector3 Position;
     public Quaternion Rotation; //Not sure I can save Quaternion, will try
     //public NonMonoState NonMonoState; Might use this one later
+}
+[System.Serializable]
+public class RotatingLeverData
+{
+    public string ID;
+    public bool IsPulled;
+    public Vector3 LeverRotation;
 }

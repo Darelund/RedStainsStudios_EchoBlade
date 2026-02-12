@@ -20,7 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Project/Scenes/Levels/Level_Manor.unity
     guid: beaf9b5762d14f042a9f29d1a17e4d9b
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Project/Scenes/Levels/Main Menu/Loading Screen.unity
     guid: ae13eaa28183d594ca3a7f418d548b91
   - enabled: 1
