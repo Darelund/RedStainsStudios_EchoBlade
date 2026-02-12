@@ -75,7 +75,7 @@ public class EnemyInvestigateState : NonMonoState
         }
        
         var detectionState = detectionHelper.Detect(1, 0.5f);
-        Debug.Log(detectionState);
+        //Debug.Log(detectionState);
 
         switch (detectionState)
         {
@@ -83,36 +83,36 @@ public class EnemyInvestigateState : NonMonoState
 
                 if (nonMonoStateMachine.GetComponent<Conversationable>().IsConversing)
                 {
-                    Debug.Log($"Conversering makes it stuck");
+                    //Debug.Log($"Conversering makes it stuck");
                     return;
                 }
 
-                Debug.Log($"Distance is to far away from {interestingpoint} it is {Vector3.Distance(agent.transform.position, interestingpoint)}m away");
-                Debug.Log($"Interestingpoint is {interestingpoint} high");
+                //Debug.Log($"Distance is to far away from {interestingpoint} it is {Vector3.Distance(agent.transform.position, interestingpoint)}m away");
+                //Debug.Log($"Interestingpoint is {interestingpoint} high");
                 if (Vector3.Distance(agent.transform.position, interestingpoint) < stopThreshold) //We want this threshold to be quit small, so the enemy "remembers" in what direction the player last went to. This will make it look in the last direction it saw the player and if the player isn't there then it will start looking around in confusion
                 {
-                    Debug.Log("Close enough");
+                    //Debug.Log("Close enough");
                     if (isAtInvestigationPoint is false && CanTalk)
                     {
                         isAtInvestigationPoint = true;
                         CanTalk = false;
-                        Debug.Log("Stuck 1");
+                        //Debug.Log("Stuck 1");
                         SparkConversation();
                     }
                     if(investigationState == 0)
                     {
                         LookAtLastPlayerPoint(interestingpoint);
-                        Debug.Log("Stuck 2");
+                        //Debug.Log("Stuck 2");
                         investigationState = 1;
                     }
                     else if (investigationState == 1)
                     {
-                        Debug.Log("Stuck 3");
+                        //Debug.Log("Stuck 3");
                         NextSearch += Time.deltaTime;
-                        Debug.Log($"Next Search in: {NextSearch} / 0.2 ");
+                        //Debug.Log($"Next Search in: {NextSearch} / 0.2 ");
                         if (NextSearch > 0.2f)
                         {
-                            Debug.Log("Do a circle");
+                            //Debug.Log("Do a circle");
                             CircleSearch(interestingpoint);
                             NextSearch = 0;
                             return;
@@ -131,7 +131,7 @@ public class EnemyInvestigateState : NonMonoState
                 isGoingTowardsInvestigatingPoint = false;
                 break;
             case DetectionState.Detect:
-                Debug.Log("Detect???");
+                //Debug.Log("Detect???");
                 break;
         }
     }
@@ -184,7 +184,7 @@ public class EnemyInvestigateState : NonMonoState
     private void InvestigateArea()
     {
         currentInvestigationTime += Time.deltaTime;
-        Debug.Log($"Investigate time: {currentInvestigationTime}");
+        //Debug.Log($"Investigate time: {currentInvestigationTime}");
         //Debug.Log($"currentInvestigationTime: {currentInvestigationTime}");
         //  Debug.Log("currentinvestigation time" + currentInvestigationTime + " " + " investigation time" + investigationTime);
         if (currentInvestigationTime >= investigationTime)

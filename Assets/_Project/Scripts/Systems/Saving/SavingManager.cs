@@ -40,82 +40,55 @@ public class SavingManager : MonoBehaviour
         savables = GameObject.FindObjectsByType<MonoBehaviour>(FindObjectsInactive.Include, FindObjectsSortMode.None).
            OfType<ISavable>().ToList();
 
-        //savables.ForEach(s =>
-        //    Debug.Log(s.GetType()));
-        // savables = GameObject.FindObjectsOfType<MonoBehaviour>()
-
         fileSaver = new JsonSaver();
-        //LOAD DAT DATA!!!
         LoadData();
 
-        //  SceneManager.activeSceneChanged += SceneManager_activeSceneChanged;
         SceneManager.sceneLoaded += SceneManager_sceneLoaded;
-        SceneManager.sceneUnloaded += SceneManager_sceneUnloaded;
-        //SceneManager.activeSceneChanged += SceneManager_activeSceneChanged;
+        //SceneManager.sceneUnloaded += SceneManager_sceneUnloaded;
         Application.quitting += Application_quitting;
+        //SceneManager.activeSceneChanged += SceneManager_activeSceneChanged;
     }
 
     //private void SceneManager_activeSceneChanged(Scene arg0, Scene arg1)
     //{
-    //    throw new System.NotImplementedException();
+    //    Debug.Log("Active scene changed");
+    //    if (arg0 != null && arg11 )
+    //        SaveData();
     //}
 
-    private void SceneManager_sceneUnloaded(Scene arg0)
-    {
-        SaveData();
-        //if (arg0.name != null && GameManager.Instance.ScenesUnlocked.TryGetValue(arg0.name, out bool value2) is true)
-        //{
-        //    Debug.Log($"New scene: {arg0.name} changed");
-        //    //Debug.Log($"Before {GameManager.Instance.ScenesUnlocked[arg1.name]}");
-        //    //Debug.Log(GameManager.Instance.ScenesUnlocked[arg1.name]);
-        //    GameManager.Instance.ScenesUnlocked[arg0.name] = true;
-        //    Debug.Log($"After {GameManager.Instance.ScenesUnlocked[arg0.name]}");
+    //private void SceneManager_sceneUnloaded(Scene arg0)
+    //{
+    //    Debug.Log($"{arg0.name} sceneunloaded");
 
-        //}
-        //Debug.Log("Did da scene unload?");
-        //SaveData();
-    }
+    //    SaveData();
+    //    //if (arg0.name != null && GameManager.Instance.ScenesUnlocked.TryGetValue(arg0.name, out bool value2) is true)
+    //    //{
+    //    //    Debug.Log($"New scene: {arg0.name} changed");
+    //    //    //Debug.Log($"Before {GameManager.Instance.ScenesUnlocked[arg1.name]}");
+    //    //    //Debug.Log(GameManager.Instance.ScenesUnlocked[arg1.name]);
+    //    //    GameManager.Instance.ScenesUnlocked[arg0.name] = true;
+    //    //    Debug.Log($"After {GameManager.Instance.ScenesUnlocked[arg0.name]}");
+
+    //    //}
+    //}
 
 
 
     #region Saving and Loading between scene changed and application quitting
     private void SceneManager_sceneLoaded(Scene arg0, LoadSceneMode arg1)
     {
-       // SaveData();
-        if (arg0.name != null && GameManager.Instance.ScenesUnlocked.TryGetValue(arg0.name, out bool value) is true)
+        savables = GameObject.FindObjectsByType<MonoBehaviour>(FindObjectsInactive.Include, FindObjectsSortMode.None).
+           OfType<ISavable>().ToList();
+        LoadData();
+        if (arg0.name != null && GameManager.Instance != null && GameManager.Instance.ScenesUnlocked.ContainsKey(arg0.name) is true)
         {
             Debug.Log($"scene: {arg0.name} loaded");
             GameManager.Instance.ScenesUnlocked[arg0.name] = true;
         }
-     
-        savables = GameObject.FindObjectsByType<MonoBehaviour>(FindObjectsInactive.Include, FindObjectsSortMode.None).
-           OfType<ISavable>().ToList();
-        //SaveData();
-        LoadData();
     }
-
-    //private void SceneManager_activeSceneChanged(Scene arg0, Scene arg1)
-    //{
-    //    if (arg0.name != null && GameManager.Instance.ScenesUnlocked.TryGetValue(arg0.name, out bool value) is true)
-    //    {
-    //        Debug.Log($"Old scene: {arg0.name} changed");
-    //        GameManager.Instance.ScenesUnlocked[arg0.name] = true;
-    //    }
-    //    if (arg1.name != null && GameManager.Instance.ScenesUnlocked.TryGetValue(arg1.name, out bool value2) is true)
-    //    {
-    //        Debug.Log($"New scene: {arg1.name} changed");
-    //        Debug.Log($"Before {GameManager.Instance.ScenesUnlocked[arg1.name]}");
-    //        Debug.Log(GameManager.Instance.ScenesUnlocked[arg1.name]);
-    //        GameManager.Instance.ScenesUnlocked[arg1.name] = true;
-    //        Debug.Log($"After {GameManager.Instance.ScenesUnlocked[arg1.name]}");
-
-    //    }
-
-    //    SaveData();
-    //}
-
     private void Application_quitting()
     {
+        gameData.LastPlayedScene = SceneManager.GetActiveScene().name;
         SaveData();
     }
     #endregion
@@ -146,5 +119,9 @@ public class SavingManager : MonoBehaviour
         {
             savable.Load(gameData);
         }
+    }
+    public void DeleteSaves()
+    {
+        fileSaver.DeleteFile();
     }
 }

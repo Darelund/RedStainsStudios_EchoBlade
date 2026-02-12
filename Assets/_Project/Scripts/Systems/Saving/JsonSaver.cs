@@ -28,10 +28,14 @@ public class JsonSaver : IFileSaver
 
         return gameData;
     }
-    private bool FileExists()
+    public bool FileExists()
     {
         bool fileExists = File.Exists(FullPath);
         return fileExists;
     }
-   
+   public void DeleteFile()
+    {
+        if (FileExists() is false) return;
+        File.Delete(FullPath);
+    }
 }
