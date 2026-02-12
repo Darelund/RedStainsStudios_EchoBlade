@@ -1,15 +1,16 @@
 using System.Collections;
-using System.Collections.Generic;
 using Unity.AI.Navigation;
 using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
-public class RotateingLever : MonoBehaviour
+public class RotateingLever : MonoBehaviour, ISavable
 {
     private bool isPulled = false;
     private bool canPull = false;
     private AudioSource audioSource;
+    private string Unique_ID;
 
     [SerializeField] private bool shouldProgressQuest;
     [SerializeField] private bool shouldCompleteMainObjective;
@@ -37,6 +38,8 @@ public class RotateingLever : MonoBehaviour
 
     private void Start()
     {
+        Unique_ID = gameObject.name + "_" + SceneManager.GetActiveScene().name;
+
         targetRotation = Quaternion.Euler(0, axisRotation, 0);
 
         pullAction = actionMap.FindActionMap("Player").FindAction("Interact");
@@ -137,6 +140,40 @@ public class RotateingLever : MonoBehaviour
         {
             canPull = false;
             Debug.Log("Can't Pull Lever Anymore");
+        }
+    }
+
+    public void Save(GameData gameData)
+    {
+        if (lever == null || door == null) return; //Don't care about doors not used
+        foreach (RotatingLeverData lever in gameData.RotatingLeverData)
+        {
+            if (lever.ID == Unique_ID)
+            {
+                lever.IsPulled = isPulled;
+                lever.LeverRotation = this.lever.transform.localEulerAngles;
+                return;
+            }
+        }
+        gameData.RotatingLeverData.Add(new RotatingLeverData() { ID = Unique_ID, IsPulled = isPulled, LeverRotation = lever.transform.localEulerAngles});
+    }
+
+    public void Load(GameData gameData)
+    {
+        if (gameData.RotatingLeverData == null) return;
+        if (gameData.RotatingLeverData.Count <= 0) return;
+        //if (lever == null || door == null) return; //Don't care about doors not used
+        Debug.Log("Is here");
+        foreach (RotatingLeverData lever in gameData.RotatingLeverData)
+        {
+            if (lever.ID == gameObject.name + "_" + SceneManager.GetActiveScene().name)
+            {
+                isPulled = lever.IsPulled;
+                if (isPulled)
+                    door.GetComponent<Animator>().SetTrigger("OpenDoor");
+                this.lever.transform.localEulerAngles = lever.LeverRotation;
+                return;
+            }
         }
     }
 }
