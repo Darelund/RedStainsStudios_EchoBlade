@@ -4310,6 +4310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9adcbf3ea0afa644a5ab828b5eede67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RotateingLever
+  shouldProgressQuest: 0
   actionMap: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   pullAction:
     m_Name: Pull
@@ -4320,6 +4321,9 @@ MonoBehaviour:
     m_Interactions: 
     m_SingletonActionBindings: []
     m_Flags: 0
+  player: {fileID: 1544217542}
+  camera: {fileID: 2009088402}
+  lever: {fileID: 0}
   door: {fileID: 1994417183}
   doorClip: {fileID: 8300000, guid: 3d2da22e88caf7947b9416b44bfad3e8, type: 3}
   axisRotation: 90
@@ -27824,6 +27828,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9adcbf3ea0afa644a5ab828b5eede67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RotateingLever
+  shouldProgressQuest: 0
   actionMap: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   pullAction:
     m_Name: Pull
@@ -27834,6 +27839,9 @@ MonoBehaviour:
     m_Interactions: 
     m_SingletonActionBindings: []
     m_Flags: 0
+  player: {fileID: 0}
+  camera: {fileID: 0}
+  lever: {fileID: 0}
   door: {fileID: 957244853}
   doorClip: {fileID: 8300000, guid: 3d2da22e88caf7947b9416b44bfad3e8, type: 3}
   axisRotation: 90
@@ -34958,6 +34966,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9adcbf3ea0afa644a5ab828b5eede67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RotateingLever
+  shouldProgressQuest: 0
   actionMap: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   pullAction:
     m_Name: Pull
@@ -34968,6 +34977,9 @@ MonoBehaviour:
     m_Interactions: 
     m_SingletonActionBindings: []
     m_Flags: 0
+  player: {fileID: 0}
+  camera: {fileID: 0}
+  lever: {fileID: 0}
   door: {fileID: 1171088659}
   doorClip: {fileID: 8300000, guid: 3d2da22e88caf7947b9416b44bfad3e8, type: 3}
   axisRotation: 45
@@ -39134,7 +39146,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6539865714335638253, guid: 9f64805503237ea448f51b663252870e, type: 3}
   m_PrefabInstance: {fileID: 1544217539}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1544217542}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a7a707e36c914884c9f00297bf7cce86, type: 3}
@@ -39143,6 +39155,11 @@ MonoBehaviour:
 --- !u!4 &1544217541 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1086468171514724177, guid: 9f64805503237ea448f51b663252870e, type: 3}
+  m_PrefabInstance: {fileID: 1544217539}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1544217542 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5965158235604092076, guid: 9f64805503237ea448f51b663252870e, type: 3}
   m_PrefabInstance: {fileID: 1544217539}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1548024069
@@ -48217,6 +48234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9adcbf3ea0afa644a5ab828b5eede67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RotateingLever
+  shouldProgressQuest: 0
   actionMap: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   pullAction:
     m_Name: Pull
@@ -48227,6 +48245,9 @@ MonoBehaviour:
     m_Interactions: 
     m_SingletonActionBindings: []
     m_Flags: 0
+  player: {fileID: 0}
+  camera: {fileID: 0}
+  lever: {fileID: 0}
   door: {fileID: 1512982733}
   doorClip: {fileID: 8300000, guid: 3d2da22e88caf7947b9416b44bfad3e8, type: 3}
   axisRotation: 90
@@ -54243,6 +54264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9adcbf3ea0afa644a5ab828b5eede67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RotateingLever
+  shouldProgressQuest: 0
   actionMap: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   pullAction:
     m_Name: Pull
@@ -54253,6 +54275,9 @@ MonoBehaviour:
     m_Interactions: 
     m_SingletonActionBindings: []
     m_Flags: 0
+  player: {fileID: 0}
+  camera: {fileID: 0}
+  lever: {fileID: 0}
   door: {fileID: 1320558677}
   doorClip: {fileID: 8300000, guid: 3d2da22e88caf7947b9416b44bfad3e8, type: 3}
   axisRotation: 180
