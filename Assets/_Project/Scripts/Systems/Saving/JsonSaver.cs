@@ -42,6 +42,8 @@ public class JsonSaver : IFileSaver
             Debug.Log(FullPath);
             return;
         }
-        File.Delete(FullPath);
+        string jsonData = JsonUtility.ToJson(new GameData(), true);
+        File.WriteAllText(FullPath, jsonData);
+        //File.Delete(FullPath);
     }
 }

@@ -56,7 +56,7 @@ public class GameManager : StateMachine, ISavable
     }
     public void BackToMainMenu()
     {
-        SavingManager.Instance.SaveData();
+        //SavingManager.Instance.SaveData();
         Time.timeScale = 1; //TODO: Remove this when we don't need it anymore
         SceneManager.LoadScene("Main Menu");
     }
@@ -68,7 +68,7 @@ public class GameManager : StateMachine, ISavable
     }
     public void Restart()
     {
-        SavingManager.Instance.SaveData();
+        //SavingManager.Instance.SaveData();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
     }

@@ -10,6 +10,7 @@ public class PauseState : State
     [SerializeField] private GameObject questScreenUI;
     public override void EnterState()
     {
+        SavingManager.Instance.SaveData();
         AIManager.Instance.StopAllAI();
       //  Time.timeScale = 0; //Navmesh agents would keep going without this, I could make it work by stopping all navmesh agents, but to lazy - Vidar
         pauseScreenUI.SetActive(true);

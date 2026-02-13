@@ -25,7 +25,7 @@ public class S_SoundWave : MonoBehaviour
         Vector3 pos = spawnPoint != null ? spawnPoint.position : transform.position;
         Quaternion rot = spawnPoint != null ? spawnPoint.rotation : transform.rotation;
         GameObject spawned = Instantiate(prefab, pos, rot);
-        
+        Debug.Log("Spawned Sound Wave at " + pos);
         if (lifeTime > 0f) Destroy(spawned, lifeTime);
     }
 }
