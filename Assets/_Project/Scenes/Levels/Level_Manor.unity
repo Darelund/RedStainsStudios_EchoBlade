@@ -50952,7 +50952,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5048907797104732277, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5844117002794410258, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -50985,6 +50985,18 @@ PrefabInstance:
     - target: {fileID: 6199995730067037116, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: SFXManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6795127766280584166, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6795127766280584166, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
+      propertyPath: m_BlocksRaycasts
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6795127766280584166, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
+      propertyPath: m_IgnoreParentGroups
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7841172270545173968, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

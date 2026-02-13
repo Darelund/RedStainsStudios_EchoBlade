@@ -29,6 +29,11 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IS
 
     [TextArea()]
     public string description;
+
+    private void OnEnable()
+    {
+        skillName = gameObject.name;
+    }
     public void Awake()
     {
         skillTree = GameObject.Find("Canvas").GetComponent<SkillTree>();

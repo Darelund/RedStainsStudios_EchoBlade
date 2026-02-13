@@ -5,7 +5,7 @@ using UnityEngine;
 public class SkillTree : MonoBehaviour
 {
     [SerializeField] private List<Tree> trees;
-    [SerializeField] private GameObject skilltreeUI;
+   // [SerializeField] private GameObject skilltreeUI;
     [SerializeField] private TMP_Text skillPointsText;
    
 
@@ -13,7 +13,7 @@ public class SkillTree : MonoBehaviour
     {
         UpdateSkillTreesText();
 
-        skilltreeUI.SetActive(false);
+       // skilltreeUI.SetActive(false);
     }
 
 

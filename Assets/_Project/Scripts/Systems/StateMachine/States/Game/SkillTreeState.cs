@@ -10,7 +10,9 @@ public class SkillTreeState : State
     public override void EnterState()
     {
         AIManager.Instance.StopAllAI();
-        skillTreeUI.SetActive(true);
+        skillTreeUI.GetComponent<CanvasGroup>().alpha = 1;
+        skillTreeUI.GetComponent<CanvasGroup>().interactable = true;
+        skillTreeUI.GetComponent<CanvasGroup>().blocksRaycasts = true;
         skiltree.UpdateSkillTreesText();
         GameObject.FindAnyObjectByType<Volume>().profile.TryGet(out DepthOfField d);
         d.active = true;
@@ -27,8 +29,11 @@ public class SkillTreeState : State
     }
     public override void ExitState()
     {
+        skillTreeUI.GetComponent<CanvasGroup>().alpha = 0;
+        skillTreeUI.GetComponent<CanvasGroup>().interactable = false;
+        skillTreeUI.GetComponent<CanvasGroup>().blocksRaycasts = false;
         AIManager.Instance.ResumeAllAI();
-        skillTreeUI.SetActive(false);
+      //  skillTreeUI.SetActive(false);
         GameObject.FindAnyObjectByType<Volume>().profile.TryGet(out DepthOfField d);
         d.active = false;
     }

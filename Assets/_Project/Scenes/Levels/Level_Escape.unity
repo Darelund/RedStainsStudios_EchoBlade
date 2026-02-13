@@ -13180,6 +13180,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5048907797104732277, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5428234008984060689, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -13259,6 +13263,14 @@ PrefabInstance:
     - target: {fileID: 6537280958817347432, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
       propertyPath: Value
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6795127766280584166, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6795127766280584166, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
+      propertyPath: m_BlocksRaycasts
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7841172270545173968, guid: 4c2bc98b6f3cc8d4f8a277e13357d825, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

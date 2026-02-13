@@ -32,7 +32,7 @@ public class PlayerAbilities : MonoBehaviour, ISavable
             Destroy(gameObject);
         }
         instance = this;
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
 
 
         AddingAbilities();

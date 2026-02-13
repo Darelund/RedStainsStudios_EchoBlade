@@ -27,25 +27,6 @@ public class DeathState : State, ISavable
     {
 
     }
-    //private IEnumerator StartDeathAnimation()
-    //{
-    //    //float start = 0;
-    //    //float end = 30;
-    //    //float waitBetweenEachAnimation = 0.1f;
-    //    //GameObject playerGameObject = GameObject.FindAnyObjectByType<Movement>().gameObject;
-
-    //    ////playerGameObject.transform.GetChild(0).parent = null;
-
-    //    //while (start < end)
-    //    //{
-    //    //    start += 1;
-    //    //    playerGameObject.transform.rotation = Quaternion.Euler(Random.Range(0, 360), Random.Range(0, 360), Random.Range(0, 360));
-    //    //    yield return new WaitForSeconds(waitBetweenEachAnimation);
-    //    //    waitBetweenEachAnimation = Random.Range(0.01f, 0.15f);
-    //    //}
-
-    //    StartCoroutine(FadeInDeathScreenCoroutine());
-    //}
     private IEnumerator FadeInDeathScreenCoroutine()
     {
         CanvasGroup canvasGroup = DeathScreenUI.GetComponent<CanvasGroup>();

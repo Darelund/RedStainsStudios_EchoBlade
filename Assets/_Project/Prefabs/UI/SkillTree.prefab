@@ -140,7 +140,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: sasasssaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7d1512beaffab5e409690e0bf7d66c21, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 339d1340e6c19f84ba2011e4658c2ba5, type: 2}
@@ -683,7 +683,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Ability
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b4f57ec591faaf9489952b5f55cbc653, type: 2}
   m_sharedMaterial: {fileID: -2078580271925997138, guid: b4f57ec591faaf9489952b5f55cbc653, type: 2}
@@ -1493,6 +1493,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3551048541885831024}
+  - component: {fileID: 8428574899380436705}
   m_Layer: 5
   m_Name: SkillTree
   m_TagString: Untagged
@@ -1526,6 +1527,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!225 &8428574899380436705
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7828424251520888178}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &8120985529621069612
 GameObject:
   m_ObjectHideFlags: 0
