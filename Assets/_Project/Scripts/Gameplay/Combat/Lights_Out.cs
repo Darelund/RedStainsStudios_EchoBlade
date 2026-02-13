@@ -24,6 +24,10 @@ public class Lights_Out : MonoBehaviour
     [SerializeField] private float cooldown;
 
     private float timer = 0;
+    private float useTimer = 3f; //Seconds you have to use it before its stops
+    private float useTimerTick; //BAd name, fix later
+
+
 
     List<MeshRenderer> renderers = new List<MeshRenderer>();
 
@@ -46,7 +50,7 @@ public class Lights_Out : MonoBehaviour
 
     private void LightsOut_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
     {
-        // if (PlayerAbilities.Instance.GetAbilityState(PlayerAbility.LightsOut) is false) return;
+         if (PlayerAbilities.Instance.GetAbilityState(PlayerAbility.LightsOut) is false) return;
         if (timer <= 0)
         {
             if (ShowDebugs)
@@ -131,6 +135,17 @@ public class Lights_Out : MonoBehaviour
 
                 throwRay = false;
                 Time.timeScale = 1f;
+            }
+
+            useTimerTick += Time.deltaTime;
+            if(useTimer <= useTimerTick)
+            {
+                useTimerTick = 0;
+
+
+                throwRay = false;
+                Time.timeScale = 1f;
+                timer = 2f;
             }
         }
     }
