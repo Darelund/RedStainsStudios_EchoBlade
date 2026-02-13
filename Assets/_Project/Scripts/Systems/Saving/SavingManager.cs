@@ -21,8 +21,8 @@ public class SavingManager : MonoBehaviour
         instance = this;
 
         Initialize();
-        if (UseSingleton is false) return;
-        DontDestroyOnLoad(gameObject);
+        //if (UseSingleton is false) return;
+        //DontDestroyOnLoad(gameObject);
     }
     #endregion
 
@@ -90,7 +90,10 @@ public class SavingManager : MonoBehaviour
         {
             Debug.Log($"scene: {arg0.name} loaded");
             GameManager.Instance.ScenesUnlocked[arg0.name] = true;
+            if (arg0.name != "MainMenu")
+                gameData.LastPlayedScene = arg0.name;
         }
+      
     }
     private void Application_quitting()
     {
@@ -119,25 +122,24 @@ public class SavingManager : MonoBehaviour
             Debug.LogError("Seems like this is your first time loading?" +
                 "That means I will create a new save for you");
             gameData = GameData.CreateNewGameData();
-            savables = GameObject.FindObjectsByType<MonoBehaviour>(FindObjectsInactive.Include, FindObjectsSortMode.None).
-            OfType<ISavable>().ToList();
-            SaveData();
+            //savables = GameObject.FindObjectsByType<MonoBehaviour>(FindObjectsInactive.Include, FindObjectsSortMode.None).
+            //OfType<ISavable>().ToList();
+            //SaveData();
         }
-        else
-        {
+       
             LoadSavables();
-        }
+        
     }
     public void NewGame()
     {
         fileSaver.DeleteFile();
         gameData = GameData.CreateNewGameData();
         LoadSavables();
-        foreach (var savable in savables)
-        {
-            savable.Save(gameData);
-        }
-        fileSaver.Save(gameData);
+        //foreach (var savable in savables)
+        //{
+        //    savable.Save(gameData);
+        //}
+        //fileSaver.Save(gameData);
     }
     private void LoadSavables()
     {
