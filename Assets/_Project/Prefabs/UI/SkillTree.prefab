@@ -92,7 +92,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &8310611998106179619
 RectTransform:
   m_ObjectHideFlags: 0
@@ -109,8 +109,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 10.670996, y: -72.11925}
-  m_SizeDelta: {x: 162.4305, y: 240.7795}
+  m_AnchoredPosition: {x: 0.00000047683716, y: -69}
+  m_SizeDelta: {x: 240.8158, y: 240.7795}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4869383138689304930
 CanvasRenderer:
@@ -635,7 +635,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &5268767955537447418
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1074,8 +1074,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 489, y: 195}
-  m_SizeDelta: {x: 280.5234, y: 264.0849}
+  m_AnchoredPosition: {x: 458.76575, y: 139.01062}
+  m_SizeDelta: {x: 340.9919, y: 376.0637}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &5832832963523362162
 GameObject:
@@ -2010,8 +2010,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
       propertyPath: description
-      value: Allows the player to disable lights within Vision of the Player for
-        a set time
+      value: Disables all light sources within your line of sight for short duration
       objectReference: {fileID: 0}
     - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
       propertyPath: lockedSprite
@@ -2274,7 +2273,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
       propertyPath: description
-      value: Attract enemies to the Players current position
+      value: Attract enemies to investigate your current position
       objectReference: {fileID: 0}
     - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
       propertyPath: lockedSprite
@@ -2833,6 +2832,11 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
+      propertyPath: description
+      value: Slip into the void to walk through certain walls for a short period
+        of time
+      objectReference: {fileID: 0}
+    - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
       propertyPath: lockedSprite
       value: 
       objectReference: {fileID: 21300000, guid: 8e370a9e0055dff4bbdae6ecc9a3436f, type: 3}
@@ -3132,8 +3136,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
       propertyPath: description
-      value: "Instant melee take down from behind, \nguaranteed if not detected,
-        loud if botched"
+      value: Execute an instant kill from behind. Be aware, other enemies will be
+        alerted if nearby
       objectReference: {fileID: 0}
     - target: {fileID: 1344744879796847251, guid: 22cc78943755d214f99d1a6807a01454, type: 3}
       propertyPath: lockedSprite
