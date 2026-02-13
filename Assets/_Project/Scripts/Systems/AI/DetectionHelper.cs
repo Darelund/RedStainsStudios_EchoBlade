@@ -68,7 +68,7 @@ public class DetectionHelper
     public GameObject GetTarget() => target;
     //Collider[] colliders;
     //int maxColliders = 10;
-    public DetectionState Detect(float CHASE_THRESHOLD = 2.5f, float INVESTIGATE_THRESHOLD = 1f)
+    public DetectionState Detect(float CHASE_THRESHOLD = 1.8f, float INVESTIGATE_THRESHOLD = 0.8f)
     {
         Vector3 forwardDir = detectorObject.forward;
         Vector3 targetDir = (target.transform.position - detectorObject.position);

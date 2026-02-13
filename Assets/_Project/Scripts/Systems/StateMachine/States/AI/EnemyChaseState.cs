@@ -16,6 +16,7 @@ public class EnemyChaseState : NonMonoState
         transform = nonMonoStateMachine.transform;
         this.agent = nonMonoStateMachine.GetComponent<NavMeshAgent>();
         this.detectionHelper = detectionHelper;
+        agent.speed = agent.speed + 3; //Increasing speed by 4
     }
     public override void EnterState()
     {
@@ -23,7 +24,7 @@ public class EnemyChaseState : NonMonoState
     }
     public override void ExitState()
     {
-
+        agent.speed = agent.speed - 3;
     }
     public override void UpdateState()
     {
