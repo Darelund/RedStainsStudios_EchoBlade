@@ -50,7 +50,7 @@ ParticleSystem:
   emitterVelocityMode: 1
   looping: 0
   prewarm: 0
-  playOnAwake: 0
+  playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
@@ -287,7 +287,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 35
+      scalar: 10
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -4903,7 +4903,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7542669140202014313}
-  - component: {fileID: 7425766893837157772}
   m_Layer: 0
   m_Name: VFX_Sound Ring
   m_TagString: Untagged
@@ -4927,15 +4926,3 @@ Transform:
   - {fileID: 4600173859515181533}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7425766893837157772
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9094274555194481345}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8df33c2544312a4694dece070d282ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SoundWave
