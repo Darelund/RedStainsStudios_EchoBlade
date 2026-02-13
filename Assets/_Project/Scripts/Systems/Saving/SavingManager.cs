@@ -40,11 +40,11 @@ public class SavingManager : MonoBehaviour
     }
     private void Initialize()
     {
-        savables = GameObject.FindObjectsByType<MonoBehaviour>(FindObjectsInactive.Include, FindObjectsSortMode.None).
-           OfType<ISavable>().ToList();
-        savables.ForEach(s => Debug.Log(s));
+        //savables = GameObject.FindObjectsByType<MonoBehaviour>(FindObjectsInactive.Include, FindObjectsSortMode.None).
+        //   OfType<ISavable>().ToList();
+        //savables.ForEach(s => Debug.Log(s));
         fileSaver = new JsonSaver();
-        LoadData();
+        //LoadData();
 
         SceneManager.sceneLoaded += SceneManager_sceneLoaded;
         //SceneManager.sceneUnloaded += SceneManager_sceneUnloaded;
@@ -85,9 +85,6 @@ public class SavingManager : MonoBehaviour
     #region Saving and Loading between scene changed and application quitting
     private void SceneManager_sceneLoaded(Scene arg0, LoadSceneMode arg1)
     {
-        savables = GameObject.FindObjectsByType<MonoBehaviour>(FindObjectsInactive.Include, FindObjectsSortMode.None).
-           OfType<ISavable>().ToList();
-     
         LoadData();
         if (arg0.name != null && GameManager.Instance != null && GameManager.Instance.ScenesUnlocked.ContainsKey(arg0.name) is true)
         {
@@ -113,8 +110,8 @@ public class SavingManager : MonoBehaviour
     }
     public void LoadData()
     {
-        if (gameData == null)
-            gameData = fileSaver.Load();
+        //if (gameData == null)
+         gameData = fileSaver.Load();
 
 
         if (gameData == null)
@@ -122,15 +119,33 @@ public class SavingManager : MonoBehaviour
             Debug.LogError("Seems like this is your first time loading?" +
                 "That means I will create a new save for you");
             gameData = GameData.CreateNewGameData();
-           
+            savables = GameObject.FindObjectsByType<MonoBehaviour>(FindObjectsInactive.Include, FindObjectsSortMode.None).
+            OfType<ISavable>().ToList();
+            SaveData();
         }
+        else
+        {
+            LoadSavables();
+        }
+    }
+    public void NewGame()
+    {
+        fileSaver.DeleteFile();
+        gameData = GameData.CreateNewGameData();
+        LoadSavables();
+        foreach (var savable in savables)
+        {
+            savable.Save(gameData);
+        }
+        fileSaver.Save(gameData);
+    }
+    private void LoadSavables()
+    {
+        savables = GameObject.FindObjectsByType<MonoBehaviour>(FindObjectsInactive.Include, FindObjectsSortMode.None).
+              OfType<ISavable>().ToList();
         foreach (var savable in savables)
         {
             savable.Load(gameData);
         }
-    }
-    public void DeleteSaves()
-    {
-        fileSaver.DeleteFile();
     }
 }

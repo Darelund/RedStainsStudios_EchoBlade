@@ -16,11 +16,12 @@ public class EnemyChaseState : NonMonoState
         transform = nonMonoStateMachine.transform;
         this.agent = nonMonoStateMachine.GetComponent<NavMeshAgent>();
         this.detectionHelper = detectionHelper;
-        agent.speed = agent.speed + 3; //Increasing speed by 4
+     
     }
     public override void EnterState()
     {
         target = nonMonoStateMachine.GetComponent<EnemyController>().detectionHelper.GetTarget();
+        agent.speed = agent.speed + 3; //Increasing speed by 4
     }
     public override void ExitState()
     {

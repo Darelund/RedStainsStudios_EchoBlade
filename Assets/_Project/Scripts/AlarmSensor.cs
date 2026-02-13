@@ -39,12 +39,14 @@ public class AlarmSensor : MonoBehaviour
     private void PingEnemies(EnemyController controller, Transform investigationPoint)
     {
 
-        //If an enemy is chasing or attacking a player then it shouldn't care about an alarm
+        //If an enemy is chasing or attacking a player then it shouldn't care about an alarm. Also true if its dead
         if(controller.GetCurrentState().GetType() == typeof(EnemyAttackState) ||
             controller.GetCurrentState().GetType() == typeof(EnemyChaseState))
         {
             return;
         }
+
+        if (controller.IsDead() is true) return; //Dead enemies shouldn't react
 
         if (CanEnemyReachTargetPointEnemy(controller, investigationPoint) is false) return; //Not possible for enemy to go to target
        

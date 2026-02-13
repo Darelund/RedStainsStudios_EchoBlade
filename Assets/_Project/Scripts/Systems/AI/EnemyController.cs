@@ -124,8 +124,8 @@ public class EnemyController : NonMonoBehaviourStateMachine, ISavable
 
     public void Load(GameData gameData)
     {
-        if (gameData.EnemiesData.Count == 0) return;
         if(gameData.EnemiesData == null) return;
+        if (gameData.EnemiesData.Count == 0) return;
 
         foreach (var enemy in gameData.EnemiesData)
         {
