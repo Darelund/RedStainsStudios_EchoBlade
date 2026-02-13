@@ -310,17 +310,37 @@ PrefabInstance:
       value: Lamppost
       objectReference: {fileID: 0}
     - target: {fileID: 5411014274372967415, guid: 4181585174fa67a4dac2ea3667a54645, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5411014274372967415, guid: 4181585174fa67a4dac2ea3667a54645, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5411014274372967415, guid: 4181585174fa67a4dac2ea3667a54645, type: 3}
+      propertyPath: m_TagString
+      value: Light
       objectReference: {fileID: 0}
     - target: {fileID: 5771139310979791394, guid: 4181585174fa67a4dac2ea3667a54645, type: 3}
       propertyPath: m_Materials.Array.size
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5771139310979791394, guid: 4181585174fa67a4dac2ea3667a54645, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 660535416369590717, guid: b17dc1dd6f36003438f8e7d7ba6c0938, type: 3}
+    - target: {fileID: 5771139310979791394, guid: 4181585174fa67a4dac2ea3667a54645, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2336839302229727711, guid: b17dc1dd6f36003438f8e7d7ba6c0938, type: 3}
+    - target: {fileID: 5771139310979791394, guid: 4181585174fa67a4dac2ea3667a54645, type: 3}
+      propertyPath: 'm_Materials.Array.data[2]'
+      value: 
+      objectReference: {fileID: 2100000, guid: d40854913516d10409c8e27bc08ae223, type: 2}
+    - target: {fileID: 5771139310979791394, guid: 4181585174fa67a4dac2ea3667a54645, type: 3}
       propertyPath: 'm_Materials.Array.data[3]'
       value: 
-      objectReference: {fileID: 2100000, guid: 71fa024c6925e3346bf175d539580633, type: 2}
+      objectReference: {fileID: 2100000, guid: d40854913516d10409c8e27bc08ae223, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

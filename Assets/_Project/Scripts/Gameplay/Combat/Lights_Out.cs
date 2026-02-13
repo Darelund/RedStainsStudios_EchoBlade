@@ -32,6 +32,7 @@ public class Lights_Out : MonoBehaviour
 
     private GameObject[] objects;
 
+    [SerializeField] private int HowHighToSearchForParent;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -170,11 +171,11 @@ public class Lights_Out : MonoBehaviour
 
     IEnumerator DisableLight(GameObject[] light)
     {
-
+       
         foreach (GameObject obj in light)
         {
-            Light lightComponent = obj.GetComponentInChildren<Light>();
-            AlarmSensor sensor = obj.GetComponentInChildren<AlarmSensor>();
+            Light lightComponent = GetHighestParent(obj.transform, HowHighToSearchForParent).GetComponentInChildren<Light>();
+            AlarmSensor sensor = GetHighestParent(obj.transform, HowHighToSearchForParent).GetComponentInChildren<AlarmSensor>();
 
             lightComponent.enabled = false;
             sensor.isDisabled = true;
@@ -184,12 +185,63 @@ public class Lights_Out : MonoBehaviour
 
         foreach (GameObject obj in light)
         {
-            Light lightComponent = obj.GetComponentInChildren<Light>();
-            AlarmSensor sensor = obj.GetComponentInChildren<AlarmSensor>();
+            Light lightComponent = GetHighestParent(obj.transform, HowHighToSearchForParent).GetComponentInChildren<Light>();
+            AlarmSensor sensor = GetHighestParent(obj.transform, HowHighToSearchForParent).GetComponentInChildren<AlarmSensor>();
 
             lightComponent.enabled = true;
             sensor.isDisabled = false;
         }
+    }
 
+    
+
+    private Component FindComponent(Transform startTransform, Type targetType)
+    {
+        Transform highestTransform = GetHighestParent(startTransform, 2);
+        return SearchAfterComponent(highestTransform, targetType);
+    }
+    private Transform GetHighestParent(Transform startTransform, int maxSearches)
+    {
+        int currentSearches = 0;
+        Transform highestParent = startTransform;
+        while(highestParent.parent != null && maxSearches > currentSearches)
+        {
+            highestParent = highestParent.parent;
+            currentSearches++;
+        }
+        return highestParent;
+    }
+    private Component SearchAfterComponent(Transform highestTransform, Type targetType)
+    {
+        List<Transform> AllChildren = GetAllNestedChildren(highestTransform);
+        AllChildren.ForEach(c => Debug.Log(c.gameObject.name));
+        foreach (var child in AllChildren)
+        {
+            var comp = child.GetComponent(targetType);
+            if(comp != null)
+            {
+                return child;
+            }
+        }
+        return null;
+    }
+    public List<Transform> GetAllNestedChildren(Transform parent)
+    {
+        List<Transform> childrenTransforms = new();
+
+        Queue<Transform> parents = new Queue<Transform>();
+        parents.Enqueue(parent);
+
+        while (parents.Count > 0)
+        {
+            parent = parents.Dequeue();
+            childrenTransforms.Add(parent);
+
+            for (int i = 0; i < parent.childCount; i++)
+            {
+                parents.Enqueue(parent.GetChild(i));
+            }
+        }
+        return childrenTransforms;
     }
 }

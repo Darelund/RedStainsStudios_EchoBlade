@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 5179910974664612717}
   - component: {fileID: 1204472344183436307}
   - component: {fileID: 8829855255317929437}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: lantern 1
-  m_TagString: Light
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -469,6 +469,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6580837107861947977}
     m_Modifications:
+    - target: {fileID: 3172020195900292715, guid: 01358d909c13f3e44aae06fb99680338, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3172020195900292715, guid: 01358d909c13f3e44aae06fb99680338, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 71fa024c6925e3346bf175d539580633, type: 2}
     - target: {fileID: 3193058079024434681, guid: 01358d909c13f3e44aae06fb99680338, type: 3}
       propertyPath: m_Name
       value: ceiling chain Variant
@@ -476,6 +484,14 @@ PrefabInstance:
     - target: {fileID: 3193058079024434681, guid: 01358d909c13f3e44aae06fb99680338, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3193544467660445675, guid: 01358d909c13f3e44aae06fb99680338, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3193544467660445675, guid: 01358d909c13f3e44aae06fb99680338, type: 3}
+      propertyPath: m_TagString
+      value: Light
       objectReference: {fileID: 0}
     - target: {fileID: 3195350842500354981, guid: 01358d909c13f3e44aae06fb99680338, type: 3}
       propertyPath: m_LocalPosition.x

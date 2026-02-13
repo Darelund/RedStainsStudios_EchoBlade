@@ -47747,6 +47747,10 @@ PrefabInstance:
       propertyPath: coolDownImage
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2576390160327085996, guid: 9f64805503237ea448f51b663252870e, type: 3}
+      propertyPath: HowHighToSearchForParent
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4716509805505160708, guid: 9f64805503237ea448f51b663252870e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.000000029802322
@@ -54237,6 +54241,10 @@ PrefabInstance:
     - target: {fileID: 4655388370586393318, guid: bb1a4f99f33e980409e2b8e378dd0cae, type: 3}
       propertyPath: m_Name
       value: lantern 1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5179910974664612717, guid: bb1a4f99f33e980409e2b8e378dd0cae, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6580837107861947977, guid: bb1a4f99f33e980409e2b8e378dd0cae, type: 3}
       propertyPath: m_LocalPosition.x
