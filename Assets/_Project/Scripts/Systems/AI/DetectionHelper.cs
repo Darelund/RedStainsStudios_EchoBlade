@@ -110,7 +110,7 @@ public class DetectionHelper
             //Debug.Log($"Extremity position: {extremityPoints[9].GetComponentInParent<Animator>().GetBoneTransform(HumanBodyBones.Head).transform.position}");
             //if (rayHit.collider != null)
             //    Debug.Log($"Name of hit object - {rayHit.collider.name} and target transform is {detectorObject.transform.name}");
-            if (rayHit.collider != null && rayHit.transform == detectorObject.transform)
+            if (rayHit.collider != null && rayHit.transform == detectorObject.transform && target.transform.gameObject.layer != 11)
             {
                 //TODO: It shouldn't only be about time insight
                 //it should also be how close you are. If you are in the face of the
@@ -189,7 +189,7 @@ public class DetectionHelper
            // Vector3 predictedDir = PredictFutureDirection();
             Physics.Raycast(extremityPoints[i].transform.position, predictedDir, out rayHit, detectionRange, (1 << 0) | (1 << 6) | (1 << 13) | (1 << 15));
             Debug.DrawRay(extremityPoints[i].transform.position, (predictedDir) * detectionRange, Color.darkOrange, 1);
-            if (rayHit.collider != null && rayHit.transform == detectorObject.transform)
+            if (rayHit.collider != null && rayHit.transform == detectorObject.transform && target.transform.gameObject.layer != 11)
                 return true;
         }
 
@@ -224,7 +224,7 @@ public class DetectionHelper
             // Vector3 predictedDir = PredictFutureDirection();
             Physics.Raycast(extremityPoints[i].transform.position, predictedDir, out rayHit, detectionRange, (1 << 0) | (1 << 6) | (1 << 13) | (1 << 15));
             Debug.DrawRay(extremityPoints[i].transform.position, (predictedDir) * detectionRange, Color.darkOrange, 1);
-            if (rayHit.collider != null && rayHit.transform == detectorObject.transform)
+            if (rayHit.collider != null && rayHit.transform == detectorObject.transform && target.transform.gameObject.layer != 11)
                 return true;
         }
         

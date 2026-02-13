@@ -95,7 +95,7 @@ public class Tail : MonoBehaviour
         GetComponent<Movement>().UseGravity = false;
         Debug.Log("Tail effect activated");
 
-        gameObject.layer = 9;
+        gameObject.layer = 11;
 
         float abilityTimer;
 
