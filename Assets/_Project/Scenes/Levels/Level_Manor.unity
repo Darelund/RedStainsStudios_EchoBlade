@@ -4476,7 +4476,7 @@ PrefabInstance:
       objectReference: {fileID: 1617669294}
     - target: {fileID: 7570583017620229133, guid: 85320e484edcf3b47b213c73ad459709, type: 3}
       propertyPath: skillPoints
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7570583017620229133, guid: 85320e484edcf3b47b213c73ad459709, type: 3}
       propertyPath: inputActions
@@ -47675,6 +47675,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 177676042548167810, guid: 9f64805503237ea448f51b663252870e, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1086468171514724177, guid: 9f64805503237ea448f51b663252870e, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -47725,6 +47729,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1086468171514724177, guid: 9f64805503237ea448f51b663252870e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1530817695826123151, guid: 9f64805503237ea448f51b663252870e, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1725584136975533930, guid: 9f64805503237ea448f51b663252870e, type: 3}

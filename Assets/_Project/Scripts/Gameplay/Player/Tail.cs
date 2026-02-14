@@ -18,6 +18,8 @@ public class Tail : MonoBehaviour
 
     [SerializeField] private InputActionAsset inputActions;
     [SerializeField] private InputAction tail;
+    [SerializeField] private SkinnedMeshRenderer playerVisuals;
+    [SerializeField] private TrailRenderer playerShadow; //TODO: Add a real shadow later. Probably like a animated 2d sprite with canvas
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -89,12 +91,30 @@ public class Tail : MonoBehaviour
         return closestEnemy;
     }
 
+    
     IEnumerator TailEnemy(GameObject enemy)
     {
         // Enable tail effect
         GetComponent<Movement>().UseGravity = false;
-        Debug.Log("Tail effect activated");
+        playerVisuals.enabled = false;
+        playerShadow.enabled = true;
+        gameObject.layer = 16; //No collision layer
+        Vector3 offset = new Vector3(0, 0, -1f);
 
+        float start = 0;
+        float end = 1;
+
+        while(start < end)
+        {
+            start += Time.deltaTime;
+            transform.position = Vector3.Lerp(transform.position, enemy.transform.TransformPoint(offset), start);
+            yield return null;
+        }
+
+
+        Debug.Log("Tail effect activated");
+        playerVisuals.enabled = true;
+        playerShadow.enabled = false;
         gameObject.layer = 11;
 
         float abilityTimer;
@@ -108,7 +128,6 @@ public class Tail : MonoBehaviour
             abilityTimer = duration;
         }
 
-        Vector3 offset = new Vector3(0, 0, -1f);
 
         
 
