@@ -113,8 +113,8 @@ public class Tail : MonoBehaviour
 
 
         Debug.Log("Tail effect activated");
-        playerVisuals.enabled = true;
-        playerShadow.enabled = false;
+        //playerVisuals.enabled = true;
+        //playerShadow.enabled = false;
         gameObject.layer = 11;
 
         float abilityTimer;
@@ -141,7 +141,8 @@ public class Tail : MonoBehaviour
 
             yield return null;
         }
-
+        playerVisuals.enabled = true;
+        playerShadow.enabled = false;
         gameObject.layer = 0;
 
         //Vector3 leaveTail = new Vector3(Input.mousePosition.x, transform.position.y, Input.mousePosition.z);

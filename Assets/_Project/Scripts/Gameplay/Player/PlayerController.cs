@@ -1,5 +1,7 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -24,7 +26,7 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private SkinnedMeshRenderer playerSkinnedMeshRenderer;
     private Material playerDefaultMaterial;
-    private Material playerShadowMaterial;
+    [SerializeField] private Material playerShadowMaterial;
 
     [SerializeField] private float phasetime = 2f;
 
@@ -49,8 +51,8 @@ public class PlayerController : MonoBehaviour
 
        
         playerDefaultMaterial = playerSkinnedMeshRenderer.material;
-        playerShadowMaterial = new Material(playerDefaultMaterial);
-        playerShadowMaterial.color = Color.dimGray;
+        //playerShadowMaterial = new Material(playerDefaultMaterial);
+        //playerShadowMaterial.color = Color.dimGray;
     }
   
     public void EnableAllActions()
@@ -190,7 +192,24 @@ public class PlayerController : MonoBehaviour
     IEnumerator Phase()
     {
         LayerMask phaseableLayer = LayerMask.GetMask("Phaseable");
-        playerSkinnedMeshRenderer.material = playerShadowMaterial;
+
+        var oldMaterials = playerSkinnedMeshRenderer.materials;
+        Material[] newMaterials = playerSkinnedMeshRenderer.materials;
+
+        for (int i = 0; i < newMaterials.Length; i++)
+        {
+            newMaterials[i] = playerShadowMaterial;
+        }
+        //newMaterials.ForEach(m => m = playerShadowMaterial);
+        //int current = 0;
+        //while(current < 4)
+        //{
+        //    playerSkinnedMeshRenderer.materials[current] = playerShadowMaterial;
+        //    current++;
+        //}
+        playerSkinnedMeshRenderer.materials = newMaterials;
+
+       // playerSkinnedMeshRenderer.material = playerShadowMaterial;
         controller.excludeLayers = phaseableLayer;
 
         if (PlayerAbilities.Instance.GetAbilityState(PlayerAbility.AbilityDuration))
@@ -201,8 +220,13 @@ public class PlayerController : MonoBehaviour
         {
             yield return new WaitForSeconds(phasetime);
         }
-
-        playerSkinnedMeshRenderer.material = playerDefaultMaterial;
+        //current = 0;
+        //while (current < 4)
+        //{
+        //    playerSkinnedMeshRenderer.sharedMaterials[current] = oldMaterials[current];
+        //    current++;
+        //}
+        playerSkinnedMeshRenderer.materials = oldMaterials;
         isPhasing = false;
 
         controller.excludeLayers = 0;
