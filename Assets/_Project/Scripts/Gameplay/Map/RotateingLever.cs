@@ -11,6 +11,7 @@ public class RotateingLever : MonoBehaviour, ISavable
     private bool canPull = false;
     private AudioSource audioSource;
     private string Unique_ID;
+    [SerializeField] private GameObject interactionPrompt;
 
     [SerializeField] private bool shouldProgressQuest;
     [SerializeField] private bool shouldCompleteMainObjective;
@@ -71,6 +72,7 @@ public class RotateingLever : MonoBehaviour, ISavable
         if (isDaggerblade)
         {
             daggerblade.SetActive(false);
+            interactionPrompt.SetActive(false);
             yield return null;
         }
 

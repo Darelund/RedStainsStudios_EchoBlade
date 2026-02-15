@@ -16360,11 +16360,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb1a4f99f33e980409e2b8e378dd0cae, type: 3}
---- !u!1 &463618559 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1881246514499044404, guid: bb54d87a5e99bc64e9d3e5359039d4f1, type: 3}
-  m_PrefabInstance: {fileID: 1871818177}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &464480274
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28330,7 +28325,7 @@ PrefabInstance:
       objectReference: {fileID: 2009088402}
     - target: {fileID: 3311337165116801350, guid: cca769b18ee767c489719b81b5d3cce7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.33385006
+      value: -1.3491236
       objectReference: {fileID: 0}
     - target: {fileID: 3311337165116801350, guid: cca769b18ee767c489719b81b5d3cce7, type: 3}
       propertyPath: m_LocalPosition.y
@@ -28338,7 +28333,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3311337165116801350, guid: cca769b18ee767c489719b81b5d3cce7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.0055238195
+      value: 0.0053784526
       objectReference: {fileID: 0}
     - target: {fileID: 5488256223289003480, guid: cca769b18ee767c489719b81b5d3cce7, type: 3}
       propertyPath: Target.TrackingTarget
@@ -31232,7 +31227,7 @@ PrefabInstance:
       objectReference: {fileID: 1650064427}
     - target: {fileID: 3311337165116801350, guid: cca769b18ee767c489719b81b5d3cce7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.30445036
+      value: -0.19281757
       objectReference: {fileID: 0}
     - target: {fileID: 3311337165116801350, guid: cca769b18ee767c489719b81b5d3cce7, type: 3}
       propertyPath: m_LocalPosition.y
@@ -31240,7 +31235,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3311337165116801350, guid: cca769b18ee767c489719b81b5d3cce7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.008003309
+      value: 0.60382843
       objectReference: {fileID: 0}
     - target: {fileID: 5488256223289003480, guid: cca769b18ee767c489719b81b5d3cce7, type: 3}
       propertyPath: Target.TrackingTarget
@@ -42640,13 +42635,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9adcbf3ea0afa644a5ab828b5eede67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RotateingLever
+  interactionPrompt: {fileID: 2002659436}
   shouldProgressQuest: 1
   shouldCompleteMainObjective: 1
   objectiveCompleteScreen: {fileID: 1451551727}
   shouldUpdateNavMesh: 0
   isDaggerblade: 1
-  daggerblade: {fileID: 463618559}
-  navMeshSurface: {fileID: 0}
+  daggerblade: {fileID: 1871818178}
+  navMeshSurface: {fileID: 1980692427}
   actionMap: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   pullAction:
     m_Name: Pull
@@ -42658,7 +42654,7 @@ MonoBehaviour:
     m_SingletonActionBindings: []
     m_Flags: 0
   player: {fileID: 1544217542}
-  cinemachineCamera: {fileID: 0}
+  cinemachineCamera: {fileID: 2060776217}
   lever: {fileID: 55932281}
   door: {fileID: 1171088659}
   leverClip: {fileID: 8300000, guid: 4b66ae9c35ce9974aa6573a8f1521d37, type: 3}
@@ -47777,7 +47773,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4716509805505160708, guid: 9f64805503237ea448f51b663252870e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.000000029802322
+      value: 4.9298143
       objectReference: {fileID: 0}
     - target: {fileID: 4716509805505160708, guid: 9f64805503237ea448f51b663252870e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -47785,7 +47781,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4716509805505160708, guid: 9f64805503237ea448f51b663252870e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.3595982
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4716509805505160708, guid: 9f64805503237ea448f51b663252870e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -59437,6 +59433,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1379454310}
   m_SourcePrefab: {fileID: 100100000, guid: bb54d87a5e99bc64e9d3e5359039d4f1, type: 3}
+--- !u!1 &1871818178 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3173136512936449530, guid: bb54d87a5e99bc64e9d3e5359039d4f1, type: 3}
+  m_PrefabInstance: {fileID: 1871818177}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1877150564 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4102868852454362, guid: d33d1c1d6757af64f9740acdcc056948, type: 3}
@@ -63186,6 +63187,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 2928252327384497452, guid: f31d7085a400ebb4d8a0db596ba837f8, type: 3}
   m_PrefabInstance: {fileID: 1746040225}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2002659436 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5430348344412739738, guid: cb3e3227eac171d4aa8fd0d321bf8a36, type: 3}
+  m_PrefabInstance: {fileID: 1739047685}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2005726380
 GameObject:

@@ -70,6 +70,8 @@ public class DetectionHelper
     //int maxColliders = 10;
     public DetectionState Detect(float CHASE_THRESHOLD = 1.8f, float INVESTIGATE_THRESHOLD = 0.8f)
     {
+        UpdateLight();
+
         Vector3 forwardDir = detectorObject.forward;
         Vector3 targetDir = (target.transform.position - detectorObject.position);
         var distanceToPlayer = targetDir.magnitude;
@@ -87,7 +89,7 @@ public class DetectionHelper
             var detectResult = ShootOutRays(CHASE_THRESHOLD);
             if (detectResult == DetectionState.Detect || detectResult == DetectionState.Chase) return detectResult;
         }
-        UpdateLight();
+       
 
        
         if (timeInSight > INVESTIGATE_THRESHOLD)
@@ -124,7 +126,8 @@ public class DetectionHelper
                     //Debug.Log("Time to chase");
                     return DetectionState.Chase;
                 }
-                lightChanger.ChangeVisibilityColor(timeInSight);
+                UpdateLight();
+                //lightChanger.ChangeVisibilityColor(timeInSight);
                 //Debug.Log("Detecting");
                 //Stand still and look at the thing you detect
                 return DetectionState.Detect;

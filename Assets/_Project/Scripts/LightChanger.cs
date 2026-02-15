@@ -1,10 +1,12 @@
 using UnityEngine;
 using UnityEngine.InputSystem.XR;
+using UnityEngine.UI;
 
 public class LightChanger : MonoBehaviour
 {
     public float angle;
     public float range;
+    [SerializeField] private Image detectionImage;
 
     Light spotLight;
     Gradient gradient;
@@ -56,5 +58,16 @@ public class LightChanger : MonoBehaviour
         //    spotLight.color = Color.Lerp(Color.yellow, Color.red, timeInSight - 1);// 0.5 - 0.8
         //}
         spotLight.color = gradient.Evaluate(timeInSight);
+
+
+        //if (detectionImage == null) return;
+
+        //if(timeInSight <=  0)
+        //    detectionImage.gameObject.SetActive(false);
+        //else
+        //{
+        //    if (detectionImage.gameObject.activeSelf is false) detectionImage.gameObject.SetActive(true);
+        //    detectionImage.color = gradient.Evaluate(timeInSight);
+        //}
     }
 }
