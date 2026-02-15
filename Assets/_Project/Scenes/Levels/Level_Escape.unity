@@ -5602,6 +5602,22 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -1.1209692
       objectReference: {fileID: 0}
+    - target: {fileID: 4716509805505160708, guid: 9f64805503237ea448f51b663252870e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.5615247
+      objectReference: {fileID: 0}
+    - target: {fileID: 4716509805505160708, guid: 9f64805503237ea448f51b663252870e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.43087327
+      objectReference: {fileID: 0}
+    - target: {fileID: 4716509805505160708, guid: 9f64805503237ea448f51b663252870e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.5604457
+      objectReference: {fileID: 0}
+    - target: {fileID: 4716509805505160708, guid: 9f64805503237ea448f51b663252870e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.43004528
+      objectReference: {fileID: 0}
     - target: {fileID: 5965158235604092076, guid: 9f64805503237ea448f51b663252870e, type: 3}
       propertyPath: m_Name
       value: Player Ref
@@ -18149,6 +18165,10 @@ PrefabInstance:
       propertyPath: leverClip
       value: 
       objectReference: {fileID: 8300000, guid: 7bac5b2fd5290544ab9cb8cea131fef6, type: 3}
+    - target: {fileID: 2819065850993357007, guid: a0164d9c476080e449c72cf58e7709ab, type: 3}
+      propertyPath: cinemachineCamera
+      value: 
+      objectReference: {fileID: 1827211205}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -19295,6 +19315,10 @@ PrefabInstance:
       propertyPath: leverClip
       value: 
       objectReference: {fileID: 8300000, guid: 7bac5b2fd5290544ab9cb8cea131fef6, type: 3}
+    - target: {fileID: 2819065850993357007, guid: a0164d9c476080e449c72cf58e7709ab, type: 3}
+      propertyPath: cinemachineCamera
+      value: 
+      objectReference: {fileID: 1223941368}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

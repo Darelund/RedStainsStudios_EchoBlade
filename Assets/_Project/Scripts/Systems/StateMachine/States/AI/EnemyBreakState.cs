@@ -90,6 +90,6 @@ public class EnemyBreakState : NonMonoState
         (string Activity, float BreakTime) breakActivityChoosen = breakActivities[Random.Range(0, breakActivities.Count)];
         isOnBreak = true;
         breakTime = breakActivityChoosen.BreakTime;
-        Debug.Log($"{nonMonoStateMachine.gameObject.name} is on a break : {breakActivityChoosen.Activity}");
+        //Debug.Log($"{nonMonoStateMachine.gameObject.name} is on a break : {breakActivityChoosen.Activity}");
     }
 }

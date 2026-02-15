@@ -23,6 +23,36 @@ public class AbilityBar : MonoBehaviour, ISavable
         if (isEmpty is true)
             GetComponentInChildren<TMP_Text>().enabled = false;
     }
+    private void OnEnable()
+    {
+        if (isEmpty is false)
+        {
+            PlayerAbility valueAsPlayerAbility = (PlayerAbility)playerAbilityID;
+            switch (valueAsPlayerAbility)//I know, beautiful code, anyways I might make make it better in the future
+            {
+                case PlayerAbility.ShadowWalk:
+                    PlayerController.OnPhaseCoolDown += UpdateCoolDown;
+
+                    break;
+                case PlayerAbility.Tail:
+                    Tail.OnTailCoolDown += UpdateCoolDown;
+
+                    break;
+                case PlayerAbility.Lure:
+                    Lure.OnLureCoolDown += UpdateCoolDown;
+
+                    break;
+                case PlayerAbility.LightsOut:
+                    Lights_Out.OnLightOutCoolDown += UpdateCoolDown;
+
+                    break;
+                case PlayerAbility.SilentDakeDown:
+                    TakeDown.OnTakeDownCoolDown += UpdateCoolDown;
+
+                    break;
+            }
+        }
+    }
     private void OnDisable()
     {
         if (isEmpty is false)

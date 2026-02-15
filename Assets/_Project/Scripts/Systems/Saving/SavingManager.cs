@@ -145,7 +145,7 @@ public class SavingManager : MonoBehaviour
     {
         savables = GameObject.FindObjectsByType<MonoBehaviour>(FindObjectsInactive.Include, FindObjectsSortMode.None).
               OfType<ISavable>().ToList();
-        savables.ForEach(s => Debug.Log(s));    
+        //savables.ForEach(s => Debug.Log(s));    
         foreach (var savable in savables)
         {
             savable.Load(gameData);

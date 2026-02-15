@@ -5020,6 +5020,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 7bac5b2fd5290544ab9cb8cea131fef6, type: 3}
     - target: {fileID: 2819065850993357007, guid: a0164d9c476080e449c72cf58e7709ab, type: 3}
+      propertyPath: cinemachineCamera
+      value: 
+      objectReference: {fileID: 1650064427}
+    - target: {fileID: 2819065850993357007, guid: a0164d9c476080e449c72cf58e7709ab, type: 3}
       propertyPath: shouldUpdateNavMesh
       value: 1
       objectReference: {fileID: 0}
@@ -15203,6 +15207,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 7bac5b2fd5290544ab9cb8cea131fef6, type: 3}
     - target: {fileID: 2819065850993357007, guid: a0164d9c476080e449c72cf58e7709ab, type: 3}
+      propertyPath: cinemachineCamera
+      value: 
+      objectReference: {fileID: 1650064427}
+    - target: {fileID: 2819065850993357007, guid: a0164d9c476080e449c72cf58e7709ab, type: 3}
       propertyPath: shouldProgressQuest
       value: 1
       objectReference: {fileID: 0}
@@ -16445,6 +16453,10 @@ PrefabInstance:
       propertyPath: navMeshSurface
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2819065850993357007, guid: a0164d9c476080e449c72cf58e7709ab, type: 3}
+      propertyPath: cinemachineCamera
+      value: 
+      objectReference: {fileID: 2060776217}
     - target: {fileID: 7066963040038473936, guid: a0164d9c476080e449c72cf58e7709ab, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -18074,6 +18086,10 @@ PrefabInstance:
       propertyPath: leverClip
       value: 
       objectReference: {fileID: 8300000, guid: 7bac5b2fd5290544ab9cb8cea131fef6, type: 3}
+    - target: {fileID: 2819065850993357007, guid: a0164d9c476080e449c72cf58e7709ab, type: 3}
+      propertyPath: cinemachineCamera
+      value: 
+      objectReference: {fileID: 2060776217}
     - target: {fileID: 7066963040038473936, guid: a0164d9c476080e449c72cf58e7709ab, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
