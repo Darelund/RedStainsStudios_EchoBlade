@@ -246,6 +246,7 @@ MonoBehaviour:
   targetMask:
     serializedVersion: 2
     m_Bits: 0
+  LightsOutOutlineShaderMaterial: {fileID: 2100000, guid: 71fa024c6925e3346bf175d539580633, type: 2}
   slowMoFactor: 0.5
   disableDuration: 5
   range: 10
@@ -385,7 +386,7 @@ Transform:
   m_GameObject: {fileID: 6306463159368933397}
   serializedVersion: 2
   m_LocalRotation: {x: -0.00000022263974, y: -0.7933532, z: 0.6087616, w: -0.00000022815325}
-  m_LocalPosition: {x: 0.000000029802322, y: 18, z: 0.3595982}
+  m_LocalPosition: {x: -0.0000023841858, y: 18, z: 3}
   m_LocalScale: {x: 1.298381, y: 1.2983809, z: 1.2983809}
   m_ConstrainProportionsScale: 0
   m_Children: []

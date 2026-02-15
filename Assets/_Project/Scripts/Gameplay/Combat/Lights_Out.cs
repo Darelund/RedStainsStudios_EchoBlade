@@ -12,6 +12,7 @@ public class Lights_Out : MonoBehaviour
     [SerializeField] private InputAction lightsOut;
     [SerializeField] private Material material;
     [SerializeField] private LayerMask targetMask;
+    [SerializeField] private Material LightsOutOutlineShaderMaterial;
 
     //[SerializeField] public Image coolDownImage;//All images should be seperate with an event. Now I have to do a dumb solution in the AbilityBar to make this work. We need to come up with a less dumb solution later - Vidar
     public static event Action<float> OnLightOutCoolDown;
@@ -29,7 +30,7 @@ public class Lights_Out : MonoBehaviour
 
 
 
-    List<MeshRenderer> renderers = new List<MeshRenderer>();
+    List<(MeshRenderer MeshRenderer, Material[] OldMaterial)> renderers = new();
 
     private bool throwRay;
     [SerializeField] public bool ShowDebugs;
@@ -71,9 +72,17 @@ public class Lights_Out : MonoBehaviour
                 //_Outline_Scale
 
                 MeshRenderer renderer = light.GetComponent<MeshRenderer>();
+                Material[] oldMaterials = renderer.materials;
+                Material[] newMaterials = renderer.materials;
 
-                renderer.materials[1].SetFloat("_Outline_Scale", 1.05f);
-                renderers.Add(renderer);
+                for (int i = 0; i < newMaterials.Length; i++)
+                {
+                    newMaterials[i] = LightsOutOutlineShaderMaterial;
+                    newMaterials[i].SetFloat("_Outline_Scale", 1.05f);
+                }
+
+                renderer.materials = newMaterials;
+                renderers.Add((renderer, oldMaterials));
             }
 
 
@@ -104,9 +113,10 @@ public class Lights_Out : MonoBehaviour
                     Debug.Log("Disable Lights");
                 StartCoroutine(DisableLight(objects));
 
-                foreach (MeshRenderer renderer in renderers)
+                foreach (var renderer in renderers)
                 {
-                    renderer.materials[1].SetFloat("_Outline_Scale", 0f);
+                    renderer.MeshRenderer.materials = renderer.OldMaterial;
+                    //renderer.materials[1].SetFloat("_Outline_Scale", 0f);
                 }
 
                 throwRay = false;
@@ -128,9 +138,10 @@ public class Lights_Out : MonoBehaviour
             }
             else if (Input.GetMouseButton(1))
             {
-                foreach (MeshRenderer renderer in renderers)
+                foreach (var renderer in renderers)
                 {
-                    renderer.materials[1].SetFloat("_Outline_Scale", 0f);
+                    renderer.MeshRenderer.materials = renderer.OldMaterial;
+                    //renderer.materials[1].SetFloat("_Outline_Scale", 0f);
                 }
 
                 throwRay = false;
@@ -140,12 +151,19 @@ public class Lights_Out : MonoBehaviour
             useTimerTick += Time.deltaTime;
             if(useTimer <= useTimerTick)
             {
+                foreach (var renderer in renderers)
+                {
+                    renderer.MeshRenderer.materials = renderer.OldMaterial;
+                    //renderer.materials[1].SetFloat("_Outline_Scale", 0f);
+                }
                 useTimerTick = 0;
-
 
                 throwRay = false;
                 Time.timeScale = 1f;
                 timer = 2f;
+
+                OnLightOutCoolDown?.Invoke(0);
+
             }
         }
     }
