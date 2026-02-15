@@ -3,15 +3,12 @@ using UnityEngine.AI;
 
 public class EnemyAlertState : NonMonoState
 {
-    private NavMeshAgent agent;
+    private readonly NavMeshAgent agent;
     private Vector3 soundlocation;
-    private GameObject player;
 
-    private float timer = 0;
     public EnemyAlertState(NonMonoBehaviourStateMachine nonMonoStateMachine) : base(nonMonoStateMachine)
     {
         agent = nonMonoStateMachine.GetComponent<NavMeshAgent>();
-        player = GameObject.FindGameObjectWithTag("player");
     }
     public override void EnterState()
     {

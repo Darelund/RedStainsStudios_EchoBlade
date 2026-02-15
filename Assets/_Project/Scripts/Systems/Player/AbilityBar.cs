@@ -31,7 +31,7 @@ public class AbilityBar : MonoBehaviour, ISavable
             switch (valueAsPlayerAbility)//I know, beautiful code, anyways I might make make it better in the future
             {
                 case PlayerAbility.ShadowWalk:
-                    Movement.OnPhaseCoolDown -= UpdateCoolDown;
+                    PlayerController.OnPhaseCoolDown -= UpdateCoolDown;
 
                     break;
                 case PlayerAbility.Tail:
@@ -61,7 +61,7 @@ public class AbilityBar : MonoBehaviour, ISavable
             switch (valueAsPlayerAbility)//I know, beautiful code, anyways I might make make it better in the future
             {
                 case PlayerAbility.ShadowWalk:
-                    Movement.OnPhaseCoolDown -= UpdateCoolDown;
+                    PlayerController.OnPhaseCoolDown -= UpdateCoolDown;
 
                     break;
                 case PlayerAbility.Tail:
@@ -111,7 +111,7 @@ public class AbilityBar : MonoBehaviour, ISavable
         switch (Value)//I know, beautiful code, anyways I might make make it better in the future
         {
             case PlayerAbility.ShadowWalk:
-                Movement.OnPhaseCoolDown += UpdateCoolDown;
+                PlayerController.OnPhaseCoolDown += UpdateCoolDown;
 
                 break;
             case PlayerAbility.Tail:
@@ -182,7 +182,7 @@ public class AbilityBar : MonoBehaviour, ISavable
                     switch (valueAsPlayerAbility)//I know, beautiful code, anyways I might make make it better in the future
                     {
                         case PlayerAbility.ShadowWalk:
-                            Movement.OnPhaseCoolDown += UpdateCoolDown;
+                            PlayerController.OnPhaseCoolDown += UpdateCoolDown;
 
                             break;
                         case PlayerAbility.Tail:

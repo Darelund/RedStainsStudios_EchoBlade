@@ -36,7 +36,7 @@ public class EnemyController : NonMonoBehaviourStateMachine, ISavable
 
     private void Start()
     {
-        Player = FindAnyObjectByType<Movement>().gameObject;
+        Player = FindAnyObjectByType<PlayerController>().gameObject;
         detectionHelper = new DetectionHelper(transform, eyes.transform, lightChanger);
 
 

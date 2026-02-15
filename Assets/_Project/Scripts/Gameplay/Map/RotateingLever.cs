@@ -24,7 +24,7 @@ public class RotateingLever : MonoBehaviour, ISavable
     [SerializeField] private InputAction pullAction;
 
     [SerializeField] private GameObject player;
-    [SerializeField] private CinemachineCamera camera;
+    [SerializeField] private CinemachineCamera cinemachineCamera;
     [SerializeField] private GameObject lever;
     [SerializeField] private GameObject door;
     [SerializeField] private AudioClip leverClip;
@@ -106,12 +106,12 @@ public class RotateingLever : MonoBehaviour, ISavable
         GameManager.Instance.SwitchState<CutsceneState>();
         audioSource.PlayOneShot(leverClip);
         yield return new WaitForSeconds(1.5f);
-        camera.Target.TrackingTarget = door.transform;
+        cinemachineCamera.Target.TrackingTarget = door.transform;
         yield return new WaitForSeconds(1f);
         door.gameObject.GetComponent<AudioSource>().PlayOneShot(doorClip);
         door.gameObject.GetComponent<Animator>().SetTrigger("OpenDoor");
         yield return new WaitForSeconds(2f);
-        camera.Target.TrackingTarget = player.transform;
+        cinemachineCamera.Target.TrackingTarget = player.transform;
         if (shouldUpdateNavMesh)
         navMeshSurface.UpdateNavMesh(navMeshSurface.navMeshData);
 
@@ -127,7 +127,7 @@ public class RotateingLever : MonoBehaviour, ISavable
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.GetComponent<Movement>() != null && !isPulled) //Find player gameobject
+        if (other.gameObject.GetComponent<PlayerController>() != null && !isPulled) //Find player gameobject
         {
             canPull = true;
             Debug.Log("Can Pull Lever");
@@ -136,7 +136,7 @@ public class RotateingLever : MonoBehaviour, ISavable
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.GetComponent<Movement>() != null && !isPulled) //Find player gameobject
+        if (other.gameObject.GetComponent<PlayerController>() != null && !isPulled) //Find player gameobject
         {
             canPull = false;
             Debug.Log("Can't Pull Lever Anymore");

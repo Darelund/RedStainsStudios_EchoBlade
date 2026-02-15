@@ -44,7 +44,7 @@ public class DetectionHelper
     public DetectionHelper(Transform transform, Transform eyes, LightChanger lightChanger)
     {
         detectorObject = transform;
-        target = GameObject.FindAnyObjectByType<Movement>().gameObject;
+        target = GameObject.FindAnyObjectByType<PlayerController>().gameObject;
         this.eyes = eyes;
         this.lightChanger = lightChanger;
         eyeSightAngle = lightChanger.angle / 2;

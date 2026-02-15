@@ -10,7 +10,7 @@ public class AlarmSensor : MonoBehaviour
     private Vector3 offset = new Vector3(0, 0, 0);
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.GetComponent<Movement>() != null && !isDisabled) //Find player gameobject
+        if (other.gameObject.GetComponent<PlayerController>() != null && !isDisabled) //Find player gameobject
         {
             GetNearbyEnemies(other.gameObject.transform);
         }

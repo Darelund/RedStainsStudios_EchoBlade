@@ -13,7 +13,7 @@ public class DeathState : State, ISavable
         //Show death screen
 
         //Time.timeScale = 0;
-        GameObject.FindAnyObjectByType<Movement>().GetComponentInChildren<Animator>().Play("Dying");
+        GameObject.FindAnyObjectByType<PlayerController>().GetComponentInChildren<Animator>().Play("Dying");
         currentNumberOfDeaths++;
         SavingManager.Instance.SaveData();
 

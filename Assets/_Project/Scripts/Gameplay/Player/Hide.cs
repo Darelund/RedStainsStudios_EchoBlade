@@ -66,7 +66,7 @@ public class Hide : MonoBehaviour
 
     IEnumerator HideCoroutine(GameObject thingsToHideIn)
     {
-        GetComponent<Movement>().UseGravity = false;
+        GetComponent<PlayerController>().UseGravity = false;
         playerStartPoint = transform.position;
 
         var startPoint = transform.position;
@@ -98,6 +98,6 @@ public class Hide : MonoBehaviour
         }
         transform.position = endPoint;
         playerStartPoint = Vector3.zero;
-        GetComponent<Movement>().UseGravity = true;
+        GetComponent<PlayerController>().UseGravity = true;
     }
 }

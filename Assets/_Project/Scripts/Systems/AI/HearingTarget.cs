@@ -4,11 +4,11 @@ using UnityEngine.AI;
 public class HearingTarget
 {
     //TODO: Add hearing
-    private Transform hearingGameObject;
-    private float hearingRange = 30f;
-    private NavMeshAgent agent;
-    private NonMonoBehaviourStateMachine nonMonoBehaviourStateMachine;
-    private int travelDistance = 10; //How far the AI is willing to travel to reach the soundLocation
+    private readonly Transform hearingGameObject;
+    private readonly float hearingRange = 30f;
+    private readonly NavMeshAgent agent;
+    private readonly NonMonoBehaviourStateMachine nonMonoBehaviourStateMachine;
+    //private int travelDistance = 10;// TODO: Add How far the AI is willing to travel to reach the soundLocation
     private bool showHearingDebugs = true;
     public HearingTarget(Transform hearingGameObject, float hearingRange, NonMonoBehaviourStateMachine agent, bool showHearingDebugs)
     {

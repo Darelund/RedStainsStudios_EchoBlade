@@ -4,7 +4,7 @@ using System.Collections;
 public class PullLever : MonoBehaviour
 {
     [SerializeField] private Transform lever;
-    [SerializeField] private float rotationDuration = 1f;
+   // [SerializeField] private float rotationDuration = 1f;
     
     public void StartPull()
     {

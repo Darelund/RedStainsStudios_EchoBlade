@@ -5090,7 +5090,7 @@ PrefabInstance:
     - target: {fileID: 1970521500474399067, guid: c7f67f2d04638cc4a80b33ab56d2cf82, type: 3}
       propertyPath: Movement
       value: 
-      objectReference: {fileID: 1544217540}
+      objectReference: {fileID: 1544217549}
     - target: {fileID: 1970521500474399067, guid: c7f67f2d04638cc4a80b33ab56d2cf82, type: 3}
       propertyPath: AIManager
       value: 
@@ -42642,7 +42642,7 @@ MonoBehaviour:
     m_SingletonActionBindings: []
     m_Flags: 0
   player: {fileID: 1544217542}
-  camera: {fileID: 2060776217}
+  cinemachineCamera: {fileID: 0}
   lever: {fileID: 55932281}
   door: {fileID: 1171088659}
   leverClip: {fileID: 8300000, guid: 4b66ae9c35ce9974aa6573a8f1521d37, type: 3}
@@ -47820,17 +47820,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f64805503237ea448f51b663252870e, type: 3}
---- !u!114 &1544217540 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6539865714335638253, guid: 9f64805503237ea448f51b663252870e, type: 3}
-  m_PrefabInstance: {fileID: 1544217539}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1544217542}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7a707e36c914884c9f00297bf7cce86, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Movement
 --- !u!4 &1544217541 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1086468171514724177, guid: 9f64805503237ea448f51b663252870e, type: 3}
@@ -47841,6 +47830,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5965158235604092076, guid: 9f64805503237ea448f51b663252870e, type: 3}
   m_PrefabInstance: {fileID: 1544217539}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1544217549 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2254117889061333925, guid: 9f64805503237ea448f51b663252870e, type: 3}
+  m_PrefabInstance: {fileID: 1544217539}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1544217542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54691ab830e000c488dfbf69f323edee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerController
 --- !u!1001 &1548024069
 PrefabInstance:
   m_ObjectHideFlags: 0

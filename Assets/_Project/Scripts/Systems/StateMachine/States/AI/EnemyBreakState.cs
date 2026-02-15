@@ -3,12 +3,12 @@ using UnityEngine;
 
 public class EnemyBreakState : NonMonoState
 {
-    private bool isAllowedBreaks = true;
+    //private bool isAllowedBreaks = true; //Maybe add later that some enemies are not allowed to take a break
     private bool isOnBreak = false;
     private float breakTime;
     private float currentBreakTime;
-    List<(string, float)> breakActivities;
-    private DetectionHelper detectionHelper;
+    private readonly List<(string, float)> breakActivities;
+    private readonly DetectionHelper detectionHelper;
 
     public EnemyBreakState(NonMonoBehaviourStateMachine nonMonoStateMachine, DetectionHelper detectionHelper) : base(nonMonoStateMachine)
     {

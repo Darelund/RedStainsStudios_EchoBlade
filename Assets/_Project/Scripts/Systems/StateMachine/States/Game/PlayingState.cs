@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 public class PlayingState : State /*ISavable*/
 {
-    [SerializeField] private Movement Movement; //Replace with a PlayerController later
+    [SerializeField] private PlayerController Movement; //Replace with a PlayerController later
     [SerializeField] private AIManager AIManager;
 
     public override void EnterState()

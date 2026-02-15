@@ -36,8 +36,8 @@ public class TakeDown : MonoBehaviour
         if (timer > 0 || enemy != null)
         {
 
-            GetComponent<Movement>().controller.Move(Vector3.zero);
-            GetComponent<Movement>().DisableAllActions();
+            GetComponent<PlayerController>().controller.Move(Vector3.zero);
+            GetComponent<PlayerController>().DisableAllActions();
             StartCoroutine(CooldownCoroutine());
             Debug.Log("Takedown Executed!");
             GetComponentInChildren<Animator>().SetTrigger("AnimSilentTakedown");
@@ -65,7 +65,7 @@ public class TakeDown : MonoBehaviour
     private IEnumerator CooldownCoroutine()
     {
         yield return new WaitForSeconds(3.5f);
-        GetComponent<Movement>().EnableAllActions();
+        GetComponent<PlayerController>().EnableAllActions();
     }
     private void OnDisable()
     {

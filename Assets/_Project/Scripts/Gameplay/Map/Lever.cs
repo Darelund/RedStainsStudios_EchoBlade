@@ -36,7 +36,7 @@ public class Lever : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.GetComponent<Movement>() != null && !isPulled) //Find player gameobject
+        if (other.gameObject.GetComponent<PlayerController>() != null && !isPulled) //Find player gameobject
         {
             canPull = true;
             Debug.Log("Can Pull Lever");
@@ -45,7 +45,7 @@ public class Lever : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.GetComponent<Movement>() != null && !isPulled) //Find player gameobject
+        if (other.gameObject.GetComponent<PlayerController>() != null && !isPulled) //Find player gameobject
         {
             canPull = false;
             Debug.Log("Can't Pull Lever Anymore");

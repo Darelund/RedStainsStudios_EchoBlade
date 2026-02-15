@@ -10,7 +10,7 @@ public class Door : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.GetComponent<Movement>() != null)
+        if (other.gameObject.GetComponent<PlayerController>() != null)
         {
             //QuestLog.instance.ProgressQuest();
             SavingManager.Instance.SaveData();

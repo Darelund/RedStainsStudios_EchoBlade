@@ -11,15 +11,15 @@ public enum InvestigationType
 }
 public class EnemyInvestigateState : NonMonoState
 {
-    private DetectionHelper detectionHelper;
-    private NavMeshAgent agent;
+    private readonly DetectionHelper detectionHelper;
+    private readonly NavMeshAgent agent;
 
 
-    private float stopThreshold = 2.5f;
+    private readonly float stopThreshold = 2.5f;
     public bool isGoingTowardsInvestigatingPoint;
     public bool isAtInvestigationPoint = false;
 
-    private float investigationTime = 5f;
+    private readonly float investigationTime = 5f;
     [SerializeField] private float currentInvestigationTime;
     private Vector3 interestingpoint;
 
@@ -40,8 +40,7 @@ public class EnemyInvestigateState : NonMonoState
     }
     public override void EnterState()
     {
-        //Investigate(); //How to give it an interesting point
-        interestingpoint = nonMonoStateMachine.GetComponent<EnemyController>().PointOfInterest.Position /*+ new Vector3(0, -0.3f, 0)*/;
+        interestingpoint = nonMonoStateMachine.GetComponent<EnemyController>().PointOfInterest.Position;
         SearchAngle = (int)Random.Range(0, 360);
         investigationType = nonMonoStateMachine.GetComponent<EnemyController>().InvestigationType;
         CanTalk = true;
@@ -57,25 +56,15 @@ public class EnemyInvestigateState : NonMonoState
     {
         Investigate();
     }
-    public override void FixedUpdateState()
-    {
-
-    }
-
-
-    //TODO: One problem, enemies will run to the same spot and the first enemy will stop on that spot. Which will block all other enemies to reach that spot. Fix it later
     public void Investigate()
     {
-        //ugly but hopefully functional code
         if (!isGoingTowardsInvestigatingPoint)
         {
             agent.SetDestination(interestingpoint);
             isGoingTowardsInvestigatingPoint = true;
-            //already sets the intersting point with offset in other scripts
         }
        
         var detectionState = detectionHelper.Detect(1, 0.5f);
-        //Debug.Log(detectionState);
 
         switch (detectionState)
         {
@@ -83,36 +72,26 @@ public class EnemyInvestigateState : NonMonoState
 
                 if (nonMonoStateMachine.GetComponent<Conversationable>().IsConversing)
                 {
-                    //Debug.Log($"Conversering makes it stuck");
                     return;
                 }
-
-                //Debug.Log($"Distance is to far away from {interestingpoint} it is {Vector3.Distance(agent.transform.position, interestingpoint)}m away");
-                //Debug.Log($"Interestingpoint is {interestingpoint} high");
                 if (Vector3.Distance(agent.transform.position, interestingpoint) < stopThreshold) //We want this threshold to be quit small, so the enemy "remembers" in what direction the player last went to. This will make it look in the last direction it saw the player and if the player isn't there then it will start looking around in confusion
                 {
-                    //Debug.Log("Close enough");
                     if (isAtInvestigationPoint is false && CanTalk)
                     {
                         isAtInvestigationPoint = true;
                         CanTalk = false;
-                        //Debug.Log("Stuck 1");
                         SparkConversation();
                     }
                     if(investigationState == 0)
                     {
                         LookAtLastPlayerPoint(interestingpoint);
-                        //Debug.Log("Stuck 2");
                         investigationState = 1;
                     }
                     else if (investigationState == 1)
                     {
-                        //Debug.Log("Stuck 3");
                         NextSearch += Time.deltaTime;
-                        //Debug.Log($"Next Search in: {NextSearch} / 0.2 ");
                         if (NextSearch > 0.2f)
                         {
-                            //Debug.Log("Do a circle");
                             CircleSearch(interestingpoint);
                             NextSearch = 0;
                             return;
@@ -130,14 +109,10 @@ public class EnemyInvestigateState : NonMonoState
                 nonMonoStateMachine.SwitchState<EnemyInvestigateState>();
                 isGoingTowardsInvestigatingPoint = false;
                 break;
-            case DetectionState.Detect:
-                //Debug.Log("Detect???");
-                break;
         }
     }
    private void SparkConversation()
     {
-        //Debug.Log("SPARK");
         switch (nonMonoStateMachine.GetComponent<EnemyController>().InvestigationType)
         {
             case InvestigationType.InvestigateNone:
@@ -172,36 +147,27 @@ public class EnemyInvestigateState : NonMonoState
         //if (nonMonoStateMachine.GetComponent<EnemyController>().PointOfInterest.Direction.magnitude <= Mathf.Epsilon) return;
         Vector3 newpos = new Vector3(Mathf.Sin(SearchAngle), 0, Mathf.Cos(SearchAngle)) * 2 + pos;
         SearchAngle = (int)Random.Range(0, 360);
-        //Debug.Log("New look angle");
         NavMeshPath targetPath = new NavMeshPath();
         if (agent.CalculatePath(newpos, targetPath) is false) return; //Why not out parameter?
-        //if(Vector3.Distance(targetPath.corners[targetPath.corners.Length - 1], soundLocation) > 0.05f) return;
         if (targetPath.status == NavMeshPathStatus.PathPartial || targetPath.status == NavMeshPathStatus.PathInvalid) return;
         agent.SetDestination(newpos);     
     }
-    //TODO: Make him look around on the investigation spot instead if just standing there
- 
     private void InvestigateArea()
     {
         currentInvestigationTime += Time.deltaTime;
-        //Debug.Log($"Investigate time: {currentInvestigationTime}");
-        //Debug.Log($"currentInvestigationTime: {currentInvestigationTime}");
-        //  Debug.Log("currentinvestigation time" + currentInvestigationTime + " " + " investigation time" + investigationTime);
+      
         if (currentInvestigationTime >= investigationTime)
         {
             //if the ai has been investigating for 5 seconds and have not found anything, return to patrol
-            //currentEnemyState = EnemyState.Patrol;
             if (nonMonoStateMachine.transform.GetComponent<EnemyController>().ShouldPatrol)
                 nonMonoStateMachine.SwitchState<EnemyPatrolState>();
             else
                 nonMonoStateMachine.SwitchState<EnemyStationaryState>();
-            //nonMonoStateMachine.SwitchState<EnemyPatrolState>();
+
             currentInvestigationTime = 0f;
             isGoingTowardsInvestigatingPoint = false;
-            isLooking = false;
             if (agent.isActiveAndEnabled == false) agent.enabled = true;
         }
     }
-    bool isLooking = false;
 
 }

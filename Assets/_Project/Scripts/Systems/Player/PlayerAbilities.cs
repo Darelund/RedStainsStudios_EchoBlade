@@ -52,7 +52,7 @@ public class PlayerAbilities : MonoBehaviour, ISavable
     {
         if (playerAbility == PlayerAbility.MovementSpeed)
         {
-            GameObject.FindGameObjectWithTag("Player").GetComponent<Movement>().speed *= 1.15f;
+            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().speed *= 1.15f;
         }
         abilities[playerAbility] = true;
     }
