@@ -5,7 +5,6 @@ using System.Xml;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using static UnityEngine.EventSystems.EventTrigger;
 
 public class EnemyController : NonMonoBehaviourStateMachine, ISavable
 {
@@ -87,16 +86,16 @@ public class EnemyController : NonMonoBehaviourStateMachine, ISavable
     //}
     private void OnDrawGizmos()
     {
-        if (ShowGizmos is false) return;
 
 
         Gizmos.color = Color.yellow;
-
-        //var circleMesh = new Mesh();
-        //circleMesh.
+        if (ShowHearingDebugs is true)
         Gizmos.DrawWireSphere(transform.position, hearingRange);
 
-      //  transform.draw
+        if (ShowGizmos is false) return;
+        //InterestingPoint
+        Gizmos.color = Color.orange;
+        Gizmos.DrawWireCube(PointOfInterest.Position, new Vector3(1, 5, 1));
 
     }
 

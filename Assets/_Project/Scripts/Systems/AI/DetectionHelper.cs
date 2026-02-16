@@ -107,9 +107,9 @@ public class DetectionHelper
         for (int i = 0; i < extremityPoints.Count; i++)
         {
             Vector3 predictedDir = (eyes.position - extremityPoints[i].transform.position).normalized;
-           // Vector3 predictedDir = PredictFutureDirection();
+            //Vector3 predictedDir = PredictFutureDirection(extremityPoints[i].transform);
             Physics.Raycast(extremityPoints[i].transform.position, predictedDir, out rayHit, detectionRange, (1 << 0) | (1 << 6) | (1 << 13) | (1 << 15));
-            Debug.DrawRay(extremityPoints[i].transform.position, (predictedDir) * detectionRange, Color.darkOliveGreen, 1);
+            
             //Debug.Log($"Extremity position: {extremityPoints[9].GetComponentInParent<Animator>().GetBoneTransform(HumanBodyBones.Head).transform.position}");
             //if (rayHit.collider != null)
             //    Debug.Log($"Name of hit object - {rayHit.collider.name} and target transform is {detectorObject.transform.name}");
@@ -125,6 +125,7 @@ public class DetectionHelper
 
                 timeInSight += detectionSpeed * Time.deltaTime;
                 Debug.Log(timeInSight);
+                Debug.DrawRay(extremityPoints[i].transform.position, (predictedDir) * detectionRange, Color.green, 1);
                 //Chase after being in sight for x seconds
                 if (timeInSight > CHASE_THRESHOLD)
                 {
@@ -136,6 +137,12 @@ public class DetectionHelper
                 //Debug.Log("Detecting");
                 //Stand still and look at the thing you detect
                 return DetectionState.Detect;
+            }
+            else //Missed
+            {
+                if (rayHit.collider != null && rayHit.transform.gameObject != null)
+                    Debug.Log(rayHit.transform.gameObject.name);
+                Debug.DrawRay(extremityPoints[i].transform.position, (predictedDir) * detectionRange, Color.darkRed, 1);
             }
         }
         //Debug.Log("Nothing detected");
@@ -153,20 +160,21 @@ public class DetectionHelper
         }
         lightChanger.ChangeVisibilityColor(timeInSight);
     }
-    //private Vector3 PredictFutureDirection()
-    //{
-    //    float distance = Vector3.Distance(eyes.position, extremityPoints[9].GetComponentInParent<Animator>().GetBoneTransform(HumanBodyBones.Head).transform.position);
+    Vector3 lastPosition;
+    private Vector3 PredictFutureDirection(Transform transformTarget)
+    {
+        float distance = Vector3.Distance(eyes.position, transformTarget.position);
 
-    //    Vector3 velocity = (((target.transform.position) - lastposition) / Time.deltaTime) * 0.35f;
-    //    lastposition = target.transform.position;
+        Vector3 velocity = (((target.transform.position) - lastPosition) / Time.deltaTime) * 0.35f;
+        lastPosition = target.transform.position;
 
-    //    float predictionTime = distance / detectorObject.GetComponent<NavMeshAgent>().speed;
+        float predictionTime = distance / detectorObject.GetComponent<NavMeshAgent>().speed;
 
-    //    Vector3 futurePosition =
-    //    (target.transform.position) + velocity * predictionTime;
-    //    Vector3 predictedDir = (eyes.position - futurePosition).normalized;
-    //    return predictedDir;
-    //}
+        Vector3 futurePosition =
+        (target.transform.position) + velocity * predictionTime;
+        Vector3 predictedDir = (eyes.position - futurePosition).normalized;
+        return predictedDir;
+    }
 
 
     //TODO: Right now it finds all default layers, dumb, fix later. Make one layer for things that the enemy should interact with when they see it
@@ -177,10 +185,19 @@ public class DetectionHelper
         float distance = Vector3.Distance(target.transform.position, detectorObject.position);
         //Debug.Log($"Distance to player {distance}");
         //No need to check, player can't hide
-        if (distance <= autoDetectionRange) return true;
+        if (distance <= autoDetectionRange)
+        {
+            Debug.Log("Auto Detection");
+            return true;
+        }
+
 
         //Well player is to far away
-        if (distance > detectionRange) return false;
+        if (distance > detectionRange)
+        {
+            Debug.Log("Too far away");
+            return false;
+        }
 
    
 
@@ -194,13 +211,20 @@ public class DetectionHelper
         for (int i = 0; i < extremityPoints.Count; i++)
         {
             Vector3 predictedDir = (eyes.position - extremityPoints[i].position).normalized;
-           // Vector3 predictedDir = PredictFutureDirection();
+            //Vector3 predictedDir = PredictFutureDirection(extremityPoints[i].transform);
+            // Vector3 predictedDir = PredictFutureDirection();
             Physics.Raycast(extremityPoints[i].transform.position, predictedDir, out rayHit, detectionRange, (1 << 0) | (1 << 6) | (1 << 13) | (1 << 15));
-            Debug.DrawRay(extremityPoints[i].transform.position, (predictedDir) * detectionRange, Color.darkOrange, 1);
             if (rayHit.collider != null && rayHit.transform == detectorObject.transform && target.transform.gameObject.layer != 11)
+            {
+                Debug.DrawRay(extremityPoints[i].transform.position, (predictedDir) * detectionRange, Color.darkGreen, 1);
                 return true;
+            }
+            else
+            {
+                Debug.DrawRay(extremityPoints[i].transform.position, (predictedDir) * detectionRange, Color.darkOrange, 1);
+            }
         }
-
+        Debug.Log("Missed everything");
         //int numberOfRaycasts = 15;
         //float degreesBetweenRays = 5;
 

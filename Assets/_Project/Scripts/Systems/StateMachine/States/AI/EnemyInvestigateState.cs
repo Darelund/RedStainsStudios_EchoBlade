@@ -70,9 +70,18 @@ public class EnemyInvestigateState : NonMonoState
         {
             case DetectionState.DetectNone:
 
+             
                 if (nonMonoStateMachine.GetComponent<Conversationable>().IsConversing)
                 {
                     return;
+                }
+                if (agent.hasPath is false && isGoingTowardsInvestigatingPoint is true && isAtInvestigationPoint is false)
+                {
+                    agent.SetDestination(interestingpoint);
+                }
+                else if (agent.hasPath is false && isGoingTowardsInvestigatingPoint is true && isAtInvestigationPoint is true)
+                {
+                    agent.SetDestination(circlePos);
                 }
                 if (Vector3.Distance(agent.transform.position, interestingpoint) < stopThreshold) //We want this threshold to be quit small, so the enemy "remembers" in what direction the player last went to. This will make it look in the last direction it saw the player and if the player isn't there then it will start looking around in confusion
                 {
@@ -109,6 +118,11 @@ public class EnemyInvestigateState : NonMonoState
                 nonMonoStateMachine.SwitchState<EnemyInvestigateState>();
                 isGoingTowardsInvestigatingPoint = false;
                 break;
+            case DetectionState.Detect:
+                //Be still, look at the thing you detected
+                if (agent.hasPath)
+                    agent.ResetPath();
+                break;
         }
     }
    private void SparkConversation()
@@ -142,15 +156,16 @@ public class EnemyInvestigateState : NonMonoState
         agent.SetDestination(pos + nonMonoStateMachine.GetComponent<EnemyController>().PointOfInterest.Direction);
     }
     //Second stage is to look around for the player
+    private Vector3 circlePos;
     private void CircleSearch(Vector3 pos)
     {
         //if (nonMonoStateMachine.GetComponent<EnemyController>().PointOfInterest.Direction.magnitude <= Mathf.Epsilon) return;
-        Vector3 newpos = new Vector3(Mathf.Sin(SearchAngle), 0, Mathf.Cos(SearchAngle)) * 2 + pos;
+        circlePos = new Vector3(Mathf.Sin(SearchAngle), 0, Mathf.Cos(SearchAngle)) * 2 + pos;
         SearchAngle = (int)Random.Range(0, 360);
         NavMeshPath targetPath = new NavMeshPath();
-        if (agent.CalculatePath(newpos, targetPath) is false) return; //Why not out parameter?
+        if (agent.CalculatePath(circlePos, targetPath) is false) return; //Why not out parameter?
         if (targetPath.status == NavMeshPathStatus.PathPartial || targetPath.status == NavMeshPathStatus.PathInvalid) return;
-        agent.SetDestination(newpos);     
+        agent.SetDestination(circlePos);     
     }
     private void InvestigateArea()
     {

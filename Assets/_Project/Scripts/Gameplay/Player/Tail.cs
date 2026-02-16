@@ -15,7 +15,7 @@ public class Tail : MonoBehaviour
     //[SerializeField] public Image coolDownImage;//All images should be seperate with an event. Now I have to do a dumb solution in the AbilityBar to make this work. We need to come up with a less dumb solution later - Vidar
     public static event Action<float> OnTailCoolDown;
     private float timer = 0;
-
+    private bool isTailing = false;
     [SerializeField] private InputActionAsset inputActions;
     [SerializeField] private InputAction tail;
     [SerializeField] private SkinnedMeshRenderer playerVisuals;
@@ -72,6 +72,7 @@ public class Tail : MonoBehaviour
             //if (coolDownImage != null)
             //    coolDownImage.fillAmount = Mathf.Lerp(0, 1, timer);
         }
+        if(isTailing is true)
         LeaveTailEarly();
     }
 
@@ -107,6 +108,7 @@ public class Tail : MonoBehaviour
     
     IEnumerator TailEnemy(GameObject enemy)
     {
+        isTailing = true;
         // Enable tail effect
         GetComponent<PlayerController>().UseGravity = false;
         playerVisuals.enabled = false;
@@ -158,6 +160,7 @@ public class Tail : MonoBehaviour
     }
     private void LeaveTail()
     {
+        isTailing = false;
         playerVisuals.enabled = true;
         playerShadow.enabled = false;
         gameObject.layer = 0;

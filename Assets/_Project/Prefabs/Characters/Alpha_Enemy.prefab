@@ -125,7 +125,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2223049869280993935}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: b654241facd38f14881f1b8444ffba9f, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -167,7 +167,7 @@ MonoBehaviour:
     Direction: {x: 0, y: 0, z: 0}
   ShouldPatrol: 1
   hearingRange: 13
-  ShowGizmos: 0
+  ShowGizmos: 1
   ShowHearingDebugs: 0
   InvestigationType: 0
   enemyID: 
@@ -181,7 +181,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 5
+  m_Speed: 6
   m_Acceleration: 10
   avoidancePriority: 50
   m_AngularSpeed: 6000
@@ -215,7 +215,7 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2223049869280993935}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: b654241facd38f14881f1b8444ffba9f, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
