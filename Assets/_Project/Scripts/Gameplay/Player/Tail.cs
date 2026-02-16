@@ -53,6 +53,7 @@ public class Tail : MonoBehaviour
             if (enemies.Count != 0)
             {
                 GameObject closestEnemy = GetClosestEnemy(enemies);
+                if (closestEnemy == null) return;
                 StartCoroutine(TailEnemy(closestEnemy));
             }
         }
@@ -70,6 +71,18 @@ public class Tail : MonoBehaviour
             OnTailCoolDown?.Invoke(Mathf.Lerp(0, 1, timer));
             //if (coolDownImage != null)
             //    coolDownImage.fillAmount = Mathf.Lerp(0, 1, timer);
+        }
+        LeaveTailEarly();
+    }
+
+
+    //TODO: Add this to the input System so it works for more than keyboards
+    private void LeaveTailEarly()
+    {
+        if(Mouse.current.rightButton.wasPressedThisFrame is true)
+        {
+            StopAllCoroutines();
+            LeaveTail();
         }
     }
 
@@ -141,20 +154,31 @@ public class Tail : MonoBehaviour
 
             yield return null;
         }
+        LeaveTail();
+    }
+    private void LeaveTail()
+    {
         playerVisuals.enabled = true;
         playerShadow.enabled = false;
         gameObject.layer = 0;
 
-        //Vector3 leaveTail = new Vector3(Input.mousePosition.x, transform.position.y, Input.mousePosition.z);
+        LeaveTailPosition();
+        if (PlayerAbilities.Instance.GetAbilityState(PlayerAbility.AbilityHaste))
+        {
+            timer = cooldown * 0.8f;
+        }
+        else
+        {
+            timer = cooldown;
+        }
 
-        ////if (leaveTail.x > 1.5f) leaveTail.x = 1.5f;
-        ////    else if (leaveTail.x < -1.5f) leaveTail.x = -1.5f;
 
-        ////if (leaveTail.z > 1.5f) leaveTail.z = 1.5f;
-        ////    else if (leaveTail.z < -1.5f) leaveTail.z = -1.5f;
-
-        //Vector3 clamp = leaveTail - transform.position;
-
+        // Disable tail effect
+        Debug.Log("Tail effect deactivated");
+        GetComponent<PlayerController>().UseGravity = true;
+    }
+    private void LeaveTailPosition()
+    {
         Camera cam = Camera.main;
         if (cam != null)
         {
@@ -169,23 +193,6 @@ public class Tail : MonoBehaviour
 
             transform.position = transform.position + clampedDelta;
         }
-
-       // transform.position = Vector3.Lerp(Vector3.ClampMagnitude(clamp, 1.5f), transform.position, 0.3f);
-
-        if (PlayerAbilities.Instance.GetAbilityState(PlayerAbility.AbilityHaste))
-        {
-            timer = cooldown * 0.8f;
-        }
-        else
-        {
-            timer = cooldown;
-        }
-
-       // coolDownImage.fillAmount = 0;
-
-        // Disable tail effect
-        Debug.Log("Tail effect deactivated");
-        GetComponent<PlayerController>().UseGravity = true;
     }
 
     private void OnDrawGizmos()
