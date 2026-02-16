@@ -37,7 +37,7 @@ public class DetectionHelper
     //private float CHASE_THRESHOLD = 2.5f;
     //private float INVESTIGATE_THRESHOLD = 1f;
 
-
+    //private float DetectionSpeed = 4f;
     private float eyeSightAngle = 28f;
     private float detectionRange = 10;
     private readonly LightChanger lightChanger;
@@ -77,7 +77,7 @@ public class DetectionHelper
         var distanceToPlayer = targetDir.magnitude;
 
         //Player too far away
-        if(distanceToPlayer > detectionRange) return DetectionState.DetectNone;
+        if(distanceToPlayer >= detectionRange) return DetectionState.DetectNone;
        // Debug.Log("Inside detection range");
 
         //Check if the player is inside FOV
@@ -99,6 +99,7 @@ public class DetectionHelper
         //Debug.Log(timeInSight);
         return DetectionState.DetectNone;
     }
+
     private DetectionState ShootOutRays(float CHASE_THRESHOLD = 2.5f)
     {
         RaycastHit rayHit;
@@ -117,9 +118,13 @@ public class DetectionHelper
                 //TODO: It shouldn't only be about time insight
                 //it should also be how close you are. If you are in the face of the
                 //enemy then obviously it should instantly chase/do something
-                float closeness = detectionRange - Vector3.Distance(target.transform.position, rayHit.collider.transform.position);
-                timeInSight += closeness * Time.deltaTime;
-                //Debug.Log(timeInSight);
+                float distance = Vector3.Distance(target.transform.position, rayHit.collider.transform.position);
+                float closeness = 1 - (distance / detectionRange); //1 to make closer higher
+                var clampedClosness = Mathf.Clamp01(closeness); //We don't want negative values
+                var detectionSpeed = Mathf.Lerp(2f, 10f, clampedClosness);
+
+                timeInSight += detectionSpeed * Time.deltaTime;
+                Debug.Log(timeInSight);
                 //Chase after being in sight for x seconds
                 if (timeInSight > CHASE_THRESHOLD)
                 {
