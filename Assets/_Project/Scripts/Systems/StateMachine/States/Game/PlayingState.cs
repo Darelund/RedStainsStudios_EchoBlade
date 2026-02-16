@@ -18,6 +18,10 @@ public class PlayingState : State /*ISavable*/
         {
             GameManager.Instance.SwitchState<PauseState>();
         }
+        if (Keyboard.current.spaceKey.wasPressedThisFrame)
+        {
+            GameManager.Instance.SwitchState<QuickTimeEventState>();
+        }
     }
     public override void FixedUpdateState()
     {
